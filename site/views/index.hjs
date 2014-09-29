@@ -96,11 +96,12 @@
             <div class="col-sm-10 col-md-9 pull-right">
 
                 <h1 class="section-title">Publication</h1>
+                <a href="http://scholar.google.com/citations?user=puTV6X0AAAAJ&hl=en"><strong>Google Scholar Profile</strong></a>
                 <h5>Journal</h5>
                 <p class="feature-paragraph">
-                  <h6><a href="files/2014_JVCIR_Manuscript.pdf">Accurate Segmentation of Land Regions in Historical Cadastral Maps</a></h6>
+                  <h6><a href="files/2014_JVCIR.pdf">Accurate Segmentation of Land Regions in Historical Cadastral Maps</a></h6>
                   Nam Wook Kim, <a href="http://cglab.snu.ac.kr/~jjlee/">Jung Jin Lee</a>, Hyungmin Lee, <a href="http://hcil.snu.ac.kr/~jwseo/">Jinwook Seo</a>.<br/>
-                  <i>Journal of Visual Communication and Image Representation (JVCIR)</i>, Jan 2014.
+                  <i>Journal of Visual Communication and Image Representation (JVCIR)</i>, July 2014.
                 </p>
 
                 <h5>Conference</h5>
