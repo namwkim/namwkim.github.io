@@ -54,7 +54,7 @@
       <section id="left-sidebar">
         
         <div class="logo">
-          <img src="assets/images/other_images/nam_vintage.jpg" class="img-rounded" alt="Nam Wook Kim">
+          <a href="#about" class="link-scroll"><img src="assets/images/other_images/nam_vintage.jpg" class="img-rounded" alt="Nam Wook Kim"></a>
         </div><!-- .logo -->
 
         <!-- Menu Icon for smaller viewports -->
