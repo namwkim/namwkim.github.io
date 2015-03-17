@@ -1,0 +1,8 @@
+{
+  "name": "namwkim",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular":"*"
+  },
+  "private": true
+}
