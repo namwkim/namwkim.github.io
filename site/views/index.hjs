@@ -93,7 +93,7 @@
                   <h1>Nam Wook Kim</h1>
                   <p>I am a Ph.D student in <a href="http://www.seas.harvard.edu/">SEAS</a> at <a href="http://www.harvard.edu/">Harvard</a>, focusing on information visualization and human computer interaction research. I work in the <a href="http://vcg.seas.harvard.edu/">Visual Computing Group</a>, and am advised by <a href="http://www.seas.harvard.edu/directory/pfister">Prof.Hanspeter Pfister</a> and <a href="http://www.eecs.harvard.edu/~kgajos/">Prof.Krzysztof Gajos</a>. <a href="http://kfaseng.helloweb.co.kr/">Kwanjeong Educational Foundation</a> supports my graduate studies. </a></p>
 
-                  <p>I am interested in not only applying visualizations in various domains such as open government, creativity support and story telling, but also understanding cognition, perception, and sensmaking around the use of visualizations. </p>
+                  <p>I am interested in applying data visualization in various domains such as open government, creativity support, and story telling, but also understanding the cognition, perception, and sensmaking aspects of visualizations.</p>
                   <!--<p><a href="#text" class="link-scroll btn btn-outline-inverse btn-lg">find out more</a></p>-->
                   <p><a href="http://resume.linkedinlabs.com/v9ku1bta8"><strong>CV Link</strong></a></p>
                 </section>
@@ -111,31 +111,51 @@
                 <h5>Journal</h5>
                 <p class="feature-paragraph">
                   <h6><a href="files/2014_JVCIR.pdf">Accurate Segmentation of Land Regions in Historical Cadastral Maps</a></h6>
-                  Nam Wook Kim, <a href="http://cglab.snu.ac.kr/~jjlee/">Jung Jin Lee</a>, Hyungmin Lee, <a href="http://hcil.snu.ac.kr/~jwseo/">Jinwook Seo</a>.<br/>
-                  <i>Journal of Visual Communication and Image Representation (JVCIR)</i>, July 2014.
+                  <strong>Nam Wook Kim</strong>, Jung Jin Lee, Hyungmin Lee, Jinwook Seo.<br/>
+                  <i>JVCIR 2014. </i>
                 </p>
 
                 <h5>Conference</h5>
                 <p class="feature-paragraph">
+                  <h6><a href="files/2012-JigsawMap-CHI.pdf">Factful: Engaging Taxpayers in the Public Discussion of a Government Budget</a></h5>
+                  Juho Kim, Eun-Young Ko, Jonghyuk Jung, Chang Won Lee, <strong>Nam Wook Kim</strong>, Jihee Kim<br/>
+                  <i>CHI 2015.(to appear) </i>
+                </p>                
+                <p class="feature-paragraph">
                   <h6><a href="files/2012-JigsawMap-CHI.pdf">JigsawMap: connecting the past to the future by mapping historical textual cadasters</a></h5>
-                  Hyungmin Lee, Sooyun Lee, Nam Wook Kim, and <a href="http://hcil.snu.ac.kr/~jwseo/">Jinwook Seo</a>.<br/>
-                  <i>Proc. ACM Human Factors in Computing Systems (CHI)</i>, May 2012       
+                  Hyungmin Lee, Sooyun Lee, <strong>Nam Wook Kim</strong>, Jinwook Seo.<br/>
+                  <i>CHI 2012.</i>     
                 </p>
                 <p class="feature-paragraph">
                   <h6><a href="files/2012-SocialVis-CSCW.pdf">Social Visualization and Negotiation: Effects of Feedback Configuration and Status</a></h5>
-                  Mike Nowak, Juho Kim, Nam Wook Kim, Clifford Nass.<br/>
-                  <i>ACM 2012 conference on Computer Supported Cooperative Work (CSCW ‘12)</i>, Feb 2012.                   
+                  Mike Nowak, Juho Kim, <strong>Nam Wook Kim</strong>, Clifford Nass.<br/>
+                  <i>CSCW 2012.</i>
                 </p>
                 <p class="feature-paragraph">
                   <h6><a href="files/2010-TimeNets-AVI.pdf">Tracing Genealogical Data with TimeNets</a></h6>
-                  Nam Wook Kim, Stuart K. Card, <a href="http://www.jheer.org">Jeffrey Heer</a>.<br/>
-                  <i>Proc. Advanced Visual Interface (AVI)</i>, May 2010.
+                  <strong>Nam Wook Kim</strong>, Stuart K. Card, Jeffrey Heer.<br/>
+                  <i>AVI 2010.</i>
                 </p>
                 <h5>Poster</h5>
                 <p class="feature-paragraph">
+                  <h6><a href="files/CHI2015-WIP-Bubble.pdf">A Crowdsourced Alternative to Eye-tracking for Visualization Understanding</a></h6>
+                  <strong>Nam Wook Kim</strong>, Zoya Bylinskii, Michelle A. Borkin, Aude Oliva, Krzysztof Z. Gajos, Hanspeter Pfister.<br/>
+                  <i>CHI 2015 Extended Abstracts.(to appear)</i>. | <a href="files/CHI2015-WIP-Bubble-Poster.pdf">poster</a> | <a href="https://study.namwkim.org/bubble/admin">website</a>
+                </p>
+                <p class="feature-paragraph">
+                  <h6><a href="files/CHI2015-WIP-BudgetMap.pdf">BudgetMap: Issue-Driven Navigation for a Government Budget</a></h6>
+                  <strong>Nam Wook Kim</strong>, Chang Won Lee, Jonghyuk Jung, Eun-Young Ko, Juho Kim, Jihee Kim.<br/>
+                  <i>CHI 2015 Extended Abstracts.(to appear)</i>. | <a href="files/CHI2015-WIP-BudgetMap-Poster.pdf">poster</a> | <a href="http://budgetwiser.org/">website</a>
+                </p>
+                <p class="feature-paragraph">
                   <h6><a href="files/2013-GAS-VAST-Poster.pdf">Recording Reusable and Guided Analytics From Interaction Histories</a></h6>
-                  Nam Wook Kim.<br/>
-                  <i>Proc. IEEE Visual Analytics Science & Technology (VAST)</i>, Oct 2013.
+                  <strong>Nam Wook Kim</strong>.<br/>
+                  <i>VAST 2013 Poster.</i>
+                </p>
+                <p class="feature-paragraph">
+                  <h6><a href="files/2013-IWC-ACHI-Poster.pdf">Vehicle Instrument Panel Design for Cooperative Driving</a></h6>
+                  <strong>Nam Wook Kim</strong>., Ji Tae Hong, Dae Ok Lee.<br/>
+                  <i>ACHI 2013 Poster.</i>
                 </p>
 
 
@@ -160,7 +180,7 @@
                         <h6>Ph.D Computer Science</h6>
                         Harvard University<br/>
                         Sep.2014 - June.2019 (Expected)<br/> 
-                        Advisor: <a href="http://www.seas.harvard.edu/directory/pfister">Hanspeter Pfister</a> and <a href="http://www.eecs.harvard.edu/~kgajos/">Krzysztof Gajos</a>
+                        Advisors: <a href="http://www.seas.harvard.edu/directory/pfister">Hanspeter Pfister</a> and <a href="http://www.eecs.harvard.edu/~kgajos/">Krzysztof Gajos</a>
                       </div>
                     </div><!-- end: .item-content -->
                   </div><!-- end: .grid-item -->
@@ -407,7 +427,7 @@
                         2009
                       </div>
                       <div class="text-content">
-                        <h6>The Korean Honor Scholarshi</h6>                        
+                        <h6>The Korean Honor Scholarship</h6>                        
                         Embassy of the Republic of Korea
                       </div>
                     </div><!-- end: .item-content -->
@@ -517,7 +537,7 @@
                 </p>
                 <h5>Skiils</h5>
                 <p>
-                  D3.js, Node, MongoDB, Python, Matlab, R.
+                  D3.js, Node, MongoDB, AWS, Python, Matlab, R.
                 </p>
               </div>
           </div><!-- .content-wrapper -->
