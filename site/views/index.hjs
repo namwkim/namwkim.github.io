@@ -117,31 +117,37 @@
                       namwkim at seas.harvard.edu
                       </p>
                       <section id="fabButtons" layout="row" layout-align="center center">
-                        <md-button class="md-fab" align="center">
-                          <md-tooltip>
-                            Curriculum Vitae
-                          </md-tooltip>
-                          <md-icon md-svg-src="/images/cv.svg" >
-                        </md-button>
-                        <md-button class="md-fab md-warn" align="center">
-                          <md-tooltip>
-                            Google Scholar
-                          </md-tooltip>
-                          <md-icon md-svg-src="/images/scholar.svg" >
-                        </md-button>
-                        <md-button class="md-fab md-primary" align="center">
-                          <md-tooltip>
-                            Facebook
-                          </md-tooltip>
-                          <md-icon md-svg-src="/images/facebook.svg" >
-                        </md-button>
-                        <md-button class="md-fab md-warn" align="center">
-                          <md-tooltip>
-                            LinkedIn
-                          </md-tooltip>
-                          <md-icon md-svg-src="/images/linkedin.svg" >
-                        </md-button>
-
+                        <a href="http://goo.gl/n6Kg1m" target="_blank" >
+                          <md-button class="md-fab">
+                            <md-tooltip>
+                              Curriculum Vitae
+                            </md-tooltip>
+                            <md-icon md-svg-src="/images/cv.svg" >
+                          </md-button>
+                        </a>
+                        <a href="http://goo.gl/UeThfZ" target="_blank" >
+                          <md-button class="md-fab md-warn" >
+                            <md-tooltip>
+                              Google Scholar
+                            </md-tooltip>
+                            <md-icon md-svg-src="/images/scholar.svg" >
+                          </md-button>
+                        </a>
+                        <a href="https://www.facebook.com/namwkim" target="_blank" >
+                          <md-button class="md-fab md-primary" align="center">
+                            <md-tooltip>
+                              Facebook
+                            </md-tooltip>
+                            <md-icon md-svg-src="/images/facebook.svg" >
+                          </md-button>
+                        <a href="https://www.linkedin.com/in/namwkim" target="_blank" >
+                          <md-button class="md-fab md-warn" align="center">
+                            <md-tooltip>
+                              LinkedIn
+                            </md-tooltip>
+                            <md-icon md-svg-src="/images/linkedin.svg" >
+                          </md-button>
+                        </a>
                     </section>
                     </md-card-content>
                   </md-card>            
@@ -201,7 +207,7 @@
                 <md-card-content>
                   <h3>Featured Projects</h3>
                   <md-divider></md-divider>
-                    <md-content style="height: 500px;">
+                    <md-content style="height: 600px;">
                       <md-list layout="column">
                         <md-item ng-repeat="item in projects">
                           <md-item-content layout="row" layout-align="start start">                     
@@ -231,7 +237,7 @@
                   <md-divider></md-divider>
 
                   <md-content>
-                    <md-content style="height: 500px;">
+                    <md-content style="height: 600px;">
                       <section class="publication">
                         <md-subheader class="md-accent"><h3>Journal Papers</h3></md-subheader>
                         <md-list layout="column">
