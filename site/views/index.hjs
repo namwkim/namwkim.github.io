@@ -9,6 +9,19 @@
 
     <title>Nam Wook Kim</title>
 
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>  
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>  
+    
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- Google Analytics -->  
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -19,9 +32,271 @@
       ga('send', 'pageview');
 
     </script>
+    <!-- Changing the delimeter of AngularJS to avoid conflict with Hogan-Express-->
+    <script>
+
+    </script>    
+  <script src="/javascripts/index.js"></script>  
   </head>
 
-  <body>
+  <body ng-app="myApp">
+    <div ng-controller="AppCtrl" layout="column" layout-fill>
+      <md-toolbar md-scroll-shrink class="md-tall" id="myToolbar">
+        <span flex></span>
+        <h2 layout="row" layout-align="center center" class="md-toolbar-tools md-toolbar-tools-bottom">      
+            <span id="toolbarName">Nam Wook Kim</span>      
+        </h2>
+      </md-toolbar>
+      <md-tabs md-stretch-tabs="always" id="myTabs">
+        <md-tab>
+          <md-divider></md-divider>
+          <md-tab-label>
+            <h3 >About</h3>
+          </md-tab-label>          
 
+          <!--
+            <md-grid-list 
+              md-cols-gt-md="12" md-cols-sm="3" md-cols-md="8"
+              md-row-height-gt-md="1:1" md-row-height="4:3"
+              md-gutter="12x" md-gutter-gt-sm="8px" >
+
+              <md-grid-tile class="white"
+                md-rowspan="6" md-colspan="4">
+                <md-content class="md-padding-sm">
+                  <md-card id="profileCard">
+                    <img src="/images/profile.png" class="md-card-image">
+                    <md-card-content> 
+                      <h3>Nam Wook Kim</h3>
+                      <md-divider></md-divider>
+                      <p>
+                      Maxwell Dworkin 142<br>
+                      33 Oxford Street<br>
+                      Cambridge, MA<br>
+                      namwkim at seas.harvard.edu
+                      </p>
+                    </md-card-content>
+                  </md-card>        
+                </md-content>
+              </md-grid-tile>
+
+              <md-grid-tile class="white"
+                md-rowspan="7" md-colspan="4">
+                
+                <md-card id="bioCard">
+                  <md-card-content>
+                    <h3>Bio</h3>
+                    <md-divider></md-divider>
+                    <p>I am a Ph.D student in <a href="http://www.seas.harvard.edu/">SEAS</a> at <a href="http://www.harvard.edu/">Harvard</a>, focusing on information visualization and human computer interaction research. I am interested in applying data visualization in various domains such as open government, creativity support, and story telling, but also understanding the cognition, perception, and sensmaking aspects of visualizations.</p>
+
+                    <p>I work in the <a href="http://vcg.seas.harvard.edu/">Visual Computing Group</a>, and am advised by <a href="http://www.seas.harvard.edu/directory/pfister">Prof.Hanspeter Pfister</a> and <a href="http://www.eecs.harvard.edu/~kgajos/">Prof.Krzysztof Gajos</a>. <a href="http://kfaseng.helloweb.co.kr/">Kwanjeong Educational Foundation</a> supports my graduate studies. </p>
+
+                    <p> Prior to Harvard, I was a research associate at KAIST and also worked in industry for 4 years, including Samsung and LG. He received his M.S. in Computer Science from Stanford Univ. and B.S. in Computer Science, Digital Media, and Mathematics from Ajou and Stony Brook (dual degree).</p>
+                    
+                  </md-card-content>
+                </md-card>       
+                       
+              </md-grid-tile>
+              <md-grid-tile class="white"
+                md-rowspan="7" md-colspan="4">
+              </md-grid-tile>
+
+            <md-grid-list>
+          -->
+          
+            <div layout-gt-md="row" layout="column" layout-fill>
+              <div flex="100" flex-gt-md="33" flex-order="1">            
+                  <md-card id="profileCard">
+                    <img src="/images/profile.png" class="md-card-image">
+                    <md-card-content>
+                      <h3>Nam Wook Kim</h3>
+                      <md-divider></md-divider>
+                      <p>
+                      Maxwell Dworkin 142<br>
+                      33 Oxford Street<br>
+                      Cambridge, MA<br>
+                      namwkim at seas.harvard.edu
+                      </p>
+                      <section id="fab-buttons" layout="row" layout-align="center center">
+                        <md-button class="md-fab" align="center">
+                          <md-tooltip>
+                            Curriculum Vitae
+                          </md-tooltip>
+                          <md-icon md-svg-src="/images/cv.svg" >
+                        </md-button>
+                        <md-button class="md-fab md-primary" align="center">
+                          <md-tooltip>
+                            Facebook
+                          </md-tooltip>
+                          <md-icon md-svg-src="/images/facebook.svg" >
+                        </md-button>
+                        <md-button class="md-fab md-warn" align="center">
+                          <md-tooltip>
+                            LinkedIn
+                          </md-tooltip>
+                          <md-icon md-svg-src="/images/linkedin.svg" >
+                        </md-button>
+
+                    </section>
+                    </md-card-content>
+                  </md-card>            
+              </div>
+              <div flex="100" flex-gt-md="33" flex-order="2">
+                <md-card id="bioCard">
+                  <md-card-content>
+                    <h3>Bio</h3>
+                    <md-divider></md-divider>
+                    <p>I am a Ph.D student in <a href="http://www.seas.harvard.edu/">SEAS</a> at <a href="http://www.harvard.edu/">Harvard</a>, focusing on information visualization and human computer interaction research. I am interested in applying data visualization in various domains such as open government, creativity support, and story telling, but also understanding the cognition, perception, and sensmaking aspects of visualizations.</p>
+
+                    <p>I work in the <a href="http://vcg.seas.harvard.edu/">Visual Computing Group</a>, and am advised by <a href="http://www.seas.harvard.edu/directory/pfister">Prof.Hanspeter Pfister</a> and <a href="http://www.eecs.harvard.edu/~kgajos/">Prof.Krzysztof Gajos</a>. <a href="http://kfaseng.helloweb.co.kr/">Kwanjeong Educational Foundation</a> supports my graduate studies. </p>
+
+                    <p> Prior to Harvard, I was a research associate at KAIST and also worked in industry for 4 years, including Samsung and LG. He received his M.S. in Computer Science from Stanford Univ. and B.S. in Computer Science, Digital Media, and Mathematics from Ajou and Stony Brook (dual degree).</p>
+                  </md-card-content>
+                </md-card>               
+              </div>
+              <div flex="100" flex-gt-md="33" flex-order="3">
+                <md-card id="bioCard">
+                  <md-card-content>
+                    <h3>News</h3>
+                    <md-divider></md-divider>
+
+                    <md-content style="height: 500px;">
+                      <md-list layout="column">
+                        <md-item ng-repeat="item in news">
+                          <md-item-content>                    
+                          
+                            <div class="md-tile-content">                              
+                              <h3> 
+                                <% item.date %>. <% item.location %>    
+                              </h3>
+                              <p style="font-size:0.9em" class="text-muted">
+                                <% item.msg %>
+                              </p>
+                            </div>
+                          </md-item-content>
+                        </md-item>
+                      </md-list>
+                    </md-content>
+                    
+                  </md-card-content>
+                </md-card>               
+              </div> 
+            </div>
+     
+          
+        </md-tab>
+        <md-tab>
+          <md-divider></md-divider>
+          <md-tab-label>
+            <h3>Research</h3>
+          </md-tab-label>
+          <div layout-gt-md="row" layout="column" layout-fill>
+            <div flex="100" flex-gt-md="33" flex-order="1">  
+              <md-card id="projCard">
+                <md-card-content>
+                  <h3>Featured Projects</h3>
+                  <md-divider></md-divider>
+                    <md-content style="height: 600px;">
+                      <md-list layout="column">
+                        <md-item ng-repeat="item in projects">
+                          <md-item-content>                    
+                            <div class="md-tile-left">
+                              <img ng-src="<%item.imgLink%>" class="face">
+                            </div>
+                            <div class="md-tile-content">                              
+                              <h3> 
+                                <% item.name %>    
+                              </h3>
+                              <p style="font-size:0.9em" class="text-muted">
+                                <% item.desc %>
+                              </p>
+                            </div>
+                          </md-item-content>
+                        </md-item>
+                      </md-list>
+                    </md-content>
+
+                </md-card-content>
+              </md-card>               
+            </div>
+            <div flex="100" flex-gt-md="66" flex-order="2">                             
+              <md-card id="pubCard">
+                <md-card-content>
+                  <h3>Publication</h3>
+                  <md-divider></md-divider>
+
+                  <md-content>
+                    <md-content style="height: 600px;">
+                      <section>
+                        <md-subheader class="md-accent"><h3>Journal Papers</h3></md-subheader>
+                        <md-list layout="column">
+                          <md-item ng-repeat="paper in journalPapers">
+                            <md-item-content>
+                              <div class="md-tile-left">
+                                j.<% journalPapers.length-$index %>
+                              </div>
+                              <div class="md-tile-content">
+                                <a href="<% paper.link %>"><h3><% paper.name %></h3></a>
+                                <p style="font-size:0.9em">
+                                  <span ng-bind-html="paper.author"></span><br> 
+                                  <i ng-bind-html="paper.source"></i>.
+                                  <i ng-if="paper.note!=null" ng-bind-html="paper.note"></i>
+                                </p>
+                                
+                              </div>
+                            </md-item-content>
+                          </md-item>
+                        </md-list>
+                      </section>
+                      <section>
+                        <md-subheader class="md-primary"><h3>Conference Papers</h3></md-subheader>
+                        <md-list layout="column">
+                          <md-item ng-repeat="paper in conferencePapers">
+                            <md-item-content>
+                              <div class="md-tile-left">
+                                  c.<% conferencePapers.length-$index %>
+                              </div>
+                              <div class="md-tile-content">
+                                <a href="<% paper.link %>"><h3><% paper.name %></h3></a>
+                                <p style="font-size:0.9em">
+                                  <span ng-bind-html="paper.author"></span><br> 
+                                  <i ng-bind-html="paper.source"></i>.
+                                  <i ng-if="paper.note!=null" ng-bind-html="paper.note"></i>
+                                </p>
+                              </div>
+                            </md-item-content>
+                          </md-item>
+                        </md-list>
+                      </section>
+                      <section>
+                        <md-subheader class="md-warn"><h3>Posters/Demos/Workshop Papers</h3></md-subheader>
+                        <md-list layout="column">
+                          <md-item ng-repeat="paper in otherPapers">
+                            <md-item-content>
+                              <div class="md-tile-left">
+                                  p.<% otherPapers.length - $index %>
+                              </div>
+                              <div class="md-tile-content">
+                                <a href="<% paper.link %>"><h3><% paper.name %></h3></a>
+                                <p style="font-size:0.9em">
+                                  <span ng-bind-html="paper.author"></span><br> 
+                                  <i ng-bind-html="paper.source"></i>.
+                                  <i ng-if="paper.note!=null" ng-bind-html="paper.note"></i>
+                                  <span ng-if="paper.posterLink!=null">| <a href="<% paper.posterLink %>"> poster</a></span>
+                                  <span ng-if="paper.website!=null">| <a ng-if="paper.website!=null" href="<% paper.website %>">website</a></span>
+                                </p>
+                              </div>
+                            </md-item-content>
+                          </md-item>
+                        </md-list>
+                      </section>             
+                    </md-content>
+                  </md-content>
+                </md-card-content>
+              </md-card>
+            </div>
+          </div>
+        </md-tab>
+      </md-tabs>
+    </div>
   </body>
 </html>
