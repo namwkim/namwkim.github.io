@@ -21,11 +21,19 @@
 #projCard{
 	background: white;
 }
-#fab-buttons .md-button{
+#fabButtons .md-button{
 	margin-right: 1em;
 
 }
-
+.listImage {
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  width: 48px;
+  margin-top:2.5em;
+}
+.publication .md-subheader{
+	padding: 0em;
+}
 body{
 	
 	background: #ececec;

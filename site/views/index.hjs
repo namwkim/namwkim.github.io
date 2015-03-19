@@ -8,7 +8,7 @@
     <meta name="author" content="Nam Wook Kim">
 
     <title>Nam Wook Kim</title>
-
+    <link rel="icon" href="/images/favicon.png" type="image/png" sizes="16x16 32x32">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
 
     <script src="/bower_components/angular/angular.js"></script>
@@ -116,12 +116,18 @@
                       Cambridge, MA<br>
                       namwkim at seas.harvard.edu
                       </p>
-                      <section id="fab-buttons" layout="row" layout-align="center center">
+                      <section id="fabButtons" layout="row" layout-align="center center">
                         <md-button class="md-fab" align="center">
                           <md-tooltip>
                             Curriculum Vitae
                           </md-tooltip>
                           <md-icon md-svg-src="/images/cv.svg" >
+                        </md-button>
+                        <md-button class="md-fab md-warn" align="center">
+                          <md-tooltip>
+                            Google Scholar
+                          </md-tooltip>
+                          <md-icon md-svg-src="/images/scholar.svg" >
                         </md-button>
                         <md-button class="md-fab md-primary" align="center">
                           <md-tooltip>
@@ -190,17 +196,17 @@
             <h3>Research</h3>
           </md-tab-label>
           <div layout-gt-md="row" layout="column" layout-fill>
-            <div flex="100" flex-gt-md="33" flex-order="1">  
+            <div flex="100" flex-gt-md="40" flex-order="1">  
               <md-card id="projCard">
                 <md-card-content>
                   <h3>Featured Projects</h3>
                   <md-divider></md-divider>
-                    <md-content style="height: 600px;">
+                    <md-content style="height: 500px;">
                       <md-list layout="column">
                         <md-item ng-repeat="item in projects">
-                          <md-item-content>                    
-                            <div class="md-tile-left">
-                              <img ng-src="<%item.imgLink%>" class="face">
+                          <md-item-content layout="row" layout-align="start start">                     
+                            <div class="md-tile-left" > 
+                              <img ng-src="<%item.imgLink%>"  class="listImage">
                             </div>
                             <div class="md-tile-content">                              
                               <h3> 
@@ -218,15 +224,15 @@
                 </md-card-content>
               </md-card>               
             </div>
-            <div flex="100" flex-gt-md="66" flex-order="2">                             
+            <div flex="100" flex-gt-md="60" flex-order="2">                             
               <md-card id="pubCard">
                 <md-card-content>
                   <h3>Publication</h3>
                   <md-divider></md-divider>
 
                   <md-content>
-                    <md-content style="height: 600px;">
-                      <section>
+                    <md-content style="height: 500px;">
+                      <section class="publication">
                         <md-subheader class="md-accent"><h3>Journal Papers</h3></md-subheader>
                         <md-list layout="column">
                           <md-item ng-repeat="paper in journalPapers">
@@ -235,7 +241,7 @@
                                 j.<% journalPapers.length-$index %>
                               </div>
                               <div class="md-tile-content">
-                                <a href="<% paper.link %>"><h3><% paper.name %></h3></a>
+                                <a href="<% paper.link %>" target="_blank"><h3><% paper.name %></h3></a>
                                 <p style="font-size:0.9em">
                                   <span ng-bind-html="paper.author"></span><br> 
                                   <i ng-bind-html="paper.source"></i>.
@@ -247,7 +253,7 @@
                           </md-item>
                         </md-list>
                       </section>
-                      <section>
+                      <section class="publication">
                         <md-subheader class="md-primary"><h3>Conference Papers</h3></md-subheader>
                         <md-list layout="column">
                           <md-item ng-repeat="paper in conferencePapers">
@@ -256,7 +262,7 @@
                                   c.<% conferencePapers.length-$index %>
                               </div>
                               <div class="md-tile-content">
-                                <a href="<% paper.link %>"><h3><% paper.name %></h3></a>
+                                <a href="<% paper.link %>" target="_blank"><h3><% paper.name %></h3></a>
                                 <p style="font-size:0.9em">
                                   <span ng-bind-html="paper.author"></span><br> 
                                   <i ng-bind-html="paper.source"></i>.
@@ -267,7 +273,7 @@
                           </md-item>
                         </md-list>
                       </section>
-                      <section>
+                      <section class="publication">
                         <md-subheader class="md-warn"><h3>Posters/Demos/Workshop Papers</h3></md-subheader>
                         <md-list layout="column">
                           <md-item ng-repeat="paper in otherPapers">
@@ -276,13 +282,13 @@
                                   p.<% otherPapers.length - $index %>
                               </div>
                               <div class="md-tile-content">
-                                <a href="<% paper.link %>"><h3><% paper.name %></h3></a>
+                                <a href="<% paper.link %>" target="_blank"><h3><% paper.name %></h3></a>
                                 <p style="font-size:0.9em">
                                   <span ng-bind-html="paper.author"></span><br> 
                                   <i ng-bind-html="paper.source"></i>.
                                   <i ng-if="paper.note!=null" ng-bind-html="paper.note"></i>
-                                  <span ng-if="paper.posterLink!=null">| <a href="<% paper.posterLink %>"> poster</a></span>
-                                  <span ng-if="paper.website!=null">| <a ng-if="paper.website!=null" href="<% paper.website %>">website</a></span>
+                                  <span ng-if="paper.posterLink!=null">| <a href="<% paper.posterLink %>" target="_blank"> poster</a></span>
+                                  <span ng-if="paper.website!=null">| <a href="<% paper.website %>" target="_blank">website</a></span>
                                 </p>
                               </div>
                             </md-item-content>
