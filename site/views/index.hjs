@@ -8,7 +8,7 @@
     <meta name="author" content="Nam Wook Kim">
 
     <title>Nam Wook Kim</title>
-    <link rel="icon" href="/images/favicon.png" type="image/png" sizes="16x16 32x32">
+    <link rel="icon" href="/images/favicon.ico" type="image/png" sizes="16x16 32x32">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
 
     <script src="/bower_components/angular/angular.js"></script>
@@ -100,7 +100,7 @@
                       <h3>Badges</h3>
                       <md-divider></md-divider>
                       <div class="row">
-                          <img style="margin:10px;  width:55px; height:65px;" ng-repeat="badge in badges" src="<% badge.image %>"  alt="<% badge.name %>" class="img-rounded">
+                          <img style="margin:10px;  width:55px; height:65px;" ng-repeat="badge in badges" ng-src="<% badge.image %>"  alt="<% badge.name %>" class="img-rounded">
                       </div>
                     </md-card-content>
                   </md-card>          
