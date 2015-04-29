@@ -2,58 +2,61 @@ var app = angular.module('myApp', ['ngMaterial', 'ngSanitize'], function($interp
           $interpolateProvider.startSymbol('<%');
           $interpolateProvider.endSymbol('%>');
       });
-app.controller('AppCtrl', function($scope) {
+app.controller('AppCtrl', function($scope, $sce) {
+  $scope.trustAsHtml = function(string) {
+      return $sce.trustAsHtml(string);
+  };
   $scope.badges = [
     {
-      image: "harvard.png",
+      image: "/images/harvard.png",
       name: "Harvard",
       rowspan: 1,
       colspan: 1
     },  
     {
-      image: "adobe.png",
+      image: "/images/adobe.png",
       name: "Adobe",
       rowspan: 1,
       colspan: 1
     },  
     {
-      image: "kaist.png",
+      image: "/images/kaist.png",
       name: "KAIST",
       rowspan: 1,
       colspan: 1
     },  
     {
-      image: "lg.png",
+      image: "/images/lg.png",
       name: "LG",
       rowspan: 1,
       colspan: 1
     },  
     {
-      image: "samsung.png",
+      image: "/images/samsung.png",
       name: "Samsung",
       rowspan: 1,
       colspan: 1
     },  
     {
-      image: "stanford.png",
+      image: "/images/stanford.png",
       name: "Stanford",
       rowspan: 1,
       colspan: 1
     },  
     {
-      image: "stony.png",
+      image: "/images/stony.png",
       name: "Stony Brook",
       rowspan: 1,
       colspan: 1
     },  
     {
-      image: "iit.png",
+      image: "/images/iit.png",
       name: "IIT",
       rowspan: 1,
       colspan: 1
     },  
     {
-      image: "ajou.png",
+      image: "/images/ajou.png",
       name: "Ajou",
       rowspan: 1,
       colspan: 1
@@ -111,7 +114,7 @@ app.controller('AppCtrl', function($scope) {
       link: "/files/CHI2015-Factful.pdf",
       author: "Juho Kim, Eun-Young Ko, Jonghyuk Jung, Chang Won Lee, <strong>Nam Wook Kim</strong>, Jihee Kim",
       source: "CHI2015",
-      note: "<mark>Honorable Mention Award</mark>"
+      note: "<mark><img src='images/honorable.png' style='width:20px'>Honorable Mention Award</img></mark>"
     },
     {
       name: "JigsawMap: Connecting the Past to the Future by Mapping Historical Textual Cadasters",
@@ -122,7 +125,7 @@ app.controller('AppCtrl', function($scope) {
     {
       name: "Social Visualization and Negotiation: Effects of Feedback Configuration and Status",
       link: "/files/CSCW2012-SocialVis.pdf",
-      author: "Hyungmin Lee, Sooyun Lee, <strong>Nam Wook Kim</strong>, Jinwook Seo",
+      author: "Michael Nowak, Juho Kim, <strong>Nam Wook Kim</strong>, Clifford Nass",
       source: "CSCW2012"
     },
     {

@@ -100,7 +100,7 @@
                       <h3>Badges</h3>
                       <md-divider></md-divider>
                       <div class="row">
-                          <img style="margin:10px;  width:55px; height:65px;" ng-repeat="badge in badges" src="/images/<% badge.image %>"  alt="<% badge.name %>" class="img-rounded">
+                          <img style="margin:10px;  width:55px; height:65px;" ng-repeat="badge in badges" src="<% badge.image %>"  alt="<% badge.name %>" class="img-rounded">
                       </div>
                     </md-card-content>
                   </md-card>          
@@ -110,11 +110,11 @@
                   <md-card-content>
                     <h3>Bio</h3>
                     <md-divider></md-divider>
-                    <p>I am a Ph.D student in <a href="http://www.seas.harvard.edu/">SEAS</a> at <a href="http://www.harvard.edu/">Harvard</a>, focusing on information visualization and human computer interaction research. I am interested in applying data visualization in various domains such as open government, creativity support, and story telling, but also understanding the cognition, perception, and sensmaking aspects of visualizations.</p>
+                    <p>I am a Ph.D student in <a href="http://www.seas.harvard.edu/">SEAS</a> at <a href="http://www.harvard.edu/">Harvard</a>, focusing on information visualization and human computer interaction research. I am interested in not only applying data visualization in various domains such as open government, creativity support, and story telling, but also understanding the cognition, perception, and sensmaking aspects of visualizations.</p>
 
                     <p>I work in the <a href="http://vcg.seas.harvard.edu/">Visual Computing Group</a>, and am advised by <a href="http://www.seas.harvard.edu/directory/pfister">Prof.Hanspeter Pfister</a> and <a href="http://www.eecs.harvard.edu/~kgajos/">Prof.Krzysztof Gajos</a>. <a href="http://kfaseng.helloweb.co.kr/">Kwanjeong Educational Foundation</a> supports my graduate studies. </p>
 
-                    <p> Prior to Harvard, I was a research associate at KAIST and also worked in industry for 4 years, including Samsung and LG. I received M.S. in Computer Science from Stanford Univ. and B.S. in Computer Science, Digital Media, and Mathematics from Ajou and Stony Brook (dual degree).</p>
+                    <p> Prior to Harvard, I was a research associate at KAIST and also worked in industry for 4 years, including Samsung and LG. I received M.S. in Computer Science from Stanford Univ. and B.S. in Computer Science, Digital Media, and Mathematics from Ajou Univ. and Stony Brook Univ. (dual degree).</p>
                   </md-card-content>
                 </md-card> 
                 <md-card id="pubCard">
@@ -136,7 +136,7 @@
                                   <p style="font-size:0.9em">
                                     <span ng-bind-html="paper.author"></span><br> 
                                     <i ng-bind-html="paper.source"></i>.
-                                    <i ng-if="paper.note!=null" ng-bind-html="paper.note"></i>
+                                    <i ng-if="paper.note!=null" ng-bind-html="trustAsHtml(paper.note)"></i>
                                   </p>
                                   
                                 </div>
@@ -157,7 +157,7 @@
                                   <p style="font-size:0.9em">
                                     <span ng-bind-html="paper.author"></span><br> 
                                     <i ng-bind-html="paper.source"></i>.
-                                    <i ng-if="paper.note!=null" ng-bind-html="paper.note"></i>
+                                    <i ng-if="paper.note!=null" ng-bind-html="trustAsHtml(paper.note)"></i>
                                   </p>
                                 </div>
                               </md-item-content>
@@ -177,7 +177,7 @@
                                   <p style="font-size:0.9em">
                                     <span ng-bind-html="paper.author"></span><br> 
                                     <i ng-bind-html="paper.source"></i>.
-                                    <i ng-if="paper.note!=null" ng-bind-html="paper.note"></i>
+                                    <i ng-if="paper.note!=null" ng-bind-html="trustAsHtml(paper.note)"></i>
                                     <span ng-if="paper.posterLink!=null">| <a href="<% paper.posterLink %>" target="_blank"> poster</a></span>
                                     <span ng-if="paper.website!=null">| <a href="<% paper.website %>" target="_blank">website</a></span>
                                   </p>
