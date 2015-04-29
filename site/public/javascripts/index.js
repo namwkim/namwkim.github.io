@@ -3,6 +3,63 @@ var app = angular.module('myApp', ['ngMaterial', 'ngSanitize'], function($interp
           $interpolateProvider.endSymbol('%>');
       });
 app.controller('AppCtrl', function($scope) {
+  $scope.badges = [
+    {
+      image: "harvard.png",
+      name: "Harvard",
+      rowspan: 1,
+      colspan: 1
+    },  
+    {
+      image: "adobe.png",
+      name: "Adobe",
+      rowspan: 1,
+      colspan: 1
+    },  
+    {
+      image: "kaist.png",
+      name: "KAIST",
+      rowspan: 1,
+      colspan: 1
+    },  
+    {
+      image: "lg.png",
+      name: "LG",
+      rowspan: 1,
+      colspan: 1
+    },  
+    {
+      image: "samsung.png",
+      name: "Samsung",
+      rowspan: 1,
+      colspan: 1
+    },  
+    {
+      image: "stanford.png",
+      name: "Stanford",
+      rowspan: 1,
+      colspan: 1
+    },  
+    {
+      image: "stony.png",
+      name: "Stony Brook",
+      rowspan: 1,
+      colspan: 1
+    },  
+    {
+      image: "iit.png",
+      name: "IIT",
+      rowspan: 1,
+      colspan: 1
+    },  
+    {
+      image: "ajou.png",
+      name: "Ajou",
+      rowspan: 1,
+      colspan: 1
+    }
+
+  ];
   $scope.news = [
     {
       msg: "Starting an internship at Adobe Creative Technologies Lab.",

@@ -33,17 +33,14 @@
 
     </script>
     <!-- Changing the delimeter of AngularJS to avoid conflict with Hogan-Express-->
-    <script>
-
-    </script>    
   <script src="/javascripts/index.js"></script>  
   </head>
 
-  <body ng-app="myApp">
+  <body ng-app="myApp" >
     <div ng-controller="AppCtrl" layout="column" layout-fill>
       <md-toolbar md-scroll-shrink class="md-tall" id="myToolbar">
         <span flex></span>
-        <h2 layout="row" layout-align="center center" class="md-toolbar-tools md-toolbar-tools-bottom">      
+        <h2 layout="row" layout-align="center center" class="md-display-2 md-toolbar-tools md-toolbar-tools-bottom">      
             <span id="toolbarName">Nam Wook Kim</span>      
         </h2>
       </md-toolbar>
@@ -62,7 +59,7 @@
                       Cambridge, MA<br>
                       namwkim at seas.harvard.edu
                       </p>
-                      <br><br>
+                      <br>
                       <section id="fabButtons" layout="row" layout-align="center center">
                         <a href="http://goo.gl/n6Kg1m" target="_blank" >
                           <md-button class="md-fab"  aria-label="Curriculum Vitae">
@@ -97,7 +94,16 @@
                         </a>
                     </section>
                     </md-card-content>
-                  </md-card>            
+                  </md-card>    
+                  <md-card id="badgeCard">
+                    <md-card-content>
+                      <h3>Badges</h3>
+                      <md-divider></md-divider>
+                      <div class="row">
+                          <img style="margin:10px;  width:55px; height:65px;" ng-repeat="badge in badges" src="/images/<% badge.image %>"  alt="<% badge.name %>" class="img-rounded">
+                      </div>
+                    </md-card-content>
+                  </md-card>          
               </div>
               <div flex flex-gt-md="66">
                 <md-card id="bioCard">
