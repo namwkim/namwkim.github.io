@@ -12,49 +12,49 @@ app.controller('AppCtrl', function($scope, $sce) {
       name: "Harvard",
       rowspan: 1,
       colspan: 1
-    },  
+    },
     {
       image: "/images/adobe.png",
       name: "Adobe",
       rowspan: 1,
       colspan: 1
-    },  
+    },
     {
       image: "/images/kaist.png",
       name: "KAIST",
       rowspan: 1,
       colspan: 1
-    },  
+    },
     {
       image: "/images/lg.png",
       name: "LG",
       rowspan: 1,
       colspan: 1
-    },  
+    },
     {
       image: "/images/samsung.png",
       name: "Samsung",
       rowspan: 1,
       colspan: 1
-    },  
+    },
     {
       image: "/images/stanford.png",
       name: "Stanford",
       rowspan: 1,
       colspan: 1
-    },  
+    },
     {
       image: "/images/stony.png",
       name: "Stony Brook",
       rowspan: 1,
       colspan: 1
-    },  
+    },
     {
       image: "/images/iit.png",
       name: "IIT",
       rowspan: 1,
       colspan: 1
-    },  
+    },
     {
       image: "/images/ajou.png",
       name: "Ajou",
@@ -68,7 +68,7 @@ app.controller('AppCtrl', function($scope, $sce) {
       msg: "Starting an internship at Adobe Creative Technologies Lab.",
       date: "May 27, 2015",
       location: "San Francisco, CA"
-    },  
+    },
     {
       msg: "Attending the CHI 2015 conference.",
       date: "Apr 18-23, 2015",
@@ -95,7 +95,7 @@ app.controller('AppCtrl', function($scope, $sce) {
       msg: "Started the CS PhD Program at Harvard SEAS.",
       date: "Sep 2, 2014",
       location: "Cambridge, MA"
-    }    
+    }
   ];
 
 
@@ -111,16 +111,16 @@ app.controller('AppCtrl', function($scope, $sce) {
   $scope.conferencePapers = [
     {
       name: "BudgetMap: Engaging Taxpayers in the Issue-Driven Classification of a Government Budget",
-      link:  "",
+      link: "/files/CSCW2016-BudgetMap.pdf",
       author: "Nam Wook Kim, Jonghyuk Jung, Eun-Young Ko, Songyi Han, Chang Won Lee, Juho Kim, and Jihee Kim",
-      source: "CSCW 2016 (to appear)"
+      source: "CSCW 2016"
     },
     {
       name: "Beyond Memorability: Visualization Recognition and Recall",
       link:  "http://vcg.seas.harvard.edu/files/pfister/files/infovis_submission251-camera.pdf",
       author: "Michelle A. Borkin, Zoya Bylinskii, Nam Wook Kim, Constance May Bainbridge, Chelsea S. Yeh, Daniel Borkin, Hanspeter Pfister, and Aude Oliva.",
-      source: "InfoVis 2015 (to appear)"
-    },  
+      source: "InfoVis 2015"
+    },
     {
       name: "Factful: Engaging Taxpayers in the Public Discussion of a Government Budget",
       link: "/files/CHI2015-Factful.pdf",
@@ -148,7 +148,7 @@ app.controller('AppCtrl', function($scope, $sce) {
     }
   ];
 
-  
+
   $scope.otherPapers = [
     {
       name: "BudgetWiser: Gamification Design Opportunities in the Government Budget Domain",
@@ -201,7 +201,7 @@ app.controller('AppCtrl', function($scope, $sce) {
       desc: "We are exploring a new approach to support designers to create infographics. \
       Our research question is how to help them to design creative and memorable infographics \
       without enforcing automatic data encoding and limiting the expressiveness of visual representations."
-    },  
+    },
     {
       name: "A Crowdsourced Alternative to Eye-tracking",
       imgLink: "/images/projects/bubble.png",
