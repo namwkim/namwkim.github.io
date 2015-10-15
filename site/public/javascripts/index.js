@@ -112,13 +112,13 @@ app.controller('AppCtrl', function($scope, $sce) {
     {
       name: "BudgetMap: Engaging Taxpayers in the Issue-Driven Classification of a Government Budget",
       link: "/files/CSCW2016-BudgetMap.pdf",
-      author: "Nam Wook Kim, Jonghyuk Jung, Eun-Young Ko, Songyi Han, Chang Won Lee, Juho Kim, and Jihee Kim",
+      author: "<strong>Nam Wook Kim</strong>, Jonghyuk Jung, Eun-Young Ko, Songyi Han, Chang Won Lee, Juho Kim, and Jihee Kim",
       source: "CSCW 2016"
     },
     {
       name: "Beyond Memorability: Visualization Recognition and Recall",
       link:  "http://vcg.seas.harvard.edu/files/pfister/files/infovis_submission251-camera.pdf",
-      author: "Michelle A. Borkin, Zoya Bylinskii, Nam Wook Kim, Constance May Bainbridge, Chelsea S. Yeh, Daniel Borkin, Hanspeter Pfister, and Aude Oliva.",
+      author: "Michelle A. Borkin, Zoya Bylinskii, <strong>Nam Wook Kim</strong>, Constance May Bainbridge, Chelsea S. Yeh, Daniel Borkin, Hanspeter Pfister, and Aude Oliva.",
       source: "InfoVis 2015"
     },
     {
