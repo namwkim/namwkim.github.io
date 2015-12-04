@@ -100,6 +100,12 @@ app.controller('AppCtrl', function($scope, $sce) {
 
 
   $scope.journalPapers = [
+     {
+      name: "Beyond Memorability: Visualization Recognition and Recall",
+      link:  "http://vcg.seas.harvard.edu/files/pfister/files/infovis_submission251-camera.pdf",
+      author: "Michelle A. Borkin, Zoya Bylinskii, <strong>Nam Wook Kim</strong>, Constance May Bainbridge, Chelsea S. Yeh, Daniel Borkin, Hanspeter Pfister, and Aude Oliva.",
+      source: "InfoVis 2015"
+    },
     {
       name: "Accurate Segmentation of Land Regions in Historical Cadastral Maps",
       link: "/files/JVCIR2014-MapSeg.pdf",
@@ -114,12 +120,6 @@ app.controller('AppCtrl', function($scope, $sce) {
       link: "/files/CSCW2016-BudgetMap.pdf",
       author: "<strong>Nam Wook Kim</strong>, Jonghyuk Jung, Eun-Young Ko, Songyi Han, Chang Won Lee, Juho Kim, and Jihee Kim",
       source: "CSCW 2016"
-    },
-    {
-      name: "Beyond Memorability: Visualization Recognition and Recall",
-      link:  "http://vcg.seas.harvard.edu/files/pfister/files/infovis_submission251-camera.pdf",
-      author: "Michelle A. Borkin, Zoya Bylinskii, <strong>Nam Wook Kim</strong>, Constance May Bainbridge, Chelsea S. Yeh, Daniel Borkin, Hanspeter Pfister, and Aude Oliva.",
-      source: "InfoVis 2015"
     },
     {
       name: "Factful: Engaging Taxpayers in the Public Discussion of a Government Budget",
