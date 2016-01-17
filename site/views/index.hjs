@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,18 +10,17 @@
     <title>Nam Wook Kim</title>
     <link rel="icon" href="/images/favicon.ico" type="image/png" sizes="16x16 32x32">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
-
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/angular-aria/angular-aria.js"></script>
-    <script src="/bower_components/angular-animate/angular-animate.js"></script>
-    <script src="/bower_components/angular-material/angular-material.js"></script>  
-    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>  
-    
-    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    
+    <script src="/bower_components/semantic-ui/dist/semantic.min.js"></script>
+    <script src="/bower_components/paper/dist/paper-full.min.js"></script>
+    <script src="/bower_components/underscore/underscore-min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.3.js"></script>
+
+    <link rel="stylesheet" href="bower_components/semantic-ui/dist/semantic.min.css">
+
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <!-- Google Analytics -->  
+    <!-- Google Analytics -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -33,168 +32,131 @@
 
     </script>
     <!-- Changing the delimeter of AngularJS to avoid conflict with Hogan-Express-->
-  <script src="/javascripts/index.js"></script>  
+  <script type="text/javascript">
+    var socket = io('http://namwkim.org:3000');
+    socket.on('initialization', function(canvas){
+      console.log(canvas);
+      if (canvas){
+        project.clear();
+        project.importJSON(canvas);
+      }
+    });
+    socket.on('update-canvas', function(canvas){
+      console.log(canvas);
+      if (canvas){
+        project.clear();
+        project.importJSON(canvas);
+      }
+    });
+    socket.on('update-users', function(numUsers){
+      console.log("numUsers: " + numUsers);
+    });
+  </script>
+  <script src="/javascripts/index.js"></script>
   </head>
 
-  <body ng-app="myApp" >
-    <div ng-controller="AppCtrl" layout="column" layout-fill>
-      <md-toolbar md-scroll-shrink class="md-tall" id="myToolbar">
-        <span flex></span>
-        <h2 layout="row" layout-align="center center" class="md-display-2 md-toolbar-tools md-toolbar-tools-bottom">      
-            <span id="toolbarName">Nam Wook Kim</span>      
-        </h2>
-      </md-toolbar>
-        
+  <body ng-controller="AppCtrl">
+    <canvas id="canvas" resize keepalive="true"></canvas>
 
-            <div layout-gt-md="row" layout="column">
-              <div flex flex-gt-md="33">            
-                  <md-card id="profileCard">
-                    <img src="/images/profile.png" class="md-card-image">
-                    <md-card-content>
-                      <h3>Nam Wook Kim</h3>
-                      <md-divider></md-divider>
-                      <p>
-                      Maxwell Dworkin 142<br>
-                      33 Oxford Street<br>
-                      Cambridge, MA<br>
-                      namwkim at seas.harvard.edu
-                      </p>
-                      <br>
-                      <section id="fabButtons" layout="row" layout-align="center center">
-                        <a href="http://goo.gl/n6Kg1m" target="_blank" >
-                          <md-button class="md-fab"  aria-label="Curriculum Vitae">
-                            <md-tooltip>
-                              Curriculum Vitae
-                            </md-tooltip>
-                            <md-icon md-svg-src="/images/cv.svg" >
-                          </md-button>
-                        </a>
-                        <a href="http://goo.gl/UeThfZ" target="_blank" >
-                          <md-button class="md-fab md-warn"  aria-label="Google Scholar">
-                            <md-tooltip>
-                              Google Scholar
-                            </md-tooltip>
-                            <md-icon md-svg-src="/images/scholar.svg" >
-                          </md-button>
-                        </a>
-                        <a href="https://www.facebook.com/namwkim" target="_blank" >
-                          <md-button class="md-fab md-primary" align="center"  aria-label="Facebook">
-                            <md-tooltip>
-                              Facebook
-                            </md-tooltip>
-                            <md-icon md-svg-src="/images/facebook.svg" >
-                          </md-button>
-                        <a href="https://www.linkedin.com/in/namwkim" target="_blank" >
-                          <md-button class="md-fab md-warn" align="center"  aria-label="LinkedIn">
-                            <md-tooltip>
-                              LinkedIn
-                            </md-tooltip>
-                            <md-icon md-svg-src="/images/linkedin.svg" >
-                          </md-button>
-                        </a>
-                    </section>
-                    </md-card-content>
-                  </md-card>    
-                  <md-card id="badgeCard">
-                    <md-card-content>
-                      <h3>Badges</h3>
-                      <md-divider></md-divider>
-                      <div class="row">
-                          <img style="margin:10px;  width:55px; height:65px;" ng-repeat="badge in badges" ng-src="<% badge.image %>"  alt="<% badge.name %>" class="img-rounded">
-                      </div>
-                    </md-card-content>
-                  </md-card>          
-              </div>
-              <div flex flex-gt-md="66">
-                <md-card id="bioCard">
-                  <md-card-content>
-                    <h3>Bio</h3>
-                    <md-divider></md-divider>
-                    <p>I am a Ph.D student in <a href="http://www.seas.harvard.edu/">SEAS</a> at <a href="http://www.harvard.edu/">Harvard</a>, focusing on information visualization and human computer interaction research. I am interested in not only applying data visualization in various domains such as open government, creativity support, and story telling, but also understanding the cognition, perception, and sensmaking aspects of visualizations.</p>
-
-                    <p>I work in the <a href="http://vcg.seas.harvard.edu/">Visual Computing Group</a>, and am advised by <a href="http://www.seas.harvard.edu/directory/pfister">Prof.Hanspeter Pfister</a> and <a href="http://www.eecs.harvard.edu/~kgajos/">Prof.Krzysztof Gajos</a>. <a href="http://kfaseng.helloweb.co.kr/">Kwanjeong Educational Foundation</a> supports my graduate studies. </p>
-
-                    <p> Prior to Harvard, I was a research associate at KAIST and also worked in industry for 4 years, including Samsung and LG. I received M.S. in Computer Science from Stanford Univ. and B.S. in Computer Science, Digital Media, and Mathematics from Ajou Univ. and Stony Brook Univ. (dual degree).</p>
-                  </md-card-content>
-                </md-card> 
-                <md-card id="pubCard">
-                  <md-card-content>
-                    <h3>Publication</h3>
-                    <md-divider></md-divider>
-                    <md-content>
-                      <md-content style="height: 600px;">
-                        <section class="publication">
-                          <md-subheader class="md-accent"><h3>Journal Papers</h3></md-subheader>
-                          <md-list layout="column">
-                            <md-item ng-repeat="paper in journalPapers">
-                              <md-item-content>
-                                <div class="md-tile-left">
-                                  j.<% journalPapers.length-$index %>
-                                </div>
-                                <div class="md-tile-content">
-                                  <a href="<% paper.link %>" target="_blank"><h3><% paper.name %></h3></a>
-                                  <p style="font-size:0.9em">
-                                    <span ng-bind-html="paper.author"></span><br> 
-                                    <i ng-bind-html="paper.source"></i>.
-                                    <i ng-if="paper.note!=null" ng-bind-html="trustAsHtml(paper.note)"></i>
-                                  </p>
-                                  
-                                </div>
-                              </md-item-content>
-                            </md-item>
-                          </md-list>
-                        </section>
-                        <section class="publication">
-                          <md-subheader class="md-primary"><h3>Conference Papers</h3></md-subheader>
-                          <md-list layout="column">
-                            <md-item ng-repeat="paper in conferencePapers">
-                              <md-item-content>
-                                <div class="md-tile-left">
-                                    c.<% conferencePapers.length-$index %>
-                                </div>
-                                <div class="md-tile-content">
-                                  <a href="<% paper.link %>" target="_blank"><h3><% paper.name %></h3></a>
-                                  <p style="font-size:0.9em">
-                                    <span ng-bind-html="paper.author"></span><br> 
-                                    <i ng-bind-html="paper.source"></i>.
-                                    <i ng-if="paper.note!=null" ng-bind-html="trustAsHtml(paper.note)"></i>
-                                  </p>
-                                </div>
-                              </md-item-content>
-                            </md-item>
-                          </md-list>
-                        </section>
-                        <section class="publication">
-                          <md-subheader class="md-warn"><h3>Posters/Demos/Workshop Papers</h3></md-subheader>
-                          <md-list layout="column">
-                            <md-item ng-repeat="paper in otherPapers">
-                              <md-item-content>
-                                <div class="md-tile-left">
-                                    p.<% otherPapers.length - $index %>
-                                </div>
-                                <div class="md-tile-content">
-                                  <a href="<% paper.link %>" target="_blank"><h3><% paper.name %></h3></a>
-                                  <p style="font-size:0.9em">
-                                    <span ng-bind-html="paper.author"></span><br> 
-                                    <i ng-bind-html="paper.source"></i>.
-                                    <i ng-if="paper.note!=null" ng-bind-html="trustAsHtml(paper.note)"></i>
-                                    <span ng-if="paper.posterLink!=null">| <a href="<% paper.posterLink %>" target="_blank"> poster</a></span>
-                                    <span ng-if="paper.website!=null">| <a href="<% paper.website %>" target="_blank">website</a></span>
-                                  </p>
-                                </div>
-                              </md-item-content>
-                            </md-item>
-                          </md-list>
-                        </section>
-                      </md-content>
-                    </md-content>    
-                  </md-card-content>
-              </md-card>
-
-              </div>
-           
+    <div class="ui centered shape">
+      <div class="sides">
+        <div class="active side">
+          <div class="ui card">
+            <div class="image"
+            data-content="Click and drag to draw your footprint!"
+            data-variation="wide">
+              <img src="/images/profile.png">
             </div>
-     
+            <div class="content">
+              <div class="header">Nam Wook Kim</div>
+              <div class="meta">
+                <a>Ph.D. Student at Harvard</a>
+              </div>
+              <div class="description">
+                Maxwell Dworkin 142<br>
+                33 Oxford Street<br>
+                Cambridge, MA<br>
+                namwkim at seas.harvard.edu
+              </div>
+            </div>
+            <div class="extra content">
+              <span class="right floated">
+                <a ng-click="flipBack()">
+                  <i class="retweet icon"></i>
+                </a>
+              </span>
+              <span>
+                <a class="popup"
+                  href="https://goo.gl/HV5TYP"
+                  target="_blank"
+                  data-variation="inverted mini"
+                  data-content="CV">
+                  <i class="file icon"></i>
+                </a>
+                <a class="popup"
+                  href="https://scholar.google.com/citations?hl=en&user=puTV6X0AAAAJ"
+                  target="_blank"
+                  data-variation="inverted mini"
+                  data-content="Google Scholar">
+                  <i class="university icon"></i>
+                </a>
+                <a class="popup"
+                  href="https://twitter.com/namwkim85"
+                  target="_blank"
+                  data-variation="inverted mini"
+                  data-content="Tweeter">
+                  <i class="twitter icon"></i>
+                </a>
+                <a class="popup"
+                  href="https://www.linkedin.com/in/namwkim"
+                  target="_blank"
+                  data-variation="inverted mini"
+                  data-content="LinkedIn">
+                  <i class="linkedin icon"></i>
+                </a>
+                <a class="popup"
+                  href="https://github.com/namwkim"
+                  target="_blank"
+                  data-variation="inverted mini"
+                  data-content="GitHub">
+                  <i class="github icon"></i>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="side">
+          <div class="ui card">
+            <div class="content">
+              <img class="right floated mini ui image"
+              data-content="Click and drag to draw your footprint!"
+              data-variation="wide"
+              src="/images/profile.png">
+
+              <div class="header">Nam Wook Kim</div>
+              <div class="meta">
+                <a>Ph.D. Student at Harvard</a>
+              </div>
+              <div class="description">
+                I am a Ph.D student in SEAS at Harvard, focusing on information visualization and human computer interaction research. I work in the <a href="http://vcg.seas.harvard.edu/">Visual Computing Group</a>, and am advised by <a href="http://www.seas.harvard.edu/directory/pfister">Profs.Hanspeter Pfister</a> and <a href="http://www.eecs.harvard.edu/~kgajos/">Krzysztof Gajos</a>. My graduate studies are partially supported by <a href="http://kfaseng.helloweb.co.kr/">Kwanjeong Educational Foundation</a>.
+                <br><br>
+                Prior to Harvard, I was a research associate at KAIST and also worked in industry for 4 years, including Samsung and LG.
+                I received M.S. in Computer Science from Stanford Univ. and B.S. in Computer Science, Digital Media, and Mathematics from Ajou Univ. and Stony Brook Univ. (dual degree).
+                <br>
+              </div>
+            </div>
+            <div class="extra content">
+              <span class="right floated">
+                <a class="popup" ng-click="flipBack()">
+                  <i class="retweet icon"></i>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+
   </body>
 </html>

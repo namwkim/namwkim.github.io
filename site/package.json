@@ -6,13 +6,16 @@
     "start": "./node_modules/.bin/supervisor -e 'node,js,css,html' ./bin/www"
   },
   "dependencies": {
-    "express": "~4.2.0",
-    "static-favicon": "~1.0.0",
-    "morgan": "~1.0.0",
-    "cookie-parser": "~1.0.1",
     "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.1",
     "debug": "~0.7.4",
+    "express": "~4.2.0",
     "hjs": "~0.0.6",
+    "mongodb": "~2.0.0",
+    "mongoskin": "^2.0.3",
+    "morgan": "~1.0.0",
+    "socket.io": "^1.4.4",
+    "static-favicon": "~1.0.0",
     "supervisor": "*"
   }
 }
