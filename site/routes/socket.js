@@ -52,7 +52,7 @@ module.exports = function(io, db){
   	socket.on('update', function (canvas) {
   		console.log('broadcast new canvas');
       //save into the most recent record
-      db.collection('canvas').find().sort({$natural:-1}).limit(1)
+      db.collection('canvas').find().sort({$natural:1}).limit(1)
       .toArray(function(err, results){
         if (results.length!=0){
           // console.log(results[0]._id)
