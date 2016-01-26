@@ -19,7 +19,7 @@ module.exports = function(io, db){
 		connectedUsers++;
     io.emit("update-users", connectedUsers);
     // retrieve the most recent record
-    db.collection('canvas').find().sort({$natural:-1}).limit(1)
+    db.collection('canvas').find().sort({$natural:1}).limit(1)
     .toArray(function(err, results){
       var canvas = null;
       if (results.length!=0){
