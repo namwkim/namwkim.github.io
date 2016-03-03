@@ -19,7 +19,7 @@ module.exports = function(io, db){
 		connectedUsers++;
     io.emit("update-users", connectedUsers);
     // retrieve the most recent record
-    db.collection('canvas').find().sort({$natural:1}).limit(1)
+    db.collection('canvas').find().sort({ _id : -1 }).limit(1)
     .toArray(function(err, results){
       var canvas = null;
 			console.log("current canvas count: "+results.length)
@@ -54,7 +54,7 @@ module.exports = function(io, db){
   	socket.on('update', function (canvas) {
   		console.log('broadcast new canvas');
       //save into the most recent record
-      db.collection('canvas').find().sort({$natural:1}).limit(1)
+      db.collection('canvas').find().sort({ _id : -1 }).limit(1)
       .toArray(function(err, results){
 				console.log("update canvas:")
 				console.log(canvas)
