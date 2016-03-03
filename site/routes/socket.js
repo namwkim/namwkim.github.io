@@ -27,6 +27,7 @@ module.exports = function(io, db){
         var date = dateFromObjectId(results[0]._id.toString());
         console.log(date)
         var diff = dayDiff(date, today);
+				console.log("day difference: "+ diff)
         if (diff>7){
           db.collection('canvas').insert({project:null}, function(err, result) {
             if (err) {
