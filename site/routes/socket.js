@@ -22,6 +22,7 @@ module.exports = function(io, db){
     db.collection('canvas').find().sort({$natural:1}).limit(1)
     .toArray(function(err, results){
       var canvas = null;
+			console.log("current canvas count: "+results.length)
       if (results.length!=0){
         var date = dateFromObjectId(results[0]._id.toString());
         console.log(date)
