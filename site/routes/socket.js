@@ -38,7 +38,7 @@ module.exports = function(io, db){
           canvas = results[0].project;
         }
         // console.log(results[0]._id)
-        console.log("canvas"  + canvas)
+        // console.log("canvas"  + canvas);
 
       }else{
         db.collection('canvas').insert({project:null}, function(err, result) {
