@@ -56,6 +56,8 @@ module.exports = function(io, db){
       //save into the most recent record
       db.collection('canvas').find().sort({$natural:1}).limit(1)
       .toArray(function(err, results){
+				console.log("update canvas:")
+				console.log(canvas)
         if (results.length!=0){
           // console.log(results[0]._id)
           db.collection('canvas').update({_id:results[0]._id},
