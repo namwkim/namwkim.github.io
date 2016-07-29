@@ -7,5 +7,10 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/ddg', function(req, res) {
+  //pymongo
+  res.render('ddg', { title: 'Data-Driven Guides' });
+});
+
 
 module.exports = router;
