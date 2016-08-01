@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.2/semantic.min.css">
     <!-- stylesheets -->
     <style>
+      p {
+        color:#767676
+      }
     </style>
 
 
@@ -40,11 +43,11 @@
           <div class="column">
             <div class="ui orange segments">
               <div class="ui segment" style="font-size:1.3em">
-                <p style="color:#767676">
-                  <strong><em style="color:#F2711C">Data-Driven Guides</em></strong> (DDG) is a technique for designing expressive information graphics in a graphic design environment. Instead of being confined by predefined templates or marks, designers can generate guides from data and use the guides to draw, place and measure custom shapes.
+                <p>
+                  <strong><em style="color:dimgray">Data-Driven Guides</em></strong> (DDG) is a technique for designing expressive information graphics in a graphic design environment. Instead of being confined by predefined templates or marks, designers can generate guides from data and use the guides to draw, place and measure custom shapes.
                 </p>
-                <p style="color:#767676">
-                  We provide guides to encode data using three fundamental visual encoding channels: <strong style="color:#F2711C">length, area, and position</strong>. Users can combine more than one guide to construct complex visual structures and map these structures to data. When underlying data is changed, we use a deformation technique to transform custom shapes using the guides as the backbone of the shapes.
+                <p>
+                  We provide guides to encode data using three fundamental visual encoding channels: <strong style="color:dimgray">length, area, and position</strong>. Users can combine more than one guide to construct complex visual structures and map these structures to data. When underlying data is changed, we use a deformation technique to transform custom shapes using the guides as the backbone of the shapes.
                 </p>
               </div>
               <div class="ui secondary segment">
@@ -90,7 +93,27 @@
           </div>
         </div>
         <div class="row">
-          <div class="column"> More information: TBA</div>
+          <div class="column">
+            <div class="ui segment">
+              <h3 class="ui orange header">Citation</h3>
+              <p style="font-size:1.3em">
+                <strong>Data-Driven Guides: Supporting Expressive Design for Information Graphics</strong><br/>
+                Nam Wook Kim, Eston Schweickart, Zhicheng Liu, Mira Dontcheva, Wilmot Li, Jovan Popovic, Hanspeter Pfister.<br/>
+                IEEE Transactions on Visualization and Computer Graphics (InfoVis’16), 2017
+              </p>
+              <a class="ui label" target="_blank" href="https://goo.gl/Vw7YGF">
+                <i class="file pdf outline icon"></i> PDF
+              </a>
+              <a class="ui label" target="_blank" href="https://goo.gl/BLiAdH">
+                <i class="file pdf outline icon"></i> Supplement
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+          More information: TBA
+          </div>
         </div>
         <div class="row">
           <div class="column">
