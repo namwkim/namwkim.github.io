@@ -54,50 +54,50 @@
               <div class="ui secondary segment">
                 <div class="ui four column doubling stackable centered grid">
                   <div class="column">
-                    <img class="ui left floated tiny circular image" src="/images/nam.png">
-                    <p style="padding:20px 0px">
+                    <img style="padding:5px 5px" class="ui left floated tiny circular image" src="/images/nam.png">
+                    <p style="padding:10px 0px">
                       <strong>Nam Wook Kim</strong><br>
                       Harvard
                     </p>
                   </div>
                   <div class="column">
-                    <img class="ui left floated tiny circular image" src="/images/eston.png">
-                    <p style="padding:20px 0px">
+                    <img style="padding:5px 5px" class="ui left floated tiny circular image" src="/images/eston.png">
+                    <p style="padding:10px 0px">
                       <strong>Eston Schweickart</strong><br>
                       Cornell
                     </p>
                   </div>
                   <div class="column">
-                    <img class="ui left floated tiny circular image" src="/images/leo.png">
-                    <p style="padding:20px 0px">
+                    <img style="padding:5px 5px" class="ui left floated tiny circular image" src="/images/leo.png">
+                    <p style="padding:10px 0px">
                       <strong>Zhicheng Liu</strong><br>
                       Adobe
                     </p>
                   </div>
                   <div class="column">
-                    <img class="ui left floated tiny circular image" src="/images/mira.png">
-                    <p style="padding:20px 0px">
+                    <img style="padding:5px 5px" class="ui left floated tiny circular image" src="/images/mira.png">
+                    <p style="padding:10px 0px">
                       <strong>Mira Dontcheva</strong><br>
                       Adobe
                     <p>
                   </div>
                   <div class="column">
-                    <img class="ui left floated tiny circular image" src="/images/wilmot.png">
-                    <p style="padding:20px 0px">
+                    <img style="padding:5px 5px" class="ui left floated tiny circular image" src="/images/wilmot.png">
+                    <p style="padding:10px 0px">
                       <strong>Wilmot Li</strong><br>
                       Adobe
                     <p>
                   </div>
                   <div class="column">
-                    <img class="ui left floated tiny circular image" src="/images/jovan.png">
-                    <p style="padding:20px 0px">
+                    <img style="padding:5px 5px" class="ui left floated tiny circular image" src="/images/jovan.png">
+                    <p style="padding:10px 0px">
                       <strong>Jovan Popovic</strong><br>
                       Adobe
                     </p>
                   </div>
                   <div class="column">
-                    <img class="ui left floated tiny circular image" src="/images/hanspeter.png">
-                    <p style="padding:20px 0px">
+                    <img style="padding:5px 5px" class="ui left floated tiny circular image" src="/images/hanspeter.png">
+                    <p style="padding:10px 0px">
                       <strong>Hanspeter Pfister</strong><br>
                       Harvard
                     </p>
