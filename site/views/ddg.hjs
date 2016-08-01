@@ -15,6 +15,7 @@
     <!-- stylesheets -->
     <style>
       p {
+        font-size:1.3em;
         color:#767676
       }
     </style>
@@ -42,50 +43,64 @@
         <div class="row">
           <div class="column">
             <div class="ui orange segments">
-              <div class="ui segment" style="font-size:1.3em">
+              <div class="ui segment">
                 <p>
-                  <strong><em style="color:dimgray">Data-Driven Guides</em></strong> (DDG) is a technique for designing expressive information graphics in a graphic design environment. Instead of being confined by predefined templates or marks, designers can generate guides from data and use the guides to draw, place and measure custom shapes.
+                  <strong style="color:dimgray"><em>Data-Driven Guides</em></strong> (DDG) is a technique for designing expressive information graphics in a graphic design environment. Instead of being confined by predefined templates or marks, designers can generate guides from data and use the guides to draw, place and measure custom shapes.
                 </p>
                 <p>
                   We provide guides to encode data using three fundamental visual encoding channels: <strong style="color:dimgray">length, area, and position</strong>. Users can combine more than one guide to construct complex visual structures and map these structures to data. When underlying data is changed, we use a deformation technique to transform custom shapes using the guides as the backbone of the shapes.
                 </p>
               </div>
               <div class="ui secondary segment">
-                <div class="ui five column doubling centered grid">
+                <div class="ui four column doubling stackable centered grid">
                   <div class="column">
-                    <img class="ui left floated mini circular image" src="/images/nam.png">
-                    <strong>Nam Wook Kim</strong><br>
-                    Harvard
+                    <img class="ui left floated tiny circular image" src="/images/nam.png">
+                    <p style="padding:17px 0px">
+                      <strong>Nam Wook Kim</strong><br>
+                      Harvard
+                    </p>
                   </div>
                   <div class="column">
-                    <img class="ui left floated mini circular image" src="/images/eston.png">
-                    <strong>Eston Schweickart</strong><br>
-                    Cornell
+                    <img class="ui left floated tiny circular image" src="/images/eston.png">
+                    <p style="padding:17px 0px">
+                      <strong>Eston Schweickart</strong><br>
+                      Cornell
+                    </p>
                   </div>
                   <div class="column">
-                    <img class="ui left floated mini circular image" src="/images/leo.png">
-                    <strong>Zhicheng Liu</strong><br>
-                    Adobe
+                    <img class="ui left floated tiny circular image" src="/images/leo.png">
+                    <p style="padding:17px 0px">
+                      <strong>Zhicheng Liu</strong><br>
+                      Adobe
+                    </p>
                   </div>
                   <div class="column">
-                    <img class="ui left floated mini circular image" src="/images/mira.png">
-                    <strong>Mira Dontcheva</strong><br>
-                    Adobe
+                    <img class="ui left floated tiny circular image" src="/images/mira.png">
+                    <p style="padding:17px 0px">
+                      <strong>Mira Dontcheva</strong><br>
+                      Adobe
+                    <p>
                   </div>
                   <div class="column">
-                    <img class="ui left floated mini circular image" src="/images/wilmot.png">
-                    <strong>Wilmot Li</strong><br>
-                    Adobe
+                    <img class="ui left floated tiny circular image" src="/images/wilmot.png">
+                    <p style="padding:17px 0px">
+                      <strong>Wilmot Li</strong><br>
+                      Adobe
+                    <p>
                   </div>
                   <div class="column">
-                    <img class="ui left floated mini circular image" src="/images/jovan.png">
-                    <strong>Jovan Popovic</strong><br>
-                    Adobe
+                    <img class="ui left floated tiny circular image" src="/images/jovan.png">
+                    <p style="padding:17px 0px">
+                      <strong>Jovan Popovic</strong><br>
+                      Adobe
+                    </p>
                   </div>
                   <div class="column">
-                    <img class="ui left floated mini circular image" src="/images/hanspeter.png">
-                    <strong>Hanspeter Pfister</strong><br>
-                    Harvard
+                    <img class="ui left floated tiny circular image" src="/images/hanspeter.png">
+                    <p style="padding:17px 0px">
+                      <strong>Hanspeter Pfister</strong><br>
+                      Harvard
+                    </p>
                   </div>
                 </div>
               </div>
@@ -95,19 +110,19 @@
         <div class="row">
           <div class="column">
             <div class="ui segment">
-              <h3 class="ui orange header">Citation</h3>
-              <p style="font-size:1.3em">
-                <strong>Data-Driven Guides: Supporting Expressive Design for Information Graphics</strong><br/>
+              <h2 class="ui orange header">Citation</h2>
+              <p>
+                <strong style="color:dimgray">Data-Driven Guides: Supporting Expressive Design for Information Graphics</strong><br/>
                 Nam Wook Kim, Eston Schweickart, Zhicheng Liu, Mira Dontcheva, Wilmot Li, Jovan Popovic, Hanspeter Pfister.<br/>
                 IEEE Transactions on Visualization and Computer Graphics (InfoVis’16), 2017
               </p>
-              <a class="ui label" target="_blank" href="https://goo.gl/Vw7YGF">
+              <a class="ui large label" target="_blank" href="https://goo.gl/Vw7YGF">
                 <i class="file pdf outline icon"></i> PDF
               </a>
-              <a class="ui label" target="_blank" href="https://goo.gl/BLiAdH">
+              <a class="ui large label" target="_blank" href="https://goo.gl/BLiAdH">
                 <i class="file pdf outline icon"></i> Supplement
               </a>
-              <a class="ui label" target="_blank" href="https://www.youtube.com/watch?v=iD04AT6rAYY">
+              <a class="ui large label" target="_blank" href="https://www.youtube.com/watch?v=iD04AT6rAYY">
                 <i class="video play outline icon"></i> 25sec Preview
               </a>
             </div>
@@ -115,20 +130,20 @@
         </div>
         <div class="row">
           <div class="column">
-          More information: TBA
+            <h2 class="ui header">More information: TBA</h2>
           </div>
         </div>
         <div class="row">
           <div class="column">
             <div class="ui three column centered grid">
               <div class="column">
-                <img class="ui small rounded image" src="/images/harvard_logo.png">
+                <img class="ui medium centered rounded image" src="/images/harvard_logo.png">
               </div>
               <div class="column">
-                <img class="ui small rounded image" src="/images/cornell_logo.png">
+                <img class="ui medium centered rounded image" src="/images/cornell_logo.png">
               </div>
               <div class="column">
-                <img class="ui small rounded image" src="/images/adobe_logo.png">
+                <img class="ui medium centered rounded image" src="/images/adobe_logo.png">
               </div>
             </div>
           </div>
