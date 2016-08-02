@@ -14,9 +14,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.2/semantic.min.css">
     <!-- stylesheets -->
     <style>
-        p {
-            color: #767676
-        }
+      p {
+        font-size:1.3em;
+        color:#767676;
+      }
     </style>
 
 
@@ -24,7 +25,7 @@
 
 <body ng-app="myApp">
     <div class="ui container" ng-controller="myAppCtrl">
-        <h1 class="ui dividing orange center aligned icon header">
+      <h1 class="ui dividing orange center aligned icon header">
         <!-- <i class="plug icon"></i> -->
         <img class="ui image" src="images/ddg-icon.svg"/>
         <div class="content" style="font-size:1.3em">
@@ -32,110 +33,128 @@
         </div>
         <div class="sub header" style="font-size:1.0em">Supporting Expressive Design for Information Graphics</div>
       </h1>
-        <div class="ui stackable grid">
-            <div class="row">
-                <div class="column">
-                    <div class="ui embed" data-source="youtube" data-id="xkFF_tOue_E" data-placeholder="/images/flower_chart.png">
-                    </div>
-                </div>
+      <div class="ui stackable grid">
+        <div class="row">
+          <div class="column">
+            <div class="ui embed" data-source="youtube" data-id="xkFF_tOue_E" data-placeholder="/images/flower_chart.png">
             </div>
-            <div class="row">
-                <div class="column">
-                    <div class="ui orange segments">
-                        <div class="ui segment" style="font-size:1.3em">
-                            <p>
-                                <strong><em style="color:dimgray">Data-Driven Guides</em></strong> (DDG) is a technique for designing expressive information graphics in a graphic design environment. Instead of being confined by predefined templates or
-                                marks, designers can generate guides from data and use the guides to draw, place and measure custom shapes.
-                            </p>
-                            <p>
-                                We provide guides to encode data using three fundamental visual encoding channels: <strong style="color:dimgray">length, area, and position</strong>. Users can combine more than one guide to construct complex visual structures
-                                and map these structures to data. When underlying data is changed, we use a deformation technique to transform custom shapes using the guides as the backbone of the shapes.
-                            </p>
-                        </div>
-                        <div class="ui secondary segment">
-                            <div class="ui five column doubling centered grid">
-                                <div class="column">
-                                    <img class="ui left floated mini circular image" src="/images/nam.png">
-                                    <strong>Nam Wook Kim</strong>
-                                    <br> Harvard
-                                </div>
-                                <div class="column">
-                                    <img class="ui left floated mini circular image" src="/images/eston.png">
-                                    <strong>Eston Schweickart</strong>
-                                    <br> Cornell
-                                </div>
-                                <div class="column">
-                                    <img class="ui left floated mini circular image" src="/images/leo.png">
-                                    <strong>Zhicheng Liu</strong>
-                                    <br> Adobe
-                                </div>
-                                <div class="column">
-                                    <img class="ui left floated mini circular image" src="/images/mira.png">
-                                    <strong>Mira Dontcheva</strong>
-                                    <br> Adobe
-                                </div>
-                                <div class="column">
-                                    <img class="ui left floated mini circular image" src="/images/wilmot.png">
-                                    <strong>Wilmot Li</strong>
-                                    <br> Adobe
-                                </div>
-                                <div class="column">
-                                    <img class="ui left floated mini circular image" src="/images/jovan.png">
-                                    <strong>Jovan Popovic</strong>
-                                    <br> Adobe
-                                </div>
-                                <div class="column">
-                                    <img class="ui left floated mini circular image" src="/images/hanspeter.png">
-                                    <strong>Hanspeter Pfister</strong>
-                                    <br> Harvard
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <div class="ui segment">
-                        <h3 class="ui orange header">Citation</h3>
-                        <p style="font-size:1.3em">
-                            <strong>Data-Driven Guides: Supporting Expressive Design for Information Graphics</strong>
-                            <br/> Nam Wook Kim, Eston Schweickart, Zhicheng Liu, Mira Dontcheva, Wilmot Li, Jovan Popovic, Hanspeter Pfister.
-                            <br/> IEEE Transactions on Visualization and Computer Graphics (InfoVis’16), 2017
-                        </p>
-                        <a class="ui label" target="_blank" href="https://goo.gl/Vw7YGF">
-                            <i class="file pdf outline icon"></i> PDF
-                        </a>
-                        <a class="ui label" target="_blank" href="https://goo.gl/BLiAdH">
-                            <i class="file pdf outline icon"></i> Supplement
-                        </a>
-                        <a class="ui large label" target="_blank" href="https://www.youtube.com/watch?v=tX_XeTYCaos">
-                            <i class="video play outline icon"></i> 25sec Preview
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    More information: TBA
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <div class="ui three column centered grid">
-                        <div class="column">
-                            <img class="ui small rounded image" src="/images/harvard_logo.png">
-                        </div>
-                        <div class="column">
-                            <img class="ui small rounded image" src="/images/cornell_logo.png">
-                        </div>
-                        <div class="column">
-                            <img class="ui small rounded image" src="/images/adobe_logo.png">
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="row">
+          <div class="column">
+            <div class="ui orange segments">
+              <div class="ui segment">
+                <p>
+                  <strong style="color:dimgray"><em>Data-Driven Guides</em></strong> (DDG) is a technique for designing expressive information graphics in a graphic design environment. Instead of being confined by predefined templates or marks, designers can generate guides from data and use the guides to draw, place and measure custom shapes.
+                </p>
+                <p>
+                  We provide guides to encode data using three fundamental visual encoding channels: <strong style="color:dimgray">length, area, and position</strong>. Users can combine more than one guide to construct complex visual structures and map these structures to data. When underlying data is changed, we use a deformation technique to transform custom shapes using the guides as the backbone of the shapes.
+                </p>
+              </div>
+              <div class="ui secondary segment">
+                <div class="ui four column doubling stackable centered divided grid">
+                  <div class="row">
+                    <div class="column">
+                      <img style="margin:12px" class="ui left floated tiny circular image" src="/images/nam.png">
+                      <p style="margin-top:22px">
+                        <strong>Nam Wook Kim</strong><br>
+                        Harvard
+                      </p>
+                    </div>
+                    <div class="column">
+                      <img style="margin:12px" class="ui left floated tiny circular image" src="/images/eston.png">
+                      <p style="margin-top:22px">
+                        <strong>Eston Schweickart</strong><br>
+                        Cornell
+                      </p>
+                    </div>
+                    <div class="column">
+                      <img style="margin:12px" class="ui left floated tiny circular image" src="/images/leo.png">
+                      <p style="margin-top:22px">
+                        <strong>Zhicheng Liu</strong><br>
+                        Adobe
+                      </p>
+                    </div>
+                    <div class="column">
+                      <img style="margin:12px" class="ui left floated tiny circular image" src="/images/mira.png">
+                      <p style="margin-top:22px">
+                        <strong>Mira Dontcheva</strong><br>
+                        Adobe
+                      <p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="column">
+                      <img style="margin:12px" class="ui left floated tiny circular image" src="/images/wilmot.png">
+                      <p style="margin-top:22px">
+                        <strong>Wilmot Li</strong><br>
+                        Adobe
+                      <p>
+                    </div>
+
+
+                    <div class="column">
+                      <img style="margin:12px" class="ui left floated tiny circular image" src="/images/jovan.png">
+                      <p style="margin-top:22px">
+                        <strong>Jovan Popovic</strong><br>
+                        Adobe
+                      </p>
+                    </div>
+                    <div class="column">
+                      <img style="margin:12px" class="ui left floated tiny circular image" src="/images/hanspeter.png">
+                      <p style="margin-top:22px">
+                        <strong>Hanspeter Pfister</strong><br>
+                        Harvard
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <div class="ui segment">
+              <h2 class="ui orange header">Citation</h2>
+              <p>
+                <strong style="color:dimgray">Data-Driven Guides: Supporting Expressive Design for Information Graphics</strong><br/>
+                Nam Wook Kim, Eston Schweickart, Zhicheng Liu, Mira Dontcheva, Wilmot Li, Jovan Popovic, Hanspeter Pfister.<br/>
+                IEEE Transactions on Visualization and Computer Graphics (InfoVis’16), 2017
+              </p>
+              <a class="ui large label" target="_blank" href="https://goo.gl/Vw7YGF">
+                <i class="file pdf outline icon"></i> PDF
+              </a>
+              <a class="ui large label" target="_blank" href="https://goo.gl/BLiAdH">
+                <i class="file pdf outline icon"></i> Supplement
+              </a>
+              <a class="ui large label" target="_blank" href="https://www.youtube.com/watch?v=iD04AT6rAYY">
+                <i class="video play outline icon"></i> 25sec Preview
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <h4 class="ui header">More information: TBA</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <div class="ui three column centered grid">
+              <div class="column">
+                <img class="ui medium centered rounded image" src="/images/harvard_logo.png">
+              </div>
+              <div class="column">
+                <img class="ui medium centered rounded image" src="/images/cornell_logo.png">
+              </div>
+              <div class="column">
+                <img class="ui medium centered rounded image" src="/images/adobe_logo.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -156,7 +175,7 @@
                 //	website initialization
             })
         app.controller('myAppCtrl', function($scope) {
-            angular.element('.ui.embed').embed()
+          angular.element('.ui.embed').embed()
         });
     </script>
 
