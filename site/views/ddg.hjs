@@ -5,7 +5,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PhD student in the Harvard School of Engineering and Applied Sciences, studying information visualization and human-computer interaction. Prior to Harvard, he worked at Samsung and LG for four years. He received his M.S. from Stanford and B.S. (dual degree) from Ajou and Stony Brook.">
+    <meta property="og:title" content="Data-Driven Guides: Supporting Expressive Design for Information Graphics">
+    <meta property="og:description" content="A technique for designing infographics in a graphic design environment. Instead of chart templates, designers can generate guides from data and use the guides to draw, place and measure custom shapes.">
+    <meta property="og:image" content="http://www.namwkim.org/images/share.png">
+    <meta property="og:url" content="http://localhost:3000/ddg">
+
+    <meta itemprop="name" content="Data-Driven Guides: Supporting Expressive Design for Information Graphics">
+    <meta itemprop="description" content="A technique for designing infographics in a graphic design environment. Instead of chart templates, designers can generate guides from data and use the guides to draw, place and measure custom shapes.">
+    <meta itemprop="image" content="http://www.namwkim.org/images/share.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@HarvardVCG">
+    <meta name="twitter:title" content="Data-Driven Guides: Supporting Expressive Design for Information Graphics">
+    <meta name="twitter:description" content="A technique for designing infographics in a graphic design environment. Instead of chart templates, designers can generate guides from data and use the guides to draw, place and measure custom shapes.">
+    <meta name="twitter:creator" content="@namwkim85">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image:src" content="http://www.namwkim.org/images/share.png">
+
     <meta name="author" content="Nam Wook Kim">
 
     <title>Nam Wook Kim</title>
@@ -128,9 +144,12 @@
         <a class="ui large label" target="_blank" href="https://www.youtube.com/watch?v=tX_XeTYCaos">
           <i class="video play outline icon"></i> 25sec Preview
         </a>
-        <a class="ui large label" target="_blank" href="http://hyecoo.namwkim.org/">
+        <a class="ui large label" target="_blank" data-tooltip="Please note that the software is an experimental prototype (contact: namwkim85 at gmail.com)." href="http://hyecoo.namwkim.org/">
           <i class="desktop outline icon"></i> Software
         </a>
+        <p>
+
+        </p>
       </div>
       <!-- <div class="ui segment">
         <div class="ui doubling stackable two column grid">
