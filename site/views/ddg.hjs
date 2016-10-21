@@ -8,7 +8,7 @@
     <meta property="og:title" content="Data-Driven Guides: Supporting Expressive Design for Information Graphics">
     <meta property="og:description" content="A technique for designing infographics in a graphic design environment. Instead of chart templates, designers can generate guides from data and use the guides to draw, place and measure custom shapes.">
     <meta property="og:image" content="http://www.namwkim.org/images/share.png">
-    <meta property="og:url" content="http://localhost:3000/ddg">
+    <meta property="og:url" content="http://www.namwkim.org/ddg">
 
     <meta itemprop="name" content="Data-Driven Guides: Supporting Expressive Design for Information Graphics">
     <meta itemprop="description" content="A technique for designing infographics in a graphic design environment. Instead of chart templates, designers can generate guides from data and use the guides to draw, place and measure custom shapes.">
