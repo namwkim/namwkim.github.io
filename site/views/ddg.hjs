@@ -154,6 +154,28 @@
 
         </p>
       </div>
+      <div class="ui segment">
+        <h2 class="ui orange header">Miscellaneous</h2>
+
+        <div class="ui two column doubling stackable centered divided grid">
+          <div class="row">
+            <div class="column">
+              <h3 class="ui grey header">Nigel Holmes' infographics</h3>
+              <p style="text-align: justify;">
+                In our paper, we used two infographics created by <a href="http://www.nigelholmes.com/" target="_blank">Nigel Holmes</a>, including the monster and factory worker charts (see below). Both infographics were drawn by hand in 1982 which may inevitably contain some errors. We would like to thank Nigel Holmes for allowing us to use his infographics.
+              </p>
+              <img src="/images/monster-chart.jpg"  height="250">
+              <img src="/images/factory-worker-chart.png"  height="250">
+            </div>
+            <div class="column">
+              <h3 class="ui grey header">Additional Video</h3>
+              <div class="ui 4:3 embed" data-source="vimeo" data-id="176390548" data-placeholder="/images/four-monsters.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- <div class="ui segment">
         <div class="ui doubling stackable two column grid">
           <div class="row">
