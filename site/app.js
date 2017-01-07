@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var fs = require("fs");
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -8,7 +9,16 @@ var mongo = require('mongoskin');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var db = mongo.db("mongodb://localhost:27017/namwkim", {native_parser: true});
+
+// db authentication
+var auth = fs.readFileSync('auth.txt', "utf8").toString().split(',');
+auth[0] = auth[0].trim()
+auth[1] = auth[1].trim()
+
+var f = require('util').format;
+var urlTmpl = 'mongodb://%s:%s@localhost:27017/%s?authSource=admin'
+
+var db = mongo.db(f(urlTmpl, auth[0], auth[1], 'namwkim'), {native_parser: true});
 db.toObjectID = mongo.helper.toObjectID;
 
 var app = express();
