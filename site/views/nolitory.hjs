@@ -62,7 +62,10 @@
           </h2>
           Slots are available from <strong>3/15 to 3/24</strong>. Your name and email are required. We will contact you once your slot is confirmed.
           <br>
-          <h4><a href="https://narrative.youcanbook.me/" target="_blank">Link to the booking page</a></h4>
+          <h4 class="ui red header">
+            Sorry, we have enough participants right now. If we re-open it, we will let you know. Thank you.
+            <!-- <a href="https://narrative.youcanbook.me/" target="_blank">Link to the booking page</a> -->
+          </h4>
           <br>
           <div class="ui section divider"></div>
         </div>
