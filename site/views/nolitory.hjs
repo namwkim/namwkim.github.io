@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nam Wook Kim</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/png" sizes="16x16 32x32">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+
+
+</head>
+
+<body style="font-size:1.1em">
+    <div class="ui centered grid container">
+      <div class="row">
+        <div class="ten wide computer sixteen wide mobile sixteen wide tablet column">
+          <div class="ui section divider"></div>
+          <div class="ui medium images">
+            <img src="/images/nolitory/movies.png">
+            <img src="/images/nolitory/patterns.png">
+          </div>
+          <h1 class="ui header">
+              User Study: Visualizing Nonlinear Films with Narrative Curves
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="ten wide computer sixteen wide mobile sixteen wide tablet column">
+          Are you a movie fan? Have you seen movies that contain complex nonlinear narratives (e.g, movies being told backwards, movies jumping between times and places etc)?
+          <br><br>Participate in our study and learn new ways to represent them!
+        </div>
+      </div>
+      <div class="row">
+        <div class="ten wide computer sixteen wide mobile sixteen wide tablet column">
+          <h2 class="ui header">
+              What will you do?
+          </h2>
+          We are mainly interested in the readibility of our visualization for showing nonlinear timelines. Your participation in this study will involve:
+          <div class="ui bulleted list">
+            <div class="item">A short tutorial to our visualization technique</div>
+            <div class="item">Reading a plot summary and drawing its visual representation</div>
+            <div class="item">Detecting patterns from nonlinear narrative visualizations</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="ten wide computer sixteen wide mobile sixteen wide tablet column">
+          <h2 class="ui header">
+              Duration, location, & compensation
+          </h2>
+          Each study session will approximately take <strong>60</strong> minutes or less in <strong>Maxwell Dworkin 142</strong>. You will get paid <strong>$20</strong> for your time.
+        </div>
+      </div>
+      <div class="row">
+        <div class="ten wide computer sixteen wide mobile sixteen wide tablet column">
+          <h2 class="ui header">
+              Reserve your slot here!
+          </h2>
+          Slots are available from <strong>3/15 to 3/24</strong>. Your name and email are required. We will contact you once your slot is confirmed.
+          <br>
+          <h4><a href="https://narrative.youcanbook.me/" target="_blank">Link to the booking page</a></h4>
+          <br>
+          <div class="ui section divider"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.10.2/paper-core.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script> -->
+
+
+
+    <!-- Google Analytics -->
+    <script>
+      $('.ui.embed').embed();
+    </script>
+    <script>
+
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-9205727-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
