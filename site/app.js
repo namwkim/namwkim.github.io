@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 var mongo = require('mongoskin');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 
 // db authentication
 var auth = fs.readFileSync('auth.txt', "utf8").toString().split(',');
@@ -39,7 +38,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
 // db settings
 app.use(function(req, res, next){
     req.db = db;

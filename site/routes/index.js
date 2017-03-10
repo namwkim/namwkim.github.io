@@ -11,6 +11,9 @@ router.get('/ddg', function(req, res) {
   //pymongo
   res.render('ddg', { title: 'Data-Driven Guides' });
 });
-
+router.get('/nolitory', function(req, res) {
+  //pymongo
+  res.render('nolitory', { title: 'Nolitory' });
+});
 
 module.exports = router;
