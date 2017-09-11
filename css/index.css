@@ -1,0 +1,18 @@
+html{
+  font-size: 16px;
+}
+img{
+  border-radius: 3px;
+}
+a{
+
+}
+a:hover{
+  color: #00d1b2;
+  text-decoration: underline;
+}
+
+#name{
+  position: absolute;
+  top: 1rem;
+}
