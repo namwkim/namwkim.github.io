@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Data-Driven Guides: Supporting Expressive Design for Information Graphics">
+    <meta property="og:description" content="A technique for designing infographics in a graphic design environment. Instead of chart templates, designers can generate guides from data and use the guides to draw, place and measure custom shapes.">
+    <meta property="og:image" content="http://www.namwkim.org/images/share.png">
+    <meta property="og:url" content="http://www.namwkim.org/ddg">
+
+    <meta itemprop="name" content="Data-Driven Guides: Supporting Expressive Design for Information Graphics">
+    <meta itemprop="description" content="A technique for designing infographics in a graphic design environment. Instead of chart templates, designers can generate guides from data and use the guides to draw, place and measure custom shapes.">
+    <meta itemprop="image" content="http://www.namwkim.org/images/share.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@HarvardVCG">
+    <meta name="twitter:title" content="Data-Driven Guides: Supporting Expressive Design for Information Graphics">
+    <meta name="twitter:description" content="A technique for designing infographics in a graphic design environment. Instead of chart templates, designers can generate guides from data and use the guides to draw, place and measure custom shapes.">
+    <meta name="twitter:creator" content="@namwkim85">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image:src" content="http://www.namwkim.org/images/share.png">
+
+    <meta name="author" content="Nam Wook Kim">
+
+    <title>Nam Wook Kim</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/png" sizes="16x16 32x32">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+    <!-- stylesheets -->
+    <style>
+      p {
+        font-size:1.3em;
+        color:#767676;
+      }
+      a{
+        color: #767676;
+        transition:color 0.5s;
+      }
+      a:hover{
+          color:#F2711C;
+
+      }
+    </style>
+
+
+</head>
+
+<body ng-app="myApp">
+    <div class="ui container" ng-controller="myAppCtrl">
+      <h1 class="ui dividing orange center aligned icon header">
+        <!-- <i class="plug icon"></i> -->
+        <img class="ui image" src="images/ddg-icon.svg"/>
+        <div class="content" style="font-size:1.3em">
+          Data-Driven Guides
+        </div>
+        <div class="sub header" style="font-size:1.0em">Supporting Expressive Design for Information Graphics</div>
+      </h1>
+      <div class="ui basic segment">
+        <div class="ui embed" data-source="youtube" data-id="8hGL8Gka6Tw" data-placeholder="/images/flower_chart.png">
+        </div>
+      </div>
+      <div class="ui segment">
+        <h2 class="ui orange header">Abstract</h2>
+        <p>
+          In recent years, there is a growing need for communicating complex data in an accessible graphical form. Existing visualization creation tools support automatic visual encoding, but lack flexibility for creating custom design; on the other hand, freeform illustration tools require manual visual encoding, making the design process time-consuming and error-prone. In this paper, we present <strong style="color:#F2711C!important"><em>Data-Driven Guides</em></strong> (DDG), a technique for designing expressive information graphics in a graphic design environment. Instead of being confined by predefined templates or marks, designers can generate guides from data and use the guides to draw, place and measure custom shapes. We provide guides to encode data using three fundamental visual encoding channels: <strong style="color:#F2711C!important"><em>length, area, and position</em></strong>. Users can combine more than one guide to construct complex visual structures and map these structures to data. When underlying data is changed, we use a deformation technique to transform custom shapes using the guides as the backbone of the shapes. Our evaluation shows that data-driven guides allow users to create expressive and more accurate custom data-driven graphics.
+        </p>
+      </div>
+
+      <div class="ui segment">
+        <h2 class="ui orange header">Authors</h2>
+        <div class="ui four column doubling stackable centered divided grid">
+          <div class="row">
+            <div class="column">
+              <img style="margin:12px" class="ui left floated tiny rounded image" src="/images/nam.png">
+              <p style="margin-top:22px">
+                <strong><a href="http://www.namwkim.org" target="_blank">Nam Wook Kim</a></strong><br>
+                Harvard
+              </p>
+            </div>
+            <div class="column">
+              <img style="margin:12px" class="ui left floated tiny rounded image" src="/images/eston.png">
+              <p style="margin-top:22px">
+                <strong><a href="http://www.cs.cornell.edu/~ers/" target="_blank">Eston Schweickart</a></strong><br>
+                Cornell
+              </p>
+            </div>
+            <div class="column">
+              <img style="margin:12px" class="ui left floated tiny rounded image" src="/images/leo.png">
+              <p style="margin-top:22px">
+                <strong><a href="https://research.adobe.com/person/zhicheng-liu/" target="_blank">Zhicheng Liu</a></strong><br>
+                Adobe
+              </p>
+            </div>
+            <div class="column">
+              <img style="margin:12px" class="ui left floated tiny rounded image" src="/images/mira.png">
+              <p style="margin-top:22px">
+                <strong><a href="https://research.adobe.com/person/mira-dontcheva/" target="_blank">Mira Dontcheva<a></strong><br>
+                Adobe
+              <p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <img style="margin:12px" class="ui left floated tiny rounded image" src="/images/wilmot.png">
+              <p style="margin-top:22px">
+                <strong><a href="https://research.adobe.com/person/wilmot-li/" target="_blank">Wilmot Li</a></strong><br>
+                Adobe
+              <p>
+            </div>
+
+
+            <div class="column">
+              <img style="margin:12px" class="ui left floated tiny rounded image" src="/images/jovan.png">
+              <p style="margin-top:22px">
+                <strong><a href="https://research.adobe.com/person/jovan-popovic/" target="_blank">Jovan Popovic</a></strong><br>
+                Adobe
+              </p>
+            </div>
+            <div class="column">
+              <img style="margin:12px" class="ui left floated tiny rounded image" src="/images/hanspeter.png">
+              <p style="margin-top:22px">
+                <strong><a href="https://www.seas.harvard.edu/directory/pfister" target="_blank">Hanspeter Pfister</a></strong><br>
+                Harvard
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui segment">
+        <h2 class="ui orange header">Citation</h2>
+        <p>
+          <strong style="color:dimgray">Data-Driven Guides: Supporting Expressive Design for Information Graphics</strong><br/>
+          Nam Wook Kim, Eston Schweickart, Zhicheng Liu, Mira Dontcheva, Wilmot Li, Jovan Popovic, Hanspeter Pfister.<br/>
+          IEEE Transactions on Visualization and Computer Graphics (InfoVis’16), 2017
+        </p>
+        <a class="ui large label" target="_blank" href="https://goo.gl/NS9Tl0">
+          <i class="file pdf outline icon"></i> PDF
+        </a>
+        <a class="ui large label" target="_blank" href="https://goo.gl/wC0GA3">
+          <i class="file pdf outline icon"></i> Supplement
+        </a>
+        <a class="ui large label" target="_blank" href="https://goo.gl/p8bRwd" data-tooltip="Videos are not playable in PDF (contact: namwkim85 at gmail.com)." href="http://hyecoo.namwkim.org/">
+          <i class="file pdf outline icon"></i> Slides
+        </a>
+        <a class="ui large label" target="_blank" href="https://www.youtube.com/watch?v=tX_XeTYCaos">
+          <i class="video play outline icon"></i> 25sec Preview
+        </a>
+        <a class="ui large label" target="_blank" data-tooltip="Please note that the software is an experimental prototype (contact: namwkim85 at gmail.com)." href="http://hyecoo.namwkim.org/">
+          <i class="desktop outline icon"></i> Software
+        </a>
+        <p>
+
+        </p>
+      </div>
+      <div class="ui segment">
+        <h2 class="ui orange header">Miscellaneous</h2>
+
+        <div class="ui two column doubling stackable centered divided grid">
+          <div class="row">
+            <div class="column">
+              <h3 class="ui grey header">Nigel Holmes' infographics</h3>
+              <p style="text-align: justify;">
+                In our paper, we used two infographics created by <a href="http://www.nigelholmes.com/" target="_blank">Nigel Holmes</a>, including the monster and factory worker charts (see below). Both infographics were drawn by hand in 1982 which may inevitably contain some errors. We would like to thank Nigel Holmes for allowing us to use his infographics.
+              </p>
+              <img src="/images/monster-chart.jpg"  height="250">
+              <img src="/images/factory-worker-chart.png"  height="250">
+            </div>
+            <div class="column">
+              <h3 class="ui grey header">Additional Video</h3>
+              <div class="ui 4:3 embed" data-source="vimeo" data-id="176390548" data-placeholder="/images/four-monsters.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="ui segment">
+        <div class="ui doubling stackable two column grid">
+          <div class="row">
+            <div class="column">
+              <div class="ui embed" data-source="youtube" data-id="37njrzOwBgY" data-placeholder="/images/monster.png"></div>
+            </div>
+            <div class="column">
+              <div class="ui embed" data-source="youtube" data-id="37njrzOwBgY" data-placeholder="/images/monster.png"></div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="ui segment">
+        <div class="ui three column centered grid">
+          <div class="column">
+            <a href="http://vcg.seas.harvard.edu/" target="_blank" class="ui medium centered rounded image">
+              <img src="/images/harvard_logo.png">
+            </a>
+          </div>
+          <div class="column">
+            <a href="http://www.cs.cornell.edu/" target="_blank" class="ui medium centered rounded image">
+              <img src="/images/cornell_logo.png">
+            </a>
+          </div>
+          <div class="column">
+            <a href="https://research.adobe.com/" target="_blank" class="ui medium centered rounded image">
+              <img src="/images/adobe_logo.png">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="ui basic segment">
+        <h2 class="ui orange header">Feedback & Comment</h2>
+        <div id="disqus_thread"></div>
+      </div>
+
+    </div>
+
+
+    <!-- javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.10.2/paper-core.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script> -->
+
+
+    <script>
+
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//data-driven-guides.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    <!-- Google Analytics -->
+    <script>
+      $('.ui.embed').embed();
+    </script>
+    <script>
+
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-9205727-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
