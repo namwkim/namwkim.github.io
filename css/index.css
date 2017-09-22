@@ -20,10 +20,16 @@ body{
 .dv{
   color: #9e9e9e;
 }
-
-.pub-thumbnail{
-  border:2px dashed #9e9e9e;
+.research-thumbnail{
+  border:1px solid #9e9e9e;
 }
+.pub-item{
+  margin-top: 15px;
+}
+.pub-thumbnail{
+  border:1px solid #9e9e9e;
+}
+
 .google-maps-container{
   max-width: 450px;
 }
