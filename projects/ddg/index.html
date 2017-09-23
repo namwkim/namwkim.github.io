@@ -34,12 +34,18 @@
         color:#767676;
       }
       a{
-        color: #767676;
+        /*color: #767676;*/
         transition:color 0.5s;
       }
       a:hover{
           color:#F2711C;
 
+      }
+      .usecase-video{
+        border: 2px solid #e8e8e8;
+      }
+      .example{
+        border: 2px solid #e8e8e8;
       }
     </style>
 
@@ -56,25 +62,26 @@
         </div>
         <div class="sub header" style="font-size:1.0em">Supporting Expressive Design for Information Graphics</div>
       </h1>
-      <div class="ui basic segment">
+      <div class="ui basic segment" id="teaser">
         <div class="ui embed" data-source="youtube" data-id="8hGL8Gka6Tw" data-placeholder="images/flower_chart.png">
         </div>
       </div>
-      <div class="ui segment">
-        <h2 class="ui orange header">Abstract</h2>
-        <p>
+      <div class="ui basic segment">
+        <h1 class="ui orange header">Introduction</h1>
+        <p style="text-align:justify">
           In recent years, there is a growing need for communicating complex data in an accessible graphical form. Existing visualization creation tools support automatic visual encoding, but lack flexibility for creating custom design; on the other hand, freeform illustration tools require manual visual encoding, making the design process time-consuming and error-prone. In this paper, we present <strong style="color:#F2711C!important"><em>Data-Driven Guides</em></strong> (DDG), a technique for designing expressive information graphics in a graphic design environment. Instead of being confined by predefined templates or marks, designers can generate guides from data and use the guides to draw, place and measure custom shapes. We provide guides to encode data using three fundamental visual encoding channels: <strong style="color:#F2711C!important"><em>length, area, and position</em></strong>. Users can combine more than one guide to construct complex visual structures and map these structures to data. When underlying data is changed, we use a deformation technique to transform custom shapes using the guides as the backbone of the shapes. Our evaluation shows that data-driven guides allow users to create expressive and more accurate custom data-driven graphics.
         </p>
       </div>
 
-      <div class="ui segment">
-        <h2 class="ui orange header">Authors</h2>
-        <div class="ui four column doubling stackable centered divided grid">
+      <div class="ui basic segment">
+        <h1 class="ui orange header">Authors</h1>
+        <div class="ui four column doubling stackable centered grid">
           <div class="row">
             <div class="column">
               <img style="margin:12px" class="ui left floated tiny rounded image" src="images/nam.png">
               <p style="margin-top:22px">
                 <strong><a href="http://www.namwkim.org" target="_blank">Nam Wook Kim</a></strong><br>
+                Ph.D. student<br>
                 Harvard
               </p>
             </div>
@@ -82,6 +89,7 @@
               <img style="margin:12px" class="ui left floated tiny rounded image" src="images/eston.png">
               <p style="margin-top:22px">
                 <strong><a href="http://www.cs.cornell.edu/~ers/" target="_blank">Eston Schweickart</a></strong><br>
+                Ph.D. student<br>
                 Cornell
               </p>
             </div>
@@ -89,13 +97,15 @@
               <img style="margin:12px" class="ui left floated tiny rounded image" src="images/leo.png">
               <p style="margin-top:22px">
                 <strong><a href="https://research.adobe.com/person/zhicheng-liu/" target="_blank">Zhicheng Liu</a></strong><br>
+                Research Scientist<br>
                 Adobe
               </p>
             </div>
             <div class="column">
               <img style="margin:12px" class="ui left floated tiny rounded image" src="images/mira.png">
               <p style="margin-top:22px">
-                <strong><a href="https://research.adobe.com/person/mira-dontcheva/" target="_blank">Mira Dontcheva<a></strong><br>
+                <strong><a href="https://research.adobe.com/person/mira-dontcheva/" target="_blank">Mira Dontcheva</a></strong><br>
+                Senior Research Scientist<br>
                 Adobe
               <p>
             </div>
@@ -105,6 +115,7 @@
               <img style="margin:12px" class="ui left floated tiny rounded image" src="images/wilmot.png">
               <p style="margin-top:22px">
                 <strong><a href="https://research.adobe.com/person/wilmot-li/" target="_blank">Wilmot Li</a></strong><br>
+                Principal Scientist<br>
                 Adobe
               <p>
             </div>
@@ -114,6 +125,7 @@
               <img style="margin:12px" class="ui left floated tiny rounded image" src="images/jovan.png">
               <p style="margin-top:22px">
                 <strong><a href="https://research.adobe.com/person/jovan-popovic/" target="_blank">Jovan Popovic</a></strong><br>
+                Senior Principal Scientist<br>
                 Adobe
               </p>
             </div>
@@ -121,14 +133,15 @@
               <img style="margin:12px" class="ui left floated tiny rounded image" src="images/hanspeter.png">
               <p style="margin-top:22px">
                 <strong><a href="https://www.seas.harvard.edu/directory/pfister" target="_blank">Hanspeter Pfister</a></strong><br>
+                Professor<br>
                 Harvard
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div class="ui segment">
-        <h2 class="ui orange header">Citation</h2>
+      <div class="ui basic segment">
+        <h1 class="ui orange header">Citation</h1>
         <p>
           <strong style="color:dimgray">Data-Driven Guides: Supporting Expressive Design for Information Graphics</strong><br/>
           Nam Wook Kim, Eston Schweickart, Zhicheng Liu, Mira Dontcheva, Wilmot Li, Jovan Popovic, Hanspeter Pfister.<br/>
@@ -153,10 +166,168 @@
 
         </p>
       </div>
-      <div class="ui segment">
-        <h2 class="ui orange header">Miscellaneous</h2>
+      <div class="ui basic segment">
+        <h1 class="ui orange header">Drawing with Data-Driven Guides</h1>
+        <p style="text-align:justify">
+          We draw inspiration from existing design
+practices in areas such as architectural or user interface design, where
+a guide is used as a reference (e.g., a ruler and grid) for precise drawing
+or alignment.We follow the theoretical frameworks of visual encodings that describe the most effective channels to encode information. We
+use data guides to size the primary visual variables of length and area, which in turn are represented as line- and circle-shaped guides, respectively</p>
+        <div class="ui vertical segment">
+          <h2 class="ui grey header">Interacting with Guides</h2>
+          <p>
+            DDG is designed to be fluidly integrated in a flexible graphic design environment, favored by infographic designers.
+            To this end, the visual appearance and interaction model of DDG follow those of regular guides available in existing graphic design tools. A main difference from regular guides is that data guides are driven
+by data. A group of data guides can be created from a tabular dataset
+consisting of a series of numerical values and their category names;
+depending on the encoding type, the length (line) or area (circle) of a
+data guide represents a data value in the dataset. The relative sizes of
+data guides within the parent group are preserved in order to be in sync
+with the underlying dataset.
+          </p>
+          <video class="usecase-video" width="100%" class="center" controls poster="images/teaser-interaction.png">
+            <source src="videos/interaction.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="ui vertical segment">
+          <h2 class="ui grey header">Drawing with Guides - Part 1</h2>
+          <p>A data guide serves as a ruler backed up by data to minimize designer’s effort to manually place and measure graphics; its size and shape indicate where a data value lies on the canvas. Users can draw custom shapes from scratch directly on top of data guides.
+            The overall drawing experience is closer to drawing with a pen and
+            ruler (i.e., bottom-up design process). Alternatively users can use data
+            guides to repurpose existing artworks by matching the artworks to the
+            size of the guides (See <a href="#retargetting">retargetting example</a>).
+          </p>
+          <video class="usecase-video" width="100%" class="center" controls poster="images/teaser-drawing-1.png">
+            <source src="videos/drawing-1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="ui vertical segment">
+          <h2 class="ui grey header">Drawing with Guides - Part 2</h2>
+          <p>
+            Users can combine multiple data guides in order to construct more expressive structures. This has the same effect as combining different visual variables, in our case length, area and position. See also <a href="#examples">examples</a> and the <a href="#teaser">teaser video</a> at the top.
+            The repeat feature in DDG allows an associated shape to be repeated over its sibling guides in the same group. If a pair of guides from two groups is
+supposed to encode a single shape, we only repeat the shape once as shown in the video below.
+          </p>
+          <video class="usecase-video" width="100%" class="center" controls poster="images/teaser-drawing-2.png">
+            <source src="videos/drawing-2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <h2 class="ui grey header" id="examples">Other Examples</h2>
+          <div class="ui container stackable two column grid">
+            <div class="column">
+              <img class="example ui fluid image" src="images/example1.png">
+              <p style="text-align:center">A sankey-style diagram where two DDG are juxtaposed to
+compare the rankings of two different metrics.</p>
+            </div>
+            <div class="column">
+              <img class="example ui fluid image" src="images/example2.png">
+              <p style="text-align:center">An area chart
+using a single stroke to draw the area and to encode slopes in the declining trend.</p>
+            </div>
+            <div class="column">
+              <img class="example ui fluid image" src="images/example3.png">
+              <p style="text-align:center">A balloon chart using area
+DDG for the size of balloons and position DDG for the location of the balloons.</p>
+            </div>
+            <div class="column">
+              <img class="example ui fluid image" src="images/example4.png">
+              <p style="text-align:center">A customized isotype chart using both length and area DDG to encode a pregnant woman’s
+height and belly respectively.</p>
+            </div>
+            <div class="column">
+              <img class="example ui fluid image" src="images/example5.png">
+              <p style="text-align:center">An isotype chart using data guides to measure the heights of imported building icons.</p>
+            </div>
+            <div class="column">
+              <img class="example ui fluid image" src="images/example6.png">
+              <p style="text-align:center">A cloud and chimney chart where four DDG created from
+the same dataset are used to encode each cloud.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui basic segment">
+        <h1 class="ui orange header" id="retargetting">Repurposing Existing Artworks</h1>
+        <p>
+          DDG maintain a flexible design process by
+allowing users to draw custom shapes on top of guides or to use the
+guides to repurpose existing artworks.
 
-        <div class="ui two column doubling stackable centered divided grid">
+          Instead of drawing it from scratch, we imported a monster
+graphic into the tool and repurposed it with data guides by adjusting
+the teeth to match the size of the guides. We can then reuse the chart
+for different datasets by simply copying and pasting the chart
+
+          Alternatively users can use data
+guides to repurpose existing artworks by matching the artworks to the
+size of the guides (Fig. 1); this workflow is the top-down, graphical
+process of placing data on existing graphics.
+          Nigel Holmes’ Monstrous Costs chart, recreated by importing a monster graphic (left) and retargeting the teeth of the
+monster with DDG (middle). Taking advantage of the data-binding capability of DDG, small multiples are easily created by
+copying the chart and changing the data for each cloned chart (right).
+
+DDG’s data binding support
+
+for freeform shapes further improves the design process by alleviat-
+ing manual encoding when data is changed as well as increasing the
+
+reusability of custom charts.
+
+DDG is basically an intermediate layer for associating data with any
+
+objects including shapes, texts, or guides. When data is changed, re-
+lated guides will consequently change their forms, which in turn trans-
+forms the objects that are linked to the guides
+
+        </p>
+        <div style="text-align:center">
+          <img class="ui example centered medium image" src="images/monster-chart.jpg">
+          <p>Nigel Holmes’ Monstrous Costs chart drawn by hand in 1982</p>
+        </div>
+        <video class="usecase-video" width="100%" class="center" controls poster="images/teaser-retargetting.png">
+          <source src="videos/retargetting.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="ui basic segment">
+        <h1 class="ui orange header">Proofreading Existing Infographics</h1>
+        <p>
+          We also found that some existing infographics were potentially in-
+accurately designed. For example, when we juxtaposed data guides
+
+on top of the original image we found that the factory worker chart
+(Fig. 13a) by Nigel Holmes may have an incorrect representation of
+the data. We also found a similar case in the balloon chart (Fig. 13b);
+
+that is, the radius of the balloon instead of the area was used to repre-
+sent the data value. This case is actually a commonly found mistake
+
+in existing infographic design practice.
+
+When recreating the factory worker chart, we found that
+the lengths of three lava marks representing France, Japan, and Britain
+do not match the size of data guides; the baseline is not clear however.
+
+With DDG, we found that the radius of balloons was used instead
+of the area.
+        </p>
+        <div class="ui container stackable four column grid">
+          <div class="column"><img class="example ui fluid image" src="images/factory-worker-chart.png"></div>
+          <div class="column"><img class="example ui fluid image" src="images/proofreading1.png"></div>
+          <div class="column"><img class="example ui fluid image" src="images/balloon-chart.png"></div>
+          <div class="column"><img class="example ui fluid image" src="images/proofreading2.png"></div>
+        </div>
+      </div>
+      <div class="ui basic segment">
+        <h1 class="ui orange header">Acknowledgement</h1>
+        <h3 class="ui grey header">Nigel Holmes' infographics</h3>
+        <p style="text-align: justify;">
+          In our paper, we used two infographics created by <a href="http://www.nigelholmes.com/" target="_blank">Nigel Holmes</a>, including the monster and factory worker charts (see above). Both infographics were drawn by hand in 1982 which may inevitably contain some errors. We would like to thank Nigel Holmes for allowing us to use his infographics.
+        </p>
+        <!-- <div class="ui two column doubling stackable centered divided grid">
           <div class="row">
             <div class="column">
               <h3 class="ui grey header">Nigel Holmes' infographics</h3>
@@ -172,7 +343,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <!-- <div class="ui segment">
@@ -187,7 +358,7 @@
           </div>
         </div>
       </div> -->
-      <div class="ui segment">
+      <div class="ui basic segment">
         <div class="ui three column centered grid">
           <div class="column">
             <a href="http://vcg.seas.harvard.edu/" target="_blank" class="ui medium centered rounded image">
@@ -207,7 +378,7 @@
         </div>
       </div>
       <div class="ui basic segment">
-        <h2 class="ui orange header">Feedback & Comment</h2>
+        <h1 class="ui orange header">Feedback & Comment</h1>
         <div id="disqus_thread"></div>
       </div>
 
