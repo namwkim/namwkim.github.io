@@ -253,40 +253,25 @@ the same dataset are used to encode each cloud.</p>
         <h1 class="ui orange header" id="retargetting">Repurposing Existing Artworks</h1>
         <p>
           DDG maintain a flexible design process by
-allowing users to draw custom shapes on top of guides or to use the
-guides to repurpose existing artworks.
+allowing users to not only draw custom shapes on top of guides or but also to use the
+guides to repurpose existing artworks. In this example, instead of drawing it from scratch, we imported a monster
+graphic (inspired by Nigel Holmes’ Monstrous Costs chart) into the tool and repurposed it with data guides by adjusting
+the teeth to match the size of the guides. This workflow is the top-down, graphical
+process of placing data on existing graphics.</p>
 
-          Instead of drawing it from scratch, we imported a monster
-graphic into the tool and repurposed it with data guides by adjusting
-the teeth to match the size of the guides. We can then reuse the chart
-for different datasets by simply copying and pasting the chart
+<div style="text-align:center; margin-bottom:20px;">
+  <img class="ui example centered medium image" src="images/monster-chart.jpg">
+  <p>Nigel Holmes’ Monstrous Costs chart drawn by hand in 1982</p>
+</div>
 
-          Alternatively users can use data
-guides to repurpose existing artworks by matching the artworks to the
-size of the guides (Fig. 1); this workflow is the top-down, graphical
-process of placing data on existing graphics.
-          Nigel Holmes’ Monstrous Costs chart, recreated by importing a monster graphic (left) and retargeting the teeth of the
-monster with DDG (middle). Taking advantage of the data-binding capability of DDG, small multiples are easily created by
-copying the chart and changing the data for each cloned chart (right).
+          <p>
 
-DDG’s data binding support
 
-for freeform shapes further improves the design process by alleviat-
-ing manual encoding when data is changed as well as increasing the
+Taking advantage of the data-binding capability of DDG, small multiples are easily created by
+copying the chart, pasting it, and changing the data for each cloned chart. DDG’s data binding support for freeform shapes further improves the design process by alleviating manual encoding when data is changed as well as increasing the reusability of custom charts.
+DDG is basically an intermediate layer for associating data with any objects including shapes, texts, or guides. When data is changed, related guides will consequently change their forms, which in turn transforms the objects that are linked to the guides.</p>
 
-reusability of custom charts.
 
-DDG is basically an intermediate layer for associating data with any
-
-objects including shapes, texts, or guides. When data is changed, re-
-lated guides will consequently change their forms, which in turn trans-
-forms the objects that are linked to the guides
-
-        </p>
-        <div style="text-align:center">
-          <img class="ui example centered medium image" src="images/monster-chart.jpg">
-          <p>Nigel Holmes’ Monstrous Costs chart drawn by hand in 1982</p>
-        </div>
         <video class="usecase-video" width="100%" class="center" controls poster="images/teaser-retargetting.png">
           <source src="videos/retargetting.mp4" type="video/mp4">
           Your browser does not support the video tag.
@@ -295,24 +280,25 @@ forms the objects that are linked to the guides
       <div class="ui basic segment">
         <h1 class="ui orange header">Proofreading Existing Infographics</h1>
         <p>
-          We also found that some existing infographics were potentially in-
-accurately designed. For example, when we juxtaposed data guides
+          DDG can also be used to proofread exsiting infographics. For example, when we juxtaposed data guides
+on top of the original image we found that the factory worker chart by Nigel Holmes may have an incorrect representation of
+the data. The lengths of three lava marks representing France, Japan, and Britain
+do not match the size of data guides; the baseline is not clear however.
+</p>
 
-on top of the original image we found that the factory worker chart
-(Fig. 13a) by Nigel Holmes may have an incorrect representation of
-the data. We also found a similar case in the balloon chart (Fig. 13b);
+<p>
+We also found a similar case in the balloon chart; that is, the radius of the balloon instead of the area was used to represent the data value. This case is actually a commonly found mistake in existing infographic design practice.
+<!-- 
+We also found that some existing infographics were potentially in-
+accurately designed.
 
-that is, the radius of the balloon instead of the area was used to repre-
-sent the data value. This case is actually a commonly found mistake
-
-in existing infographic design practice.
 
 When recreating the factory worker chart, we found that
 the lengths of three lava marks representing France, Japan, and Britain
 do not match the size of data guides; the baseline is not clear however.
 
 With DDG, we found that the radius of balloons was used instead
-of the area.
+of the area. -->
         </p>
         <div class="ui container stackable four column grid">
           <div class="column"><img class="example ui fluid image" src="images/factory-worker-chart.png"></div>
