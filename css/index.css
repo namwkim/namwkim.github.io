@@ -18,16 +18,16 @@ body{
   text-align: center;
 }
 .dv{
-  color: #9e9e9e;
+  color: #E0E0E0;
 }
 .research-thumbnail{
-  border:1px solid #9e9e9e;
+  border:1px dashed #E0E0E0;
 }
 .pub-item{
   margin-top: 15px;
 }
 .pub-thumbnail{
-  border:1px solid #9e9e9e;
+  border:1px dashed #E0E0E0;
 }
 
 .google-maps-container{
@@ -35,7 +35,7 @@ body{
 }
 .google-maps {
     position: relative;
-    padding-bottom: 75%; // This is the aspect ratio
+    padding-bottom: 75%; 
     height: 0;
     overflow: hidden;
 }
@@ -61,6 +61,12 @@ hr{
 .link-gray:hover{
   color:#acb3c2;
 }
+a{
+  cursor:pointer; 
+}
+.news_archive{
+  display: none;
+}
 /*
 body{
 
@@ -70,7 +76,7 @@ body{
 }
 .navbar .column{
   text-align: center;
-  border-left: 2px solid #9E9E9E;
+  border-left: 2px solid #E0E0E0;
 }
 
 a{

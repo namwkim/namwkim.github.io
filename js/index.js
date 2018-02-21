@@ -14,3 +14,15 @@
 // 	});
 //
 // }
+let openNewsArchive = document.querySelector('.open_news_archive');
+
+openNewsArchive.addEventListener('click', function(){
+    
+    let newsArchive = document.querySelector('.news_archive');
+    console.log(newsArchive.style.display);
+    if (newsArchive.style.display === "block") {
+        newsArchive.style.display = "none";
+    } else {
+        newsArchive.style.display = "block";
+    }
+});
