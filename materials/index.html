@@ -1,44 +1,138 @@
 <html>
 	<head>
-
+	<title>Nam Wook Kim</title>
+	<link rel="icon" href="/img/favicon.ico" type="image/png" sizes="16x16 32x32">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- <link rel="stylesheet" href="css/bulma.css"> -->
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+	
+	<!-- CSS Reset -->
+	<link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+	<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+	<script scr="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
 	</head>
 	<body style="margin:20px;">
-		<h2>Job materials</h2>
-		<div>
-			<strong>School List</strong>
-			(<a href='https://tinyurl.com/namsjobtracker'>Spreadsheet</a>)
-			- Updated on Oct 18, 2018
-			
-		</div>
-		<br>
-		<div>
-			<strong>CV</strong>
-			(<a href='./CV.pdf'>PDF</a>)
-				- Updated on Oct 18, 2018
-		</div>
-		<br>
-		<div>
-			<strong>Research Statement</strong>
-			(<a href='./Research Statement.pdf'>PDF</a>)
-			- Updated on Oct 18, 2018
-		</div>
-		<br>
-		<div>
-			<strong>Teaching Statement</strong>
-			(<a href='./Teaching Statement.pdf'>PDF</a>)
-				- Updated on Oct 18, 2018
-		</div>
-		<br>
-		<div>
-			<strong>Cover Letter: </strong>
-			<ol>
-				<li>
-					Boston University
-					(<a href='./CoverLetter_Boston.pdf'>PDF</a>)
+		<h3>Job materials</h3>
+		<div class="container">
+			<div class="columns">
+			  <div class="column col-3 col-md-12">
+				<ul class="nav">
+					<li class="nav-item active" onclick="change(this,'tracker')">
+						<a href="#">Job Tracker</a>
+					</li>
+					<li class="nav-item" onclick="change(this,'letters')">
+						<a href="#">Cover Letter</a>
+					</li>
+					<li class="nav-item" onclick="change(this,'cv')">
+					  <a href="#">CV</a>
+					</li>
+					<li class="nav-item" onclick="change(this,'research')">
+					  <a href="#">Research Statement</a>
+					</li>
+					<li class="nav-item" onclick="change(this,'teaching')">
+					  <a href="#">Teaching Statement</a>
+					</li>
+					<li class="nav-item" onclick="change(this,'diversity')">
+						<a href="#">Diversity Statement</a>
+					</li>
+
+
+				</ul>
+			  </div>
+			  <div class="column col-8 col-md-12 content">
+				<div id="tracker">
+					<h5>School List</h5>
+					<a href='https://tinyurl.com/namsjobtracker'>Link to Spreadsheet</a>
 					- Updated on Oct 18, 2018
-				</li>
-			</ol>
+					<br><br>
+					<div style="width:100%">
+						<iframe width="100%" height="600px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTJpK9Nq0w5CPxdHyCs_5ZA7uqW_1i1pOUN3ITyAOby75GOGJd2benAbad-6omxpo-9trWsTxebYP8g/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+					</div>
+				</div>
+				<div id="cv">
+					<h5>CV</h5>
+					<a href='./CV.pdf'>Link to PDF</a>
+						- Updated on Nov 18, 2018
+					<br><br>
+					<embed src="./CV.pdf" type="application/pdf" width="100%" height="1000px">
+				</div>
+				<div id="research">
+					<h5>Research Statement</h5>
+					<a href='./Research Statement.pdf'>Link to PDF</a>
+					- Updated on Nov 18, 2018
+					<br><br>
+					<embed src="./Research Statement.pdf" type="application/pdf" width="100%" height="1000px">
+				</div>
+				<div id="teaching">
+					<h5>Teaching Statement</h5>
+					<a href='./Teaching Statement.pdf'>Link to PDF</a>
+					- Updated on Nov 18, 2018
+					<br><br>
+					<embed src="./Teaching Statement.pdf" type="application/pdf" width="100%" height="1000px">
+				</div>
+				<div id="diversity">
+					<h5>Diversity Statement</h5>
+					<a href='./Diversity Statement.pdf'>Link to PDF</a>
+					- Updated on Nov 18, 2018
+					<br><br>
+					<embed src="./Diversity Statement.pdf" type="application/pdf" width="100%" height="1000px">
+				</div>
+				<div id="letters">
+					<h5>Cover Letter</h5>
+					<a href='./CoverLetter.pdf'>Link to PDF</a> (All Combined)
+					- Updated on Nov 18, 2018
+					<br><br>
+					<embed src='./CoverLetter.pdf' type="application/pdf" width="100%" height="1000px">
+				</div>
+
+			  </div>
+			  
+			</div>
 		</div>
+		<script>
+			let contents = document.querySelector('.content').children;
+			for (let child of contents){
+				child.style.display='none';
+			}
+			document.querySelector('#tracker').style.display = 'block';
+			// .childNodes.forEach(child=>child.style.display='none');
+			let change = (elem, item)=>{
+				document.querySelector('.nav-item.active').classList.remove('active');
+				let contents = document.querySelector('.content').children;
+				for (let child of contents){
+					child.style.display='none';
+				}
+				switch(item){
+					case "tracker":
+					elem.classList.add('active');
+					document.querySelector('#tracker').style.display = 'block';
+					break;
+					case "cv":
+					elem.classList.add('active');
+					document.querySelector('#cv').style.display = 'block';
+					break;
+					case "letters":
+					elem.classList.add('active');
+					document.querySelector('#letters').style.display = 'block';
+					break;
+					case "research":
+					elem.classList.add('active');
+					document.querySelector('#research').style.display = 'block';
+					break;
+					case "teaching":
+					elem.classList.add('active');
+					document.querySelector('#teaching').style.display = 'block';
+					break;
+					case "diversity":
+					elem.classList.add('active');
+					document.querySelector('#diversity').style.display = 'block';
+					break;
+				}
+			}
+		</script>
+		
+	
 		
 	</body>
 </html>
