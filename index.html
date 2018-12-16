@@ -6,429 +6,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:title" content="Nam Wook Kim">
   <meta property="og:description" content="Ph.D. candidate in the computer science department at Harvard, studying information visualization and human-computer interaction.">
-  <meta property="og:image" content="http://www.namwkim.org/img/nam.png">
+  <meta property="og:image" content="http://www.namwkim.org/assets/images/nam.png">
   <meta property="og:url" content="http://www.namwkim.org/">
 
   <meta itemprop="name" content="Nam Wook Kim">
   <meta itemprop="description" content="Ph.D. candidate in the computer science department at Harvard, studying information visualization and human-computer interaction.">
-  <meta itemprop="image" content="http://www.namwkim.org/img/nam.png">
+  <meta itemprop="image" content="http://www.namwkim.org/assets/images/nam.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nam Wook Kim">
   <meta name="twitter:description" content="Ph.D. candidate in the computer science department at Harvard, studying information visualization and human-computer interaction.">
   <meta name="twitter:creator" content="@namwkim85">
   <!-- Twitter summary card with large image must be at least 280x150px -->
-  <meta name="twitter:image:src" content="http://www.namwkim.org/img/nam.png">
+  <meta name="twitter:image:src" content="http://www.namwkim.org/assets/images/nam.png">
 
   <meta name="author" content="Nam Wook Kim">
 
   <title>Nam Wook Kim</title>
-  <link rel="icon" href="/img/favicon.ico" type="image/png" sizes="16x16 32x32">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="css/bulma.css"> -->
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/png" sizes="16x16 32x32">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/index.css">
 
-  <!-- CSS Reset -->
-  <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
-  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-  <!-- <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css"> -->
+  <!--dependencies-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+  <script src="https://d3js.org/d3-time.v1.min.js"></script>
+  <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+  <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+  <script src="https://d3js.org/d3-collection.v1.min.js"></script>
+
+  <script src="assets/js/index.js" type="module"></script>
 
 
-
-  <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-  <div id="menu">
-    <a href="#about">about</a> <span class="dv">|</span>
-    <a href="#news">news</a> <span class="dv">|</span>
-    <a href="#research">research</a> <span class="dv">|</span>
-    <a href="#publication">publication</a> <span class="dv">|</span>
-    <a href="#contact">contact</a>
-  </div>
-  <div class="container">
-
-
-
-    <div id="about" class="text-center">
-      <img class="centered rounded" width="250" src="img/nam.png">
-      <h1 class="text-lowercase m-2">NAM <span class="text-gray">WOOK</span> KIM</h1>
-
-      <p class="text-justify p-2">
-		Nam Wook Kim is a Ph.D. candidate in computer science at Harvard University. He works with Hanspeter Pfister in the <a href="http://vcg.seas.harvard.edu/" target="_blank">Visual Computing group</a> and <a href="http://www.eecs.harvard.edu/~kgajos/" target="_blank">Krzysztof Gajos</a> in the <a href="http://iis.seas.harvard.edu/" target="_blank">Intelligent Interactive Systems group</a>. Prior to Harvard, Nam was a research associate at KAIST and also spent several years working for Samsung and LG as a research engineer. He received M.S. in computer science from Stanford University and B.S. computer science and mathematics from the State University of New York at Stony Brook. 
-		<br><br>
-		His research lies in the areas of human-computer interaction and information visualization, primarily focusing on making complex data accessible to the public. Instead of using complex statistical methods to blindly automate data analysis, his work seeks to assist individuals to make sense of data using visual methods. He develops interactive tools that support authoring of data-driven stories using visualization. He also creates visual interfaces to analyze and communicate data in various domains such as open government and digital humanities.
-		<br><br>
-		My graduate studies are partially supported by <a href="http://en.ikef.or.kr/"
-		  target="_blank">Kwanjeong Educational Foundation</a>.
-
-      </p>
-
-      <p>
-        <a href="https://goo.gl/Wy6mk4" target="_blank">
+  <header class="container">
+    <h1 class="title">Nam Wook Kim</h1>
+    <div class="row">
+      <section class="column">
+        <img class="profile-image" src="assets/images/profile/nam.png">
+        <div class="profile-item center">
+          Ph.D. Candidate @ Harvard
+        </div>
+        <div class="profile-item center">
+          <a class="link-btn" href="assets/files/CV.pdf" target="_blank">
             CV
-        </a> <span class="dv">|</span>
-        <a href="https://scholar.google.com/citations?user=puTV6X0AAAAJ&hl=en" target="_blank">
-            Google Scholar
-        </a>
-      </p>
+          </a> <span class="dv">|</span>
+          <a class="link-btn" href="https://scholar.google.com/citations?user=puTV6X0AAAAJ&hl=en" target="_blank">
+              Google Scholar
+          </a>
+        </div>
+      </section>
+      <section class="column">
+        I am a <strong>Ph.D. candidate</strong> in computer science at <strong>Harvard</strong> University. He works with <a href="http://vcg.seas.harvard.edu/" target="_blank">Hanspeter Pfister</a> in the Visual Computing group and <a href="http://www.eecs.harvard.edu/~kgajos/" target="_blank">Krzysztof Gajos</a> in the Intelligent Interactive Systems group.
+        During my Ph.D. studies, I interned at Microsoft Research, Disney Research, and Adobe Research.
+        My graduate studies are partially supported by <a href="http://en.ikef.or.kr/"
+            target="_blank">Kwanjeong Educational Foundation</a> and <a href="http://www.siebelscholars.com/scholars/NamWookKim"
+            target="_blank">Siebel Scholars Foundation</a>.
+        (<a class='see-more'>See more...</a>)
+        <p class="bio-detail hidden">
+              Prior to Harvard, I was a research associate at KAIST and also spent several years working for Samsung and LG as a research engineer. I received M.S. in computer science from Stanford University and B.S. in computer science and mathematics from Stony Brook University. I also received B.S from Ajou University in Korea as part of a dual-degree program.
+            
+        </p>
+        
+        
+        <p>
+            My research vision is to lower the barriers to understand and communicate complex data. I tackle this problem by studying <strong>visualization</strong> within the broad context of <strong>human-computer interaction</strong>. 
+            To go beyond traditional expert systems, my work strives to establish a framework for creating <strong>visual data systems for the public</strong> by exploring how to enable individuals to author compelling stories about the data and understanding the cognitive aspects of visualization and storytelling.
 
-    </div>
-    <br><br>
-    <div id="news" class="text-center">
-    <h1>News</h1>
-    <div class="clearfix d-block m-2 text-left">
-      <span class="">
-        Two papers got conditionally accepted to CHI 2019.
-      </span>
-      <em class="float-right">Dec 10, 2019 @ Glasgow, UK.</em>
-    </div>
-	  <div class="clearfix d-block m-2 text-left">
-        <span class="">
-          Named as one of <a href="https://www.seas.harvard.edu/news/2018/10/5-computer-science-graduate-students-named-2019-siebel-scholars" target="_blank">2019 Siebel Scholars</a>.
-        </span>
-        <em class="float-right">Oct 5, 2019 @ Cambridge, MA.</em>
-      </div>
-      <div class="clearfix d-block m-2 text-left">
-        <span class="">
-          Presented <a href="http://bubbleview.namwkim.org/" target="_blank">BubbleView</a> at <a href="https://chi2018.acm.org" target="_blank"></a>CHI 2018</a>.
-        </span>
-        <em class="float-right">Apr 25, 2018 @ Montreal, Canada.</em>
-      </div>
-      <div class="clearfix d-block m-2 text-left">
-        <span class="">
-          Led <a href="https://github.com/harvard-cs179" target="_blank">two coding labs</a> in the <a href="http://cs179.org/" target="_blank"></a>Design of Useful and Usable Interactive Systems course</a>.
-        </span>
-        <em class="float-right">Feb, 2018 @ Cambridge, MA.</em>
-      </div>
-      <div class="clearfix d-block m-2 text-left">
-        <span class="">
-          Gave a <a href="https://namwkim.github.io/datavis" target="_blank">mini-course on visualization</a> as part of <a href="https://gsc.fas.harvard.edu/januarygsas" target="_blank">January @ GSAS at Harvard</a>
-        </span>
-        <em class="float-right">Jan 10 - Jan 11, 2018 @ Cambridge, MA.</em>
-      </div>
-      <div class="clearfix d-block m-2 text-left">
-        <span class="">Received Rising Star BRONZE in <a href="https://goo.gl/knyb4n" target="_blank">Kantar Information is Beautiful Awards 2017</a></span>
-        <em class="float-right">Nov 28, 2017 @ London, UK.</em>
-      </div>
-      <div class="clearfix d-block m-2 text-left">
-        <span ><a href="http://namwkim.org/projects/ddg/" target"_blank">Data-Driven Guides</a> shortlisted in <a href="https://goo.gl/knyb4n" target="_blank">Kantar Information is Beautiful Awards 2017</a></span>
-        <em class="float-right">Oct 19, 2017 @ London, UK.</em>
-      </div>
-      <div class="clearfix d-block m-2 text-left">
-        <span >Presented <a href="http://storycurve.namwkim.org/" target="_blank">Story Curves</a> at IEEE VIS 2017</span>
-        <em class="float-right">Oct 3, 2017 @ Phoenix, AZ.</em>
-      </div>
-      <div class="clearfix d-block m-2 text-left">
-        <span >Presented <a href="http://storycurve.namwkim.org/" target="_blank">Story Curves</a> at Walt Disney Imagineering</span>
-        <em class="float-right">Jun 8, 2017 @ LA, CA.</em>
-      </div>
-      <div class="clearfix d-block m-2 text-left">
-        <span >Internship in the <a href="https://www.microsoft.com/en-us/research/group/epic/" target="_blank">EPIC group</a> at Microsoft Research</span>
-        <em class="float-right">Apr 17 - July 21, 2017 @ Redmond, WA.</em>
-      </div>
+        </p>
+        <!-- My research lies in the areas of human-computer interaction and information visualization, primarily focusing on making complex data accessible to the public. 
+        Instead of using complex statistical methods to blindly automate data analysis, his work seeks to assist individuals to make sense of data using visual methods. He develops interactive tools that support authoring of data-driven stories using visualization. He also creates visual interfaces to analyze and communicate data in various domains such as open government and digital humanities.  -->
+  
+      </section>
+      <section class="column">
+          <h2 class="title">News</h2>
+          <div class="search">
+              <input type="text" name='news' placeholder="Search News...">
+            </div>
 
-      <a class="open_news_archive">News Archive</a>
-      <div class="news_archive">
-        <div class="clearfix d-block m-2 text-left">
-          <span >Invited talk at Pegasystem, inc. on visualization for data communication</span>
-          <em class="float-right">Apr 13, 2017 @ Cambridge, MA.</em>
-        </div>
-        <div class="clearfix d-block m-2 text-left">
-          <span >Invited talk at MIT Graphics talk series on visualization for data communication</span>
-          <em class="float-right">Apr 12, 2017 @ Cambridge, MA.</em>
-        </div>
-      </div>
+          <div class="news">
+              
+          </div>
+
+      </section>
     </div>
-    <br><br>
-    <div id="research" class="text-center">
-      <h1>research</h1>
-      <div class="columns">
-        <div class="column col-xs-12 text-justify">
-          <a href="http://namwkim.org/ddg" target="_blank"><img class="rounded research-thumbnail img-fit-cover" width="100%" src="img/teaser_ddg.png"></a>
-          <p><strong>Data-Driven Storytelling with Visualization </strong>: designing engaging and communicative visualizations and helping people create complelling data stories (more to come).
-            <br>
-            <em>Paper: <a href="http://namwkim.org/ddg" target="_blank">InfoVis'16</a></em>
-          </p>
+    
+  </header>
+  <main class="row container">
+    
+    <div class="column">
+      <section>
+        <h2 class="title">Publications</h2>
+        <div class="filter">
+            <div class="chip" data-cond="pub-all">All</div>
+            <div class="chip selected" data-cond="pub-featured">Featured</div>
+            <div class="chip" data-cond="pub-awards">Awards</div>
+            <div class="chip" data-cond="pub-first-author">First Author</div>
+            <div class="chip" data-cond="pub-recent">Recent</div>
+            <div class="chip" data-cond="pub-journal">Journal</div>
+            <div class="chip" data-cond="pub-conference">Conference</div>
         </div>
-        <div class="column col-xs-12  text-justify">
-          <a href="http://storycurve.namwkim.org/" target="_blank"><img class="rounded research-thumbnail img-fit-cover" width="100%" src="img/teaser_storycurve.png"></a>
-          <p><strong>Visualization Techniques & Applications</strong>: exploring and communicating patterns in data, and supporting support visual data analysis in various domains.<br>
-            <em>Papers: <a href="http://storycurve.namwkim.org/" target="_blank">InfoVis'17</a>,  <a href="http://idl.cs.washington.edu/papers/timenets" target="_blank">AVI'10</a></em>
-          </p>
+        <div class="pubs">
+
         </div>
-      </div>
-      <div class="columns">
-        <div class="column col-xs-12  text-justify">
-          <a href="https://namwkim.github.io/bubbleview/" target="_blank"><img class="rounded research-thumbnail img-fit-cover" width="100%" src="img/teaser_bubbleview.png"></a>
-          <p><strong>Perception and Cognition in Visualization</strong>: experiments for understanding image memorability, collecting attentional data, and building saliency models.<br>
-            <em>Papers: <a href="https://namwkim.github.io/bubbleview/" target="_blank">TOCHI'17</a>, <a href="http://visimportance.csail.mit.edu/" target="_blank">UIST'17</a>, <a href="http://massvis.mit.edu/" target="_blank">ETVIS'15</a>, <a href="http://massvis.mit.edu/" target="_blank">InfoVis'15</a></em>
-          </p>
-        </div>
-        <div class="column col-xs-12  text-justify">
-          <a href="file/paper/conference/2016-BudgetMap-CSCW.pdf" target="_blank"><img class="rounded research-thumbnail img-fit-cover" width="100%" src="img/teaser_budgetmap.png"></a>
-          <p><strong>Civic Engagement & Open Government</strong>: increasing public awareness on complex budgetary issues and eliciting public participation in the policy making process.<br>
-            <em>Papers: <a href="file/paper/conference/2016-BudgetMap-CSCW.pdf" target="_blank">CSCW'16</a>,  <a href="file/paper/conference/2015-Factful-CHI.pdf" target="_blank">CHI'15</a></em>
-          </p>
-        </div>
-      </div>
+      </section>
     </div>
-    <br><br>
-    <div id="publication" class="text-center">
-      <h1>publication</h1>
-      <br>
-      <h4>preprint</h4>
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/preprint/2017-Creative-arxiv.png">
+    <div class="column">
+      <section>
+          <h2 class="title">Travels</h2>
+          <div class="search">
+            <input type="text" name='travel' placeholder="Search Travels...">
+          </div>
+          <div class="travels">
+              
+          </div>
+      </section>
+      <section>
+        <h2 class="title">Teaching</h2>
+        <div class="courses">
+            
         </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [1] <a href="file/paper/preprint/2017-Creative-arxiv.pdf" target="_blank">Creative Community Demystified: A Statistical Overview of Behance</a><br>
-          <strong class="text-success">Nam Wook Kim</strong><br> arXiv:1703.00800v1 [cs.SI], 2017<br>
-          [<a href="https://arxiv.org/abs/1703.00800" target="_blank">arxiv</a>
+      </section>
+      <section>
+        <h2 class="title">Contact</h2>
+        <div class="profile-item email">
+            namwkim at seas.harvard.edu
+        </div>
+        <div class="profile-item">
+            33 Oxford St. Maxwell Dworkin 142<br> Cambridge, MA 02138, USA
+        </div>
+        <div class="profile-item">
+          <a href="https://twitter.com/namwkim85" target="_blank"><i class="fab fa-twitter"></i></a>
           <span class="dv">|</span>
-          <a class="pub-link" href="https://github.com/namwkim/behance-analysis/" target="_blank">code</a>]
+          <a href="https://www.facebook.com/namwkim" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          <span class="dv">|</span>
+          <a href="https://www.linkedin.com/in/namwkim" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <span class="dv">|</span>
+          <a href="https://github.com/namwkim" target="_blank"><i class="fab fa-github"></i></a>
         </div>
-      </div>
-
-      <br>
-      <h4>book chapter</h4>
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/book/2017-EyeFixation-ETVIS15.png">
+        <br>
+        <div class="google-maps-container centered">
+          <div class="google-maps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.2981006252126!2d-71.11849992681701!3d42.378795698593215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37741136f99f3%3A0xdee244d8cde0c0dc!2sMaxwell-Dworkin%2C+33+Oxford+St%2C+Cambridge%2C+MA+02138!5e0!3m2!1sen!2sus!4v1505884688760"
+              width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
         </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [1] <a href="https://link.springer.com/chapter/10.1007/978-3-319-47024-5_14" target="_blank">Eye Fixation Metrics for Large Scale Evaluation and Comparison of Information Visualizations</a><br>
-          Zoya Bylinskii, Michelle Borkin, <strong class="text-success">Nam Wook Kim</strong> Hanspeter Pfister, Aude Oliva<br>
-          Eye Tracking and Visualization: Foundations, Techniques, and Applications (pp. 235-255). Springer International Publishing (<a href="http://www.vis.uni-stuttgart.de/etvis/ETVIS_2015.html" target="_blank">ETVIS'15</a>)<br>
-          [<a href="http://massvis.mit.edu/" target="_blank">project website</a>]
+        <br>
+        <div class="twiter-container centered">
+          <a class="twitter-timeline" data-height="750" href="https://twitter.com/namwkim85">Tweets by namwkim85</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
-      </div>
-
-
-      <br>
-      <h4>journal articles</h4>
-      <div class="columns pub-item">
-			<div class="column col-2 col-xs-12">
-			  <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/journal/2018-QualityMetrics-EuroVis.jpg">
-			</div>
-			<div class="column col-10 col-xs-12 text-left">
-			  [6] <a href="file/paper/journal/2018-QualityMetrics-EuroVis.pdf" target="_blank">Quality Metrics for Information Visualization</a></strong><br>
-			  Michael Behrisch, Michael Blumenschein, <strong class="text-success">Nam Wook Kim</strong>, Alexandra Diehl, Lin Shao, Mennatallah El-Assady, Johannes Fuchs, Daniel Seebacher, Ulrik Brandes, Hanspeter Pfister, Daniel Weiskopf, Daniel A. Keim<br> Computer Graphics Forum, 2018 (<a href="https://www.eurovis2018.org/program-stars/" target="_blank">EuroVis'18</a>)<br>
-			  [<a href="https://visualquality.dbvis.de/" target="_blank">project website</a>]
-			</div>
-		  </div>
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/journal/2018-StoryCurve-InfoVis.png">
-        </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [5] <a href="file/paper/journal/2018-StoryCurve-InfoVis.pdf" target="_blank">Visualizing Nonlinear Narratives with Story Curves</a></strong><br>
-          <strong class="text-success">Nam Wook Kim</strong>, Benjamin Bach, Hyejin Im, Sasha Schriber, Markus Gross, Hanspeter Pfister<br> IEEE Transactions on Visualization and Computer Graphics, 2018 (<a href="http://ieeevis.org/year/2017/info/papers" target="_blank">InfoVis'17</a>)<br>
-          <small class="label label-primary"><i class="fa fa-certificate" aria-hidden="true"></i> Kantar IIB Longlist</small><br>
-          [<a href="http://storycurve.namwkim.org/" target="_blank">project website</a>]
-        </div>
-      </div>
-
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover" src="img/journal/2017-BubbleView-TOCHI.png">
-        </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [4] <a href="file/paper/journal/2017-BubbleView-TOCHI.pdf" target="_blank">BubbleView: an interface for crowdsourcing image importance maps and tracking visual attention</a><br>
-          <strong class="text-success">Nam Wook Kim</strong>*, Zoya Bylinskii*, Michelle A. Borkin, Krzysztof Z. Gajos, Aude Oliva, Fredo Durand, Hanspeter Pfister<br> ACM Transactions on Computer-Human Interaction, 2017 (<a href="https://tochi.acm.org/" target="_blank">TOCHI</a>)<br>
-          [<a href="https://namwkim.github.io/bubbleview/" target="_blank">project website</a>]
-        </div>
-      </div>
-
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/journal/2017-DDG-InfoVis.png">
-        </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [3] <a href="file/paper/journal/2017-DDG-InfoVis.pdf" target="_blank"> Data-Driven Guides: Supporting Expressive Design for Information Graphics</a><br>
-          <strong class="text-success">Nam Wook Kim</strong>, Eston Schweickart, Zhicheng Liu, Mira Dontcheva, Wilmot Li, Jovan Popovic, Hanspeter Pfister.<br> IEEE Transactions on Visualization and Computer Graphics, 2017 (<a href="http://ieeevis.org/year/2016/info/overview-amp-topics/papers"
-            target="_blank">InfoVis'16</a>)<br>
-            <small class="label label-primary"><i class="fa fa-trophy" aria-hidden="true"></i> Kantar IIB Rising Star</small><br>
-            [<a href="http://ddg.namwkim.org" target="_blank">project website</a>]
-        </div>
-      </div>
-
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/journal/2016-BeyondMem-InfoVis.png">
-        </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [2] <a href="file/paper/journal/2016-BeyondMem-InfoVis.pdf" target="_blank">Beyond Memorability: Visualization Recognition and Recall</a><br>
-          Michelle A. Borkin*, Zoya Bylinskii*, <strong class="text-success">Nam Wook Kim</strong>, Constance May Bainbridge, Chelsea
-          S. Yeh, Daniel Borkin, Hanspeter Pfister, and Aude Oliva<br>
-          IEEE Transactions on Visualization and Computer Graphics, 2016 (<a href="http://ieeevis.org/year/2015/info/overview-amp-topics/papers" target="_blank">InfoVis'15</a>)<br>
-          [<a href="http://massvis.mit.edu/" target="_blank">project website</a>]
-        </div>
-      </div>
-
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/journal/2014-MapSeg-JVCIR.png">
-        </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [1] <a href="http://www.sciencedirect.com/science/article/pii/S1047320314000029" target="_blank">Accurate Segmentation of Land Regions in Historical Cadastral Maps</a><br>
-          <strong class="text-success">Nam Wook Kim</strong>, Jung Jin Lee, Hyungmin Lee, Jinwook Seo<br> Journal of Visual Communication and Image Representation (<a href="https://www.journals.elsevier.com/journal-of-visual-communication-and-image-representation" target="_blank">JVCIR</a>),
-          2014
-        </div>
-      </div>
-
-
-
-
-      <br>
-      <h4>conference papers</h4>
-
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/conference/2017-GraphicModel-UIST.png">
-        </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [6] <a href="file/paper/conference/2017-GraphicModel-UIST.pdf" target="_blank">Learning Visual Importance for Graphic Designs and Data Visualizations</a><br> Zoya Bylinskii, <strong class="text-success">Nam Wook Kim</strong>, Peter O’Donovan, Sami Alsheikh, Spandan
-          Madan, Hanspeter Pfister, Fredo Durand, Bryan Russell, Aaron Hertzmann<br> ACM Symposium on User Interface Software and Technology (<a href="https://uist.acm.org/uist2017/" target="_blank">UIST'17</a>)<br>
-          <small class="label label-primary"><i class="fa fa-certificate" aria-hidden="true"></i> Best Paper Honorable Mention</small><br>
-          [<a href="http://visimportance.csail.mit.edu/" target="_blank">project website</a>]
-        </div>
-      </div>
-
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/conference/2016-BudgetMap-CSCW.png">
-        </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [5] <a href="file/paper/conference/2016-BudgetMap-CSCW.pdf" target="_blank">BudgetMap: Engaging Taxpayers in the Issue-Driven Classification of a Government Budget</a><br>
-          <strong class="text-success">Nam Wook Kim</strong>, Jonghyuk Jung, Eun-Young Ko, Songyi Han, Chang Won Lee, Juho Kim, and Jihee Kim<br> ACM Conference on Computer-Supported Cooperative Work and Social Computing (<a href="https://cscw.acm.org/2016/index.php" target="_blank">CSCW'16</a>)<br>
-          [<a href="http://budgetmap.budgetwiser.org/" target="_blank">project website</a>]
-        </div>
-      </div>
-
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/conference/2015-Factful-CHI.png">
-        </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [4] <a href="file/paper/conference/2015-Factful-CHI.pdf" target="_blank">Factful: Engaging Taxpayers in the Public Discussion of a Government Budget</a><br> Juho Kim, Eun-Young Ko, Jonghyuk Jung,
-          Chang Won Lee, <strong class="text-success">Nam Wook Kim</strong>, Jihee Kim<br> ACM Conference on Human Factors in Computing Systems (<a href="https://chi2015.acm.org/" target="_blank">CHI'15</a>)<br>
-          <small class="label label-primary"><i class="fa fa-certificate" aria-hidden="true"></i> Best Paper Honorable Mention</small><br>
-          [<a href="http://budgetwiser.org/" target="_blank">project website</a>]
-        </div>
-      </div>
-
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/conference/2012-JigsawMap-CHI.png">
-        </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [3] <a href="file/paper/conference/2012-JigsawMap-CHI.pdf" target="_blank">JigsawMap: Connecting the Past to the Future by Mapping Historical Textual Cadasters</a><br> Hyungmin Lee, Sooyun Lee, <strong class="text-success">Nam Wook Kim</strong>, Jinwook Seo<br>          ACM Conference on Human Factors in Computing Systems (<a href="https://chi2012.acm.org/" target="_blank">CHI'12</a>)<br>
-          [<a href="http://hcil.snu.ac.kr/research/jigsawmap" target="_blank">project website</a>]
-        </div>
-      </div>
-
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/conference/2012-SocialVis-CSCW.png">
-        </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [2] <a href="file/paper/conference/2012-SocialVis-CSCW.pdf" target="_blank">Social Visualization and Negotiation: Effects of Feedback Configuration and Status</a><br> Mike Nowak, Juho Kim, <strong class="text-success">Nam Wook Kim</strong>, Clifford Nass<br> ACM
-          Conference on Computer-Supported Cooperative Work and Social Computing (<a href="http://cscw2012.org/" target="_blank">CSCW'12</a>)<br>
-        </div>
-      </div>
-
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/conference/2010-TimeNets-AVI.png">
-        </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [1] <a href="file/paper/conference/2010-TimeNets-AVI.pdf" target="_blank">Tracing Genealogical Data with TimeNets</a><br>
-          <strong class="text-success">Nam Wook Kim</strong>, Stuart K. Card, Jeffrey Heer<br> International Working Conference on Advanced Visual Interfaces (<a href="http://www.dis.uniroma1.it/avi2010/tutorials.htm" target="_blank">AVI'10</a>)<br>
-          [<a href="http://idl.cs.washington.edu/papers/timenets" target="_blank">project website</a>]
-        </div>
-      </div>
-
-
-      <br>
-      <h4>workshop and extended abstract papers</h4>
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/workshop/2015-BudgetWiser-CHIWorkshop.png">
-        </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [4] <a href="file/paper/workshop/2015-BudgetWiser-CHIWorkshop.pdf" target="_blank">BudgetWiser: Gamification Design Opportunities in the Government Budget Domain</a><br>
-          <strong class="text-success">Nam Wook Kim</strong>, Jihee Kim, Juho Kim, Chang Won Lee, Eun-Young Ko, Jonghyuk Jung<br> Workshop on Researching Gamification (<a href="https://chi2015.acm.org/" target="_blank">CHI'15</a>)<br>
-        </div>
-      </div>
-
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/poster/2015-Bubble-CHIEA.png">
-        </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [3] <a href="file/paper/poster/2015-Bubble-CHIEA.pdf" target="_blank">A Crowdsourced Alternative to Eye-tracking for Visualization Understanding</a><br>
-          <strong class="text-success">Nam Wook Kim</strong>, Zoya Bylinskii, Michelle A. Borkin, Aude Oliva, Krzysztof Z. Gajos, Hanspeter Pfister<br> ACM Conference Extended Abstracts on Human Factors in Computing Systems (<a href="https://chi2015.acm.org/" target="_blank">CHI EA '15</a>)<br>
-          [<a href="file/slide/2015-Bubble-CHIEA-Poster.pdf" target="_blank">poster</a>]
-        </div>
-      </div>
-
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/poster/2015-BudgetMap-CHIEA.png">
-        </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [2] <a href="file/paper/poster/2015-BudgetMap-CHIEA.pdf" target="_blank">BudgetMap: Issue-Driven Navigation for a Government Budget</a><br>
-          <strong class="text-success">Nam Wook Kim</strong>, Chang Won Lee, Jonghyuk Jung, Eun-Young Ko, Juho Kim, Jihee Kim<br> ACM Conference Extended Abstracts on Human Factors in Computing Systems (<a href="https://chi2015.acm.org/" target="_blank">CHI EA '15</a>)<br>
-          [<a href="file/slide/2015-BudgetMap-CHIEA-Poster.pdf" target="_blank">poster</a>]
-        </div>
-      </div>
-
-      <div class="columns pub-item">
-        <div class="column col-2 col-xs-12">
-          <img class="pub-thumbnail img-responsive img-fit-cover"  src="img/poster/2013-Guided-VAST.png">
-        </div>
-        <div class="column col-10 col-xs-12 text-left">
-          [1] <a href="file/paper/poster/2013-Guided-VAST.pdf" target="_blank">Recording Reusable and Guided Analytics From Interaction Histories</a><br>
-          <strong class="text-success">Nam Wook Kim</strong><br> IEEE Conference on Visual Analytics Science and Technology (<a href="http://ieeevis.org/year/2013/poster-session/all/all" target="_blank">VAST13</a>)<br>
-        </div>
-      </div>
-
+      </section>
     </div>
-    <br><br>
-    <div id="contact" class="text-center">
-      <h1>get in touch</h1>
-      <p>
-        namwkim at seas.harvard.edu<br>
-        33 Oxford St. Maxwell Dworkin 142<br> Cambridge, MA 02138, USA<br>
-        <a href="https://twitter.com/namwkim85" target="_blank">Twitter</a>
-        <span class="dv">|</span>
-        <a href="https://www.facebook.com/namwkim" target="_blank">Facebook</a>
-        <span class="dv">|</span>
-        <a href="https://www.linkedin.com/in/namwkim" target="_blank">LinkedIn</a>
-        <span class="dv">|</span>
-        <a href="https://github.com/namwkim" target="_blank">Github</a>
-      </p>
-      <div class="google-maps-container centered">
-        <div class="google-maps">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.2981006252126!2d-71.11849992681701!3d42.378795698593215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37741136f99f3%3A0xdee244d8cde0c0dc!2sMaxwell-Dworkin%2C+33+Oxford+St%2C+Cambridge%2C+MA+02138!5e0!3m2!1sen!2sus!4v1505884688760"
-            width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-      </div>
-      <br>
-      <div class="twiter-container centered">
-        <a class="twitter-timeline" data-height="750" href="https://twitter.com/namwkim85">Tweets by namwkim85</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
-
-    </div>
-  </div>
-  <br>
-
-
-
-  <script src="js/index.js" type="module"></script>
+  </main>
 </body>
 
 </html>
