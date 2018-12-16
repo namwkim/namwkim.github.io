@@ -6,6 +6,7 @@ let maxNews = 5;
 let maxTravels = 5;
 let maxCourses = 5;
 
+
 Promise.all([
     'assets/files/news.csv',
     'assets/files/travels.csv',
@@ -263,6 +264,22 @@ travelSearch.addEventListener('input', function(event){
         renderTravels(allTravels);
     }
 });
+
+let profileImage = document.querySelector('.profile-image');
+
+let numImages = 11;
+let randIdx  = Math.floor(Math.random()*numImages)+1;
+profileImage.src = `/assets/images/profile/photo${randIdx}.png`;
+profileImage.addEventListener('mousemove', function(event){
+    let x = event.clientX - this.offsetLeft;
+    let y = event.clientY-this.offsetTop;
+    let idx =  Math.floor(x/(this.width/numImages))+1;
+    if (idx>=0 && idx<=numImages){
+        profileImage.src = `/assets/images/profile/photo${idx}.png`;
+    }
+    
+});
+
 // window.onload = function() {
 // 	var see = document.getElementById('see-old-news');
 //
