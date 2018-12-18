@@ -274,7 +274,7 @@ profileImage.addEventListener('mousemove', function(event){
     let x = event.clientX - this.offsetLeft;
     let y = event.clientY-this.offsetTop;
     let idx =  Math.floor(x/(this.width/numImages))+1;
-    if (idx>=0 && idx<=numImages){
+    if (idx>=1 && idx<=numImages){
         profileImage.src = `/assets/images/profile/photo${idx}.png`;
     }
     
