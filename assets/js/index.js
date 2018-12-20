@@ -1,11 +1,15 @@
 // let Remarkable = require('remarkable');
 let md = new Remarkable();
 let formatTime = d3.timeFormat("%b %d, %Y");
+let parseTime = d3.timeParse('%Y-%m-%d');
 let allPubs, allNews, allTravels;
 let maxNews = 5;
 let maxTravels = 5;
 let maxCourses = 5;
 
+function strip(str) {
+    return str.replace(/^\s+|\s+$/g, '');
+}
 
 Promise.all([
     'assets/files/news.csv',
@@ -146,7 +150,7 @@ function renderNews(news){
         let elem = document.createElement('div');
         elem.innerHTML = `
                 ${md.render(item.headline)}
-                 <span class='date'>${formatTime(new Date(item.date))}</span>
+                 <span class='date'>${formatTime(parseTime(strip(item.date)))}</span>
             `;
         
         container.appendChild(elem);
@@ -161,8 +165,8 @@ function renderTravels(travels){
         let elem = document.createElement('div');
         elem.innerHTML = `
                 ${md.render(item.headline)}
-                 <span class='date'>${formatTime(new Date(item.start))}</span> ~ 
-                 <span class='date'>${formatTime(new Date(item.end))}</span>  
+                 <span class='date'>${formatTime(parseTime(strip(item.start)))}</span> ~ 
+                 <span class='date'>${formatTime(parseTime(strip(item.end)))}</span>  
                  <span class='location'>@ ${writeAddress(item)}</span>
             `;
         
@@ -230,7 +234,7 @@ newsSearch.addEventListener('input', function(event){
             
             var tmp = document.createElement("div");
             tmp.innerHTML = md.render(d.headline);
-            let date = formatTime(new Date(d.date))
+            let date = formatTime(parseTime(strip(d.date)))
             let text = (tmp.textContent || tmp.innerText || "") + date;
             console.log(text.toLowerCase(),this.value.toLowerCase());
             return text.toLowerCase().includes(this.value.toLowerCase());
@@ -251,8 +255,8 @@ travelSearch.addEventListener('input', function(event){
 
             var tmp = document.createElement("div");
             tmp.innerHTML = md.render(d.headline);
-            let start = formatTime(new Date(d.start))
-            let end = formatTime(new Date(d.end));
+            let start = formatTime(parseTime(strip(d.start)))
+            let end = formatTime(parseTime(strip(d.end)));
             let address = writeAddress(d);
             
             let text = (tmp.textContent || tmp.innerText || "") + start + '~' + end + address;
