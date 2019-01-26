@@ -11,6 +11,15 @@ function strip(str) {
     return str.replace(/^\s+|\s+$/g, '');
 }
 
+function formatDate(date){
+    console.log(date);
+    let temp = strip(date);
+    if (temp=='TBD'){
+        return temp;
+    }else{
+        return formatTime(parseTime(temp));
+    }
+}
 Promise.all([
     'assets/files/news.csv',
     'assets/files/travels.csv',
@@ -150,7 +159,7 @@ function renderNews(news){
         let elem = document.createElement('div');
         elem.innerHTML = `
                 ${md.render(item.headline)}
-                 <span class='date'>${formatTime(parseTime(strip(item.date)))}</span>
+                 <span class='date'>${formatDate(item.date)}</span>
             `;
         
         container.appendChild(elem);
@@ -165,8 +174,8 @@ function renderTravels(travels){
         let elem = document.createElement('div');
         elem.innerHTML = `
                 ${md.render(item.headline)}
-                 <span class='date'>${formatTime(parseTime(strip(item.start)))}</span> ~ 
-                 <span class='date'>${formatTime(parseTime(strip(item.end)))}</span>  
+                 <span class='date'>${formatDate(item.start)}</span> ~ 
+                 <span class='date'>${formatDate(item.end)}</span>  
                  <span class='location'>@ ${writeAddress(item)}</span>
             `;
         
@@ -234,7 +243,7 @@ newsSearch.addEventListener('input', function(event){
             
             var tmp = document.createElement("div");
             tmp.innerHTML = md.render(d.headline);
-            let date = formatTime(parseTime(strip(d.date)))
+            let date = formatDate(d.date)
             let text = (tmp.textContent || tmp.innerText || "") + date;
             console.log(text.toLowerCase(),this.value.toLowerCase());
             return text.toLowerCase().includes(this.value.toLowerCase());
@@ -255,8 +264,8 @@ travelSearch.addEventListener('input', function(event){
 
             var tmp = document.createElement("div");
             tmp.innerHTML = md.render(d.headline);
-            let start = formatTime(parseTime(strip(d.start)))
-            let end = formatTime(parseTime(strip(d.end)));
+            let start = formatDate(d.start)
+            let end = formatDate(d.end)
             let address = writeAddress(d);
             
             let text = (tmp.textContent || tmp.innerText || "") + start + '~' + end + address;
