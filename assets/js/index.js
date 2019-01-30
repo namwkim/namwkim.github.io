@@ -174,8 +174,8 @@ function renderTravels(travels){
         let elem = document.createElement('div');
         elem.innerHTML = `
                 ${md.render(item.headline)}
-                 <span class='date'>${formatDate(item.start)}</span> ~ 
-                 <span class='date'>${formatDate(item.end)}</span>  
+                 <span class='date'>${formatDate(item.start)}</span> ${item.start!=item.end?'~':''} 
+                 <span class='date'>${item.start!=item.end?formatDate(item.end):''}</span>  
                  <span class='location'>@ ${writeAddress(item)}</span>
             `;
         
@@ -268,7 +268,7 @@ travelSearch.addEventListener('input', function(event){
             let end = formatDate(d.end)
             let address = writeAddress(d);
             
-            let text = (tmp.textContent || tmp.innerText || "") + start + '~' + end + address;
+            let text = (tmp.textContent || tmp.innerText || "") + start + (start!=end?(' ~ ' + end):'') + ' @ ' + address;
             console.log(text.toLowerCase(),this.value.toLowerCase());
             return text.toLowerCase().includes(this.value.toLowerCase());
         })
