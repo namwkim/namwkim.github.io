@@ -129,7 +129,7 @@ function renderPubMaterials(d, path){
         html+= generate('fas fa-code', d.code, 'CODE');
     }
     if (d.video!=''){
-        html+= generate('fas fa-video', d.video, 'VIDEO');
+        html+= generate('fas fa-video', d.video.startsWith('http')?d.video:`${path}/video.mp4`, 'VIDEO');
     }
     if (d.software!=''){
         html+= generate('fas fa-desktop', d.software, 'SOFTWARE');
