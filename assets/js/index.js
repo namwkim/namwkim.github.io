@@ -115,8 +115,10 @@ function renderPubMaterials(d, path){
     if (d.website!=''){
         html+= generate('fas fa-globe', d.website, 'WEBSITE');
     }
-    if (d.supplement!=''){
+    if (d.supplement=='yes'){
         html+= generate('far fa-file-alt', `${path}/supplement.pdf`, 'SUPPLEMENT');
+    } else if (d.supplement=='zip'){
+        html+= generate('far fa-file-alt', `${path}/supplement.zip`, 'SUPPLEMENT');
     }
     if (d.slides!=''){
         html+= generate('fas fa-chalkboard-teacher', `${path}/slides.pdf`, 'SLIDES');
