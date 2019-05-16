@@ -34,7 +34,7 @@
   <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
   <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
   <script src="https://d3js.org/d3-collection.v1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script> -->
   
   <script src="assets/js/index.js" type="module"></script>
   <!-- <script src="assets/js/MTLLoader.js" type="module"></script> -->
@@ -110,9 +110,18 @@
             <div class="chip selected" data-cond="pub-featured">Featured</div>
             <div class="chip" data-cond="pub-awards">Awards</div>
             <div class="chip" data-cond="pub-first-author">First Author</div>
-            <div class="chip" data-cond="pub-recent">Recent</div>
+            <!-- <div class="chip" data-cond="pub-recent">Recent</div> -->
+            <div class="chip" data-cond="pub-thesis">Thesis</div>
             <div class="chip" data-cond="pub-journal">Journal</div>
             <div class="chip" data-cond="pub-conference">Conference</div>
+            <div class="switch-container" >
+              <label class="switch">
+                <input id="by-time" class="checkbox" type="checkbox" name="byTime"/>
+                <span class="slider"></span>
+              </label>
+              <span class="label">By Time</span>
+      
+            </div>
         </div>
         <div class="pubs">
 

@@ -6,7 +6,7 @@ let allPubs, allNews, allTravels;
 let maxNews = 5;
 let maxTravels = 5;
 let maxCourses = 5;
-
+let dataCond = null;
 function strip(str) {
     return str.replace(/^\s+|\s+$/g, '');
 }
@@ -34,7 +34,8 @@ Promise.all([
     renderTravels(allTravels = value[1]);
     allPubs = value[2];
     let filter = document.querySelector('.chip.selected');
-    renderPubs(allPubs, filter.dataset.cond);
+    dataCond = filter.dataset.cond;
+    renderPubs(allPubs, dataCond);
     renderCourses(value[3]);
 });
 
@@ -50,10 +51,13 @@ function renderPubs(pubs, cond){
         case 'pub-featured':
         filtered = pubs.filter(item=>item.featured=='yes');
         break;
-        case 'pub-recent':// up to five years
-        let currentYear = (new Date()).getFullYear();
-        filtered = pubs.filter(item=>parseInt(item.year)>=(currentYear-3));
+        case 'pub-thesis':// up to five years
+        filtered = pubs.filter(item=>item.type.toLowerCase()=='thesis');
         break;
+        // case 'pub-recent':// up to five years
+        // let currentYear = (new Date()).getFullYear();
+        // filtered = pubs.filter(item=>parseInt(item.year)>=(currentYear-3));
+        // break;
         case 'pub-awards':
         filtered = pubs.filter(item=>item.award!='');
         break;
@@ -70,19 +74,33 @@ function renderPubs(pubs, cond){
     // console.log(pubs, cond);
     // let featured = pubs.filter(item=>item.featured=='yes');
     // console.log(featured);
-    filtered = d3.nest()
+
+    // filter by type
+    let byType = document.querySelector('#by-time');
+    console.log('render', filtered, cond);
+    // console.log('byType',byType.checked);
+    if (byType.checked){
+        filtered = d3.nest()
+        .key(item=>item.year)
+        .sortValues((a,b)=>b.title.localeCompare(a.title))
+        .entries(filtered);
+        filtered.sort((a,b)=>b.key-a.key)
+    }else{
+        filtered = d3.nest()
         .key(item=>item.type)
         .sortValues((a,b)=>parseInt(b.year)-parseInt(a.year))
         .entries(filtered);
+    }
+    
     // featured.map(d=>d.key)
     let container = document.querySelector('.pubs');
     container.innerHTML='';
-    console.log('render', filtered);
+    
     filtered.forEach(group=>{
         // console.log('item',group);
         //website,slides,video,code,data,software,supplemental,media,abstract
         let html = group.values.reduce((html, d)=>{
-            let path = `assets/files/publications/${group.key.toLowerCase()}/${d.title.replace(/\s/g, '-').replace(/:/g, '').toLowerCase()}`;
+            let path = `assets/files/publications/${d.type.toLowerCase()}/${d.title.replace(/\s/g, '-').replace(/:/g, '').toLowerCase()}`;
             return html + `<div class='pub'>
                 <div class='pub-teaser'
                     style='background-image:url(${path}/teaser.png);'>
@@ -90,7 +108,7 @@ function renderPubs(pubs, cond){
                 <div class='pub-detail'>
                     <div class='pub-title'><strong>${d.title}</strong></div>
                     <div class='pub-authors'>${d.authors.replace('Nam Wook Kim', '<strong>Nam Wook Kim</strong>')}</div>
-                    <div class='pub-venue'><em>${d.venue} (<strong>${d.venue_abbreviation}</strong>), ${d.year}</em></div>
+                    <div class='pub-venue'><em>${d.venue}${d.venue_abbreviation?`(<strong>${d.venue_abbreviation}</strong>)`:''}, ${d.year}</em></div>
                     <div class='pub-award'><strong>${d.award}</strong></div>
                     <div class='pub-materials'>
                         ${renderPubMaterials(d, path)}
@@ -120,8 +138,10 @@ function renderPubMaterials(d, path){
     } else if (d.supplement=='zip'){
         html+= generate('far fa-file-alt', `${path}/supplement.zip`, 'SUPPLEMENT');
     }
-    if (d.slides!=''){
+    if (d.slides=='yes'){
         html+= generate('fas fa-chalkboard-teacher', `${path}/slides.pdf`, 'SLIDES');
+    }else if (d.slides=='html'){
+        html+= generate('far fa-file-alt', `${path}/slides/`, 'SLIDES');
     }
     if (d.data!=''){
         html+= generate('fas fa-database', d.data, 'DATA');
@@ -149,9 +169,15 @@ conds.forEach(cond=>cond.addEventListener('click', function(event){
         selected.classList.remove('selected');
         this.classList.add('selected');   
         console.log('filter', this.dataset.cond);
-        renderPubs(allPubs, this.dataset.cond);
+        dataCond = this.dataset.cond;
+        renderPubs(allPubs, dataCond);
     }
 }));
+document.querySelector('#by-time').addEventListener('change', function(){
+    renderPubs(allPubs, dataCond);
+});
+
+
 
 function renderNews(news){
     console.log('render news', news);

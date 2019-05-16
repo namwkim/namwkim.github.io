@@ -187,10 +187,14 @@ section{
   display: flex;
   width:100%;
   margin: 1rem 0;
-  animation: slide-down .3s ease-out;
+  
+}
+.pub-group{
+  animation: slide-down .2s ease-out;
 }
 .pub-group .title{
   margin: 0.5rem 0 0.2rem 0;
+  
 }
 .pub-teaser{
   /* flex-grow: 1; */
@@ -282,4 +286,65 @@ section{
     /* position: relative;
     padding-top: 100%; */
   }
+}
+
+.switch-container{
+	display: flex;
+	margin:5px;
+	align-items: center;
+}
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 48px;
+	height: 28px;
+}
+  
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+.label{
+  margin-left: 5px;
+height: 28px;
+line-height: 28px;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 28px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.checkbox:checked + .slider {
+  background-color: #212121;
+}
+
+.checkbox:focus + .slider {
+  box-shadow: 0 0 1px #212121;
+}
+
+.checkbox:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
 }

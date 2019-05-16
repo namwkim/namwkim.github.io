@@ -1,4 +1,6 @@
 type,title,authors,venue,venue_abbreviation,year,featured,award,website,slides,video,code,data,software,supplement,media,abstract
+Thesis,From Exploration to Explanation: Designing for Visual Data Storytelling,"Nam Wook Kim",Harvard University,,2019,,,,html,,,,,,,
+Thesis,Supporting Collaborative Sensemaking in Genealogical Research,"Nam Wook Kim",Stanford University,,2010,,,,,,,,,,,
 Book,Eye Fixation Metrics for Large Scale Evaluation and Comparison of Information Visualizations,"Zoya Bylinskii, Michelle Borkin, Nam Wook Kim, Hanspeter Pfister, Aude Oliva",Springer Mathematics and Visualizations series,ETVIS,2017,,,http://massvis.mit.edu/,,,,,,,,
 Journal,Quality Metrics for Information Visualization,"Michael Behrisch, Michael Blumenschein, Nam Wook Kim, Alexandra Diehl, Lin Shao, Mennatallah El-Assady, Johannes Fuchs, Daniel Seebacher, Ulrik Brandes, Hanspeter Pfister, Daniel Weiskopf, Daniel A. Keim",Computer Graphics Forum,EuroVis,2018,,,https://visualquality.dbvis.de/,yes,,,,,,,
 Journal,Visualizing Nonlinear Narratives with Story Curves,"Nam Wook Kim, Benjamin Bach, Hyejin Im, Sasha Schriber, Markus Gross, Hanspeter Pfister",IEEE Transactions on Visualization and Computer Graphics,InfoVis,2018,yes,,https://storycurve.namwkim.org/,yes,https://www.youtube.com/watch?v=XQ6xPkAZsPU,,,https://storyexplorer.namwkim.org/,yes,,
