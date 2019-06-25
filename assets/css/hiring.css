@@ -14,3 +14,7 @@ header .column:nth-child(1){
 main{
     /* padding:10px; */
 }
+.container{
+    max-width: 748px;
+    width: 100%;
+  }
