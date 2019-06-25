@@ -18,3 +18,28 @@ main{
     max-width: 748px;
     width: 100%;
   }
+
+  .campus-image{
+    /* flex-grow: 1; */
+    width:100%;
+    height:8rem;
+    /* width: 12rem; */
+    background-size:cover;
+    background-position:top left;
+    transition:all 2s;
+}
+.campus-image:hover{
+    background-position:bottom right;
+}
+.campus .column{
+    padding: 5px 5px;
+    color:white;
+    font-size: 10px;
+}
+.campus .column:first-child{
+    padding-left: 0px;
+}
+.campus .column:last-child{
+    padding-right: 0px;
+    text-align: right;
+}
