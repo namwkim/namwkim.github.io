@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/homepage.css">
 
   <!--dependencies-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
@@ -67,41 +68,48 @@
         </div>
       </section>
       <section class="column">
-        I am a <strong>Ph.D. candidate</strong> in computer science at <strong>Harvard</strong> University. I work with <a href="http://vcg.seas.harvard.edu/" target="_blank">Hanspeter Pfister</a> in the Visual Computing group and <a href="http://www.eecs.harvard.edu/~kgajos/" target="_blank">Krzysztof Gajos</a> in the Intelligent Interactive Systems group.
+        <p>
+            Nam Wook Kim is an <strong>Assistant Professor of Computer  Science</strong> at <strong>Boston College</strong>.
+            His research vision to lower barriers for everyone to understand and communicate complex data. He tackles this challenge by studying <a href="https://en.wikipedia.org/wiki/Visualization_(graphics)" target="_blank"><strong>visualization</strong></a> within the broad context of <a href="https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction" target="_blank"><strong>human-computer interaction</strong></a>. 
+            His research investigates innovative approaches to interact with data, going beyond traditional expert systems and addressing the needs of a broader audience, including designers, journalists, and casual users.
+
+            His work has been recognized with awards from <a href="https://sigchi.org/conferences/conference-history/chi/" target="_blank">ACM CHI</a>, <a href="https://sigchi.org/conferences/conference-history/uist/">ACM UIST</a>, and <a href="https://www.informationisbeautifulawards.com/">Kantar Information is Beautiful Awards</a>. 
+
+
+
+
+            <!-- To go beyond traditional expert systems, my work strives to establish a framework for creating <strong>visual data systems for the public</strong> by exploring how to enable individuals to author compelling data stories about the data and understanding the cognitive aspects of visualization and storytelling. -->
+        </p>
+        <p>
+            He earned a Ph.D. in Computer Science from Harvard University. His Ph.D. studies were supported by <a href="http://en.ikef.or.kr/"
+            target="_blank">Kwanjeong Educational Foundation</a> and <a href="http://www.siebelscholars.com/scholars/NamWookKim"
+            target="_blank">Siebel Scholars Foundation</a>. Prior to Harvard, he was a research associate at KAIST and worked at Samsung and LG as a research engineer. He also received M.S. in Computer Science from Stanford University and B.S. in Mathematics and Computer Science from Stony Brook University, as well as B.S. in Digital Media from Ajou University (Dual Degree).
+            
+            <!-- and Ajou Universities as part of a dual-degree program. -->
+        </p>
+        <p>
+            I am hiring <a href="hiring/intern.html" target="_blank"><strong>research interns</strong></a> and <a href="hiring/postdoc.html" target="_blank"><strong>postdoctoral fellows</strong></a>!
+        </p>
+        
+        
+        <!-- I am a <strong>Ph.D. candidate</strong> in computer science at <strong>Harvard</strong> University. I work with <a href="http://vcg.seas.harvard.edu/" target="_blank">Hanspeter Pfister</a> in the Visual Computing group and <a href="http://www.eecs.harvard.edu/~kgajos/" target="_blank">Krzysztof Gajos</a> in the Intelligent Interactive Systems group.
         During my Ph.D. studies, I interned at Microsoft Research, Disney Research, and Adobe Research.
         My graduate studies are partially supported by <a href="http://en.ikef.or.kr/"
             target="_blank">Kwanjeong Educational Foundation</a> and <a href="http://www.siebelscholars.com/scholars/NamWookKim"
-            target="_blank">Siebel Scholars Foundation</a>.
-        (<a class='see-more'>See more...</a>)
-        <p class="bio-detail hidden">
+            target="_blank">Siebel Scholars Foundation</a>. -->
+        <!-- (<a class='see-more'>See more...</a>) -->
+        <!-- <p class="bio-detail hidden">
               Prior to Harvard, I was a research associate at KAIST and also spent several years working for Samsung and LG as a research engineer. I received M.S. in computer science from Stanford University and B.S. in computer science and mathematics from Stony Brook University. I also received B.S from Ajou University in Korea as part of a dual-degree program.
             
-        </p>
+        </p> -->
         
         
-        <p>
+        <!-- <p>
             My research vision is to lower the barriers to understand and communicate complex data. I tackle this problem by studying <strong>visualization</strong> within the broad context of <strong>human-computer interaction</strong>. 
             To go beyond traditional expert systems, my work strives to establish a framework for creating <strong>visual data systems for the public</strong> by exploring how to enable individuals to author compelling stories about the data and understanding the cognitive aspects of visualization and storytelling.
-        </p>
+        </p> -->
         <!-- My research lies in the areas of human-computer interaction and information visualization, primarily focusing on making complex data accessible to the public. 
         Instead of using complex statistical methods to blindly automate data analysis, his work seeks to assist individuals to make sense of data using visual methods. He develops interactive tools that support authoring of data-driven stories using visualization. He also creates visual interfaces to analyze and communicate data in various domains such as open government and digital humanities.  -->
-
-        <strong>Job Materials</strong><br>
-        <a class="link-btn" href="assets/files/materials/CV_2018.pdf" target="_blank">
-          CV
-        </a> |
-        <a class="link-btn" href="assets/files/materials/CoverLetter_BostonCollege.pdf" target="_blank">
-          Cover Letter
-        </a> |
-        <a class="link-btn" href="assets/files/materials/Research_Statement.pdf" target="_blank">
-          Research Statement
-        </a> |
-        <a class="link-btn" href="assets/files/materials/Teaching_Statement.pdf" target="_blank">
-          Teaching Statement
-        </a> |
-        <a class="link-btn" href="assets/files/materials/Diversity_Statement.pdf" target="_blank">
-          Diversity Statement
-        </a>
         
       </section>
       <section class="column">
@@ -194,7 +202,7 @@
     </div>
   </main>
   <footer>
-    Copyright © 2018 Nam Wook Kim. 
+    Copyright © <span id="copyright-year"></span> Nam Wook Kim. 
     <!-- The website code is <a href="https://github.com/namwkim/namwkim.github.io" target="_blank">here</a>.  -->
     <!-- 3D models in the background by 
     <a href="https://poly.google.com/user/b7jif2AAit5" target="_blank">Alex “SAFFY” Safayan</a> and

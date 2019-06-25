@@ -247,19 +247,19 @@ document.querySelector('.email').addEventListener('click', event=>{
     document.execCommand("copy");
     document.body.removeChild(copyText);
 })
-let seeMore = document.querySelector('.see-more');
+// let seeMore = document.querySelector('.see-more');
 
-seeMore.addEventListener('click', function(){
+// seeMore.addEventListener('click', function(){
     
-    let bioDetail = document.querySelector('.bio-detail');
-    if (bioDetail.classList.contains('hidden')) {
-        bioDetail.classList.remove('hidden');
-        bioDetail.classList.add('show');
-    } else {
-        bioDetail.classList.remove('show');
-        bioDetail.classList.add('hidden');
-    }
-});
+//     let bioDetail = document.querySelector('.bio-detail');
+//     if (bioDetail.classList.contains('hidden')) {
+//         bioDetail.classList.remove('hidden');
+//         bioDetail.classList.add('show');
+//     } else {
+//         bioDetail.classList.remove('show');
+//         bioDetail.classList.add('hidden');
+//     }
+// });
 
 let newsSearch = document.querySelector('.search input[name="news"');
 
@@ -349,3 +349,5 @@ profileImage.addEventListener('mousemove', function(event){
 //         newsArchive.style.display = "block";
 //     }
 // });
+
+document.querySelector('#copyright-year').innerHTML = (new Date()).getFullYear()
