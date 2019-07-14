@@ -145,3 +145,9 @@ a:hover::after {
 .text-highlight{
   background-color:#FFE0B2;
 }
+.emphasis{
+  background: #03A9F4;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color:white;
+}
