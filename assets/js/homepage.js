@@ -140,8 +140,8 @@ function renderPubMaterials(d, path){
     }
     if (d.slides=='yes'){
         html+= generate('fas fa-chalkboard-teacher', `${path}/slides.pdf`, 'SLIDES');
-    }else if (d.slides=='html'){
-        html+= generate('far fa-file-alt', `${path}/slides/`, 'SLIDES');
+    }else if (d.slides.startsWith('http')){
+        html+= generate('far fa-file-alt', d.slides, 'SLIDES');
     }
     if (d.data!=''){
         html+= generate('fas fa-database', d.data, 'DATA');
