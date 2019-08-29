@@ -13,31 +13,25 @@ body{
 }
 
 a {
-  cursor:pointer; 
+  border-bottom: 2px solid #4FC3F7; /*81D4FA*/
+  /* color: #000000; */
+  color:#052d3f;
+  /* padding-bottom: .25em; */
   text-decoration: none;
-  color:inherit;
-  display: inline-block;
-  position: relative;
-  /* color:#03A9F4; */
-}
-a::after {
-  content: '';
-  background-color: #B3E5FC;
-  height: 15%;
-  position: absolute;
-  top: 70%;
-  /* -webkit-transform: translateY(-50%); */
-  /* transform: translateY(-20%); */
-  left: 0;
-  width: 100%;
-  z-index: -1;
-  transition: all 0.2s;
-}
-a:hover::after {
-  height: 100%;
-  top: 0%;
+  cursor: pointer;
 }
 
+a:hover {
+  background-position:0 calc(100% - 1.5px);
+  border-bottom:none;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%234FC3F7' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: auto 4px;
+  border-bottom: 0;
+  padding-bottom: .25em;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 .container{
   max-width: 1366px;
