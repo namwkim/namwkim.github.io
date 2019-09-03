@@ -1,4 +1,5 @@
 type,title,authors,venue,venue_abbreviation,year,featured,award,website,slides,video,code,data,software,supplement,media,abstract
+Journal,Facetto: Combining Unsupervised and Supervised Learning for Hierarchical Phenotype Analysis in Multi-Channel Image Data,"Robert Krueger, Johanna Beyer, Won-Dong Jang, Nam Wook Kim, Artem Sokolov, Peter K. Sorger, Hanspeter Pfister",IEEE Transactions on Visualization and Computer Graphics,InfoVis,2020,,,,,,,,,,, 
 Thesis,From Exploration to Explanation: Designing for Visual Data Storytelling,"Nam Wook Kim",Harvard University,,2019,,,,https://storage.googleapis.com/namwkim/Defense/index.html,https://youtu.be/jGr3YQ_BzBA,,,,,,
 Thesis,Supporting Collaborative Sensemaking in Genealogical Research,"Nam Wook Kim",Stanford University,,2010,,,,,,,,,,,
 Book,Eye Fixation Metrics for Large Scale Evaluation and Comparison of Information Visualizations,"Zoya Bylinskii, Michelle Borkin, Nam Wook Kim, Hanspeter Pfister, Aude Oliva",Springer Mathematics and Visualizations series,ETVIS,2017,,,http://massvis.mit.edu/,,,,,,,,
