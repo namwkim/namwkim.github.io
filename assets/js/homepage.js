@@ -100,7 +100,7 @@ function renderPubs(pubs, cond){
         // console.log('item',group);
         //website,slides,video,code,data,software,supplemental,media,abstract
         let html = group.values.reduce((html, d)=>{
-            let path = `assets/files/publications/${d.type.toLowerCase()}/${d.title.replace(/\s/g, '-').replace(/:/g, '').toLowerCase()}`;
+            let path = `assets/files/publications/${d.type.toLowerCase()}/${d.title.replace(/\s/g, '-').replace(/[:?]/g, '').toLowerCase()}`;
             return html + `<div class='pub'>
                 <div class='pub-teaser'
                     style='background-image:url(${path}/teaser.png);'>
@@ -108,7 +108,7 @@ function renderPubs(pubs, cond){
                 <div class='pub-detail'>
                     <div class='pub-title'><strong>${d.title}</strong></div>
                     <div class='pub-authors'>${d.authors.replace('Nam Wook Kim', '<strong>Nam Wook Kim</strong>')}</div>
-                    <div class='pub-venue'><em>${d.venue}${d.venue_abbreviation?`(<strong>${d.venue_abbreviation}</strong>)`:''}, ${d.year}</em></div>
+                    <div class='pub-venue'><em>${d.venue} ${d.venue_abbreviation?`(<strong>${d.venue_abbreviation}</strong>)`:''}, ${d.year}</em></div>
                     <div class='pub-award'><strong>${d.award}</strong></div>
                     <div class='pub-materials'>
                         ${renderPubMaterials(d, path)}
@@ -183,7 +183,9 @@ function renderNews(news){
     console.log('render news', news);
     let container = document.querySelector('.news');
     container.innerHTML='';
-    news.slice(0,maxNews).forEach(item=>{
+    const filtered = news.slice(0,maxNews);
+    filtered.sort((a,b)=> parseTime(b.date) - parseTime(a.date));
+    filtered.forEach(item=>{
         let elem = document.createElement('div');
         elem.innerHTML = `
                 ${md.render(item.headline)}
@@ -198,7 +200,9 @@ function renderTravels(travels){
     console.log('render travels', travels);
     let container = document.querySelector('.travels');
     container.innerHTML='';
-    travels.slice(0,maxTravels).forEach(item=>{
+    const filtered = travels.slice(0,maxTravels);
+    filtered.sort((a,b)=> parseTime(b.end) - parseTime(a.end));
+    filtered.forEach(item=>{
         let elem = document.createElement('div');
         elem.innerHTML = `
                 ${md.render(item.headline)}
@@ -214,7 +218,9 @@ function renderTravels(travels){
 function renderCourses(courses){
     console.log('render courses', courses);
     let container = document.querySelector('.courses');
-    courses.slice(0,maxCourses).forEach(item=>{
+    const filtered = courses.slice(0,maxCourses);
+    filtered.sort((a,b)=> `${b.when}, ${b.year}` - `${a.when}, ${a.year}`);
+    filtered.forEach(item=>{
         let elem = document.createElement('div');
         elem.innerHTML = `
                 ${md.render(item.name)}
