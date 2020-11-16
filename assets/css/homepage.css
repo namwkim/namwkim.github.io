@@ -198,12 +198,14 @@ section{
     margin-bottom: 15px;
 }
 .alumni, .people{
-    display: flex;
+    display: grid;
     margin-top: 10px;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(6, 15%);
+    /* flex-wrap: wrap; */
 }
 .alumni .item, .people .item{
     margin-right: 10px;
+    
 }
 .alumni .item a, .people .item a{
     border:none;
@@ -218,8 +220,8 @@ section{
 .alumni .item img, .people .item img{
     position: relative;
     border-radius: 50%;
-    width:32px;
-    height:32px;
+    width:48px;
+    height:48px;
     object-fit: cover;
     border:2px solid white;
     transition: all .25s;
@@ -229,5 +231,15 @@ section{
 }
 
 .person-detail{
+    position: absolute;
+    background-color: white;
+    min-width: 150px;
+    padding: 5px;
+    margin-left:24px;
+    transform: translate(-50%,0);
+    border-radius: 4px;
+    z-index: 999;
+    text-align: center;
+    box-shadow:0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
     /* font-size: 12px; */
 }

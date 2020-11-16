@@ -96,19 +96,21 @@ function renderPeople(people){
 }
 
 function showPersonDetail(event){
-    const img = event.target.querySelector('img');
-    img.style.width = "64px";
-    img.style.height = "64px";
-    img.classList.add('selected');
+    // event.target.style.zIndex = 1;
+    // const img = event.target.querySelector('img');
+    // img.style.width = "64px";
+    // img.style.height = "64px";
+    // img.classList.add('selected');
 
     const detail = event.target.querySelector('.person-detail');
     detail.style.display = "block";
 }
 function hidePersonDetail(event){
-    const img = event.target.querySelector('img');
-    img.style.width = "32px";
-    img.style.height = "32px";
-    img.classList.remove('selected');
+    // event.target.style.zIndex = 0;
+    // const img = event.target.querySelector('img');
+    // img.style.width = "32px";
+    // img.style.height = "32px";
+    // img.classList.remove('selected');
 
     const detail = event.target.querySelector('.person-detail');
     detail.style.display = "none";
