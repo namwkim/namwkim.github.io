@@ -24,7 +24,8 @@ Promise.all([
     'assets/files/news.csv',
     'assets/files/travels.csv',
     'assets/files/publications.csv',
-    'assets/files/courses.csv'
+    'assets/files/courses.csv',
+    'assets/files/people.csv',
 ].map(url=>{
     return fetch(url).then(res=>
         res.ok ? res.text() : Promise.reject(res.status))
@@ -37,7 +38,81 @@ Promise.all([
     dataCond = filter.dataset.cond;
     renderPubs(allPubs, dataCond);
     renderCourses(value[3]);
+
+    renderPeople(value[4]);
 });
+
+function renderPeople(people){
+    people = people.filter(d=>d.position!=="Principle Investigator");
+
+    console.log('render people', people);
+
+    let getURL = (image)=>{
+        if (image===""){
+            return 'assets/images/person.png';
+        }else if (image.startsWith("http") && image.includes("drive.google.com")){
+            const url = new URL(image); 
+            const urlParams = new URLSearchParams(url.search);
+            return `https://drive.google.com/uc?export=view&id=${urlParams.get("id")}`;
+        }else{
+            return image;
+        }
+    }
+
+
+    let container = document.querySelector('.people');
+    container.innerHTML='';
+    people.filter(d=>d.status==="Present").forEach(item=>{
+        let elem = document.createElement('div');
+        elem.innerHTML=`
+        <a target="_blank"href="${item.website!==""?item.website:item.linkedin}">
+            <img src="${getURL(item.image)}"/>
+            <div class="person-detail" style="display:none">${item.name}<br>${item.position}</div>
+        </a>
+        `
+        
+        container.appendChild(elem);
+        elem.classList.add('item');
+        elem.addEventListener("mouseenter", showPersonDetail);
+        elem.addEventListener("mouseleave", hidePersonDetail);
+    })
+
+    container = document.querySelector('.alumni');
+    container.innerHTML='';
+    people.filter(d=>d.status==="Alumni").forEach(item=>{
+        let elem = document.createElement('div');
+        elem.innerHTML=`
+        <a target="_blank" href="${item.website!==""?item.website:item.linkedin}">
+            <img src="${getURL(item.image)}"/>
+            <div class="person-detail"  style="display:none">${item.name}<br>${item.position}</div>
+        </a>
+        `
+        
+        container.appendChild(elem);
+        elem.classList.add('item');
+        elem.addEventListener("mouseenter", showPersonDetail);
+        elem.addEventListener("mouseleave", hidePersonDetail);
+    })
+}
+
+function showPersonDetail(event){
+    const img = event.target.querySelector('img');
+    img.style.width = "64px";
+    img.style.height = "64px";
+    img.classList.add('selected');
+
+    const detail = event.target.querySelector('.person-detail');
+    detail.style.display = "block";
+}
+function hidePersonDetail(event){
+    const img = event.target.querySelector('img');
+    img.style.width = "32px";
+    img.style.height = "32px";
+    img.classList.remove('selected');
+
+    const detail = event.target.querySelector('.person-detail');
+    detail.style.display = "none";
+}
 
 function renderPubs(pubs, cond){
     let filtered;

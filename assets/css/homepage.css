@@ -194,3 +194,40 @@ section{
         padding-top: 100%; */
     }
 }
+.people{
+    margin-bottom: 15px;
+}
+.alumni, .people{
+    display: flex;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+.alumni .item, .people .item{
+    margin-right: 10px;
+}
+.alumni .item a, .people .item a{
+    border:none;
+    text-decoration: none;
+    cursor: pointer;
+}
+.alumni .item a:hover, .people .item a:hover{
+    border: none;
+    background: none;
+    padding: 0;
+}
+.alumni .item img, .people .item img{
+    position: relative;
+    border-radius: 50%;
+    width:32px;
+    height:32px;
+    object-fit: cover;
+    border:2px solid white;
+    transition: all .25s;
+}
+.alumni .item img:hover, .people .item img:hover{
+    border:2px solid #B3E5FC;
+}
+
+.person-detail{
+    /* font-size: 12px; */
+}
