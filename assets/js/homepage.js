@@ -177,7 +177,7 @@ function renderPubs(pubs, cond){
         // console.log('item',group);
         //website,slides,video,code,data,software,supplemental,media,abstract
         let html = group.values.reduce((html, d)=>{
-            let path = `assets/files/publications/${d.type.toLowerCase()}/${d.title.replace(/\s/g, '-').replace(/[:?]/g, '').toLowerCase()}`;
+            let path = `assets/files/publications/${d.type.toLowerCase()}/${d.title.replace(/\s/g, '-').replace(/[:?|,]/g, '').toLowerCase()}`;
             return html + `<div class='pub'>
                 <div class='pub-teaser'
                     style='background-image:url(${path}/teaser.png);'>
