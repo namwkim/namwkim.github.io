@@ -20,25 +20,49 @@ function formatDate(date){
         return formatTime(parseTime(temp));
     }
 }
+
+function getURL(path){
+    if (path.startsWith("http") && path.includes("drive.google.com")){
+        const url = new URL(path); 
+        const urlParams = new URLSearchParams(url.search);
+        if (urlParams.get("id")){
+            return `https://drive.google.com/uc?export=view&id=${urlParams.get("id")}`;
+        }else{
+            const id = path.split('/').slice(-2)[0];// second from last
+            return `https://drive.google.com/uc?export=view&id=${id}`;
+        }
+    }else{
+        return path;
+    }
+}
+
 Promise.all([
-    'assets/files/news.csv',
-    'assets/files/travels.csv',
-    'assets/files/publications.csv',
-    'assets/files/courses.csv',
-    'assets/files/people.csv',
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vRiEYYD3rIzHcyFpugw6fF8EbO2EVjClWyoHf49rU7nJCVa-YjXJ6vJ4VMwgRIFyaVHSgfBswDhU5-B/pub?output=csv',
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vSQ9qDvzFADgd4bP6GK6Ql3fHmpi9Ur4h2ulOi6C5PduoUg2r-5QRm5fxuM24asKxmRp1vzA8lPGdWE/pub?output=csv',
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vRuAr9AcdSeiXGGKUyqT5e-P0i5MXJB3d8bN0_9ujbVmyNbC0cZIMkE4JL_b29XR4Y_jzLAp4ZDWNWi/pub?output=csv',
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vSbSAg-v5C7XlV5VZ0OB_3xwTuc0D9DmkkblCsVTlwlxAy3y7OcGmNkQl_nsweJTkwxTmiyABSoO6WR/pub?output=csv',
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vQVrB2GEn9fEm1aWMys8h4FE0KG_a65VeULWBsV_l1xMCfgsDOJNn66t-yAWyLGvR1cb2YATyF9i62-/pub?output=csv',
 ].map(url=>{
     return fetch(url).then(res=>
         res.ok ? res.text() : Promise.reject(res.status))
-        .then(text=>d3.csvParse(text))
+        .then(text=>d3.csvParse(text, d=>{
+            const record = {...d};
+            console.log("Record", record);
+            for (const prop in record){
+                record[prop] = record[prop]==="" || record[prop]==="na"? null: record[prop];
+            }
+            return record;
+        }))
 })).then(value=>{
     renderNews(allNews = value[0]);
     renderTravels(allTravels = value[1]);
     allPubs = value[2];
+    console.log("allPubs", allPubs);
     let filter = document.querySelector('.chip.selected');
     dataCond = filter.dataset.cond;
     renderPubs(allPubs, dataCond);
     renderCourses(value[3]);
-
+    console.log('people', value[4]);
     renderPeople(value[4]);
 });
 
@@ -47,26 +71,14 @@ function renderPeople(people){
 
     console.log('render people', people);
 
-    let getURL = (image)=>{
-        if (image===""){
-            return 'assets/images/person.png';
-        }else if (image.startsWith("http") && image.includes("drive.google.com")){
-            const url = new URL(image); 
-            const urlParams = new URLSearchParams(url.search);
-            return `https://drive.google.com/uc?export=view&id=${urlParams.get("id")}`;
-        }else{
-            return image;
-        }
-    }
-
 
     let container = document.querySelector('.people');
     container.innerHTML='';
     people.filter(d=>d.status==="Present").forEach(item=>{
         let elem = document.createElement('div');
         elem.innerHTML=`
-        <a target="_blank"href="${item.website!==""?item.website:item.linkedin}">
-            <img src="${getURL(item.image)}"/>
+        <a target="_blank"href="${item.website?item.website:item.linkedin}">
+            <img src="${!item.image?'assets/images/person.png':getURL(item.image)}"/>
             <div class="person-detail" style="display:none">${item.name}<br>${item.position}</div>
         </a>
         `
@@ -82,8 +94,8 @@ function renderPeople(people){
     people.filter(d=>d.status==="Alumni").forEach(item=>{
         let elem = document.createElement('div');
         elem.innerHTML=`
-        <a target="_blank" href="${item.website!==""?item.website:item.linkedin}">
-            <img src="${getURL(item.image)}"/>
+        <a target="_blank" href="${item.website?item.website:item.linkedin}">
+            <img src="${!item.image?'assets/images/person.png':getURL(item.image)}"/>
             <div class="person-detail"  style="display:none">${item.name}<br>${item.position}</div>
         </a>
         `
@@ -136,7 +148,7 @@ function renderPubs(pubs, cond){
         // filtered = pubs.filter(item=>parseInt(item.year)>=(currentYear-3));
         // break;
         case 'pub-awards':
-        filtered = pubs.filter(item=>item.award!='');
+        filtered = pubs.filter(item=>item.award);
         break;
         case 'pub-journal':
         filtered = pubs.filter(item=>item.type.toLowerCase()=='journal');
@@ -157,18 +169,57 @@ function renderPubs(pubs, cond){
     console.log('render', filtered, cond);
     // console.log('byType',byType.checked);
     if (byType.checked){
-        filtered = d3.nest()
-        .key(item=>item.year)
-        .sortValues((a,b)=>b.title.localeCompare(a.title))
-        .entries(filtered);
-        filtered.sort((a,b)=>b.key-a.key)
+        filtered = filtered.reduce((acc, d)=>{
+            if (!acc[d.year]){
+                acc[d.year] = [];
+            }
+            acc[d.year].push(d);
+            return acc;
+        }, {});
+        // console.log("ACC", Object.entries(filtered));
+        filtered = Object.entries(filtered).map(group=>{
+            group[1].sort((a,b)=>b.title.localeCompare(a.title));
+            return group;
+        });
+        
+        // d3.nest()
+        // .key(item=>item.year)
+        // .sortValues((a,b)=>b.title.localeCompare(a.title))
+        // .entries(filtered);
+        filtered.sort((a,b)=>b[0]-a[0]);
+        // console.log("ACC", filtered);
+
     }else{
-        filtered = d3.nest()
-        .key(item=>item.type)
-        .sortValues((a,b)=>parseInt(b.year)-parseInt(a.year))
-        .entries(filtered);
+        // filtered = d3.nest()
+        // .key(item=>item.type)
+        // .sortValues((a,b)=>parseInt(b.year)-parseInt(a.year))
+        // .entries(filtered);
+        filtered = filtered.reduce((acc, d)=>{
+            if (!acc[d.type]){
+                acc[d.type] = [];
+            }
+            acc[d.type].push(d);
+            return acc;
+        }, {});
+        
+        // console.log("ACC", Object.entries(filtered));
+        filtered = Object.entries(filtered).map(group=>{
+            group[1].sort((a,b)=>parseInt(b.year)-parseInt(a.year));
+            return group;
+        });
+
+        // filtered =  filtered.reduce((acc, d, i)=>{
+        //     if (!acc[d.type]){
+        //         acc[d.type] = {
+        //             key:d.type,
+        //             values:[]
+        //         }
+        //     }
+        //     acc[d.year].values.push(d);
+        // }, {}).map(group=>group.values);
+        
     }
-    
+    console.log("filtered publications", filtered);
     // featured.map(d=>d.key)
     let container = document.querySelector('.pubs');
     container.innerHTML='';
@@ -176,62 +227,60 @@ function renderPubs(pubs, cond){
     filtered.forEach(group=>{
         // console.log('item',group);
         //website,slides,video,code,data,software,supplemental,media,abstract
-        let html = group.values.reduce((html, d)=>{
-            let path = `assets/files/publications/${d.type.toLowerCase()}/${d.title.replace(/\s/g, '-').replace(/[:?|,]/g, '').toLowerCase()}`;
+        let html = group[1].reduce((html, d)=>{
+
+            // let path = ;
+            // let path = `assets/files/publications/${d.type.toLowerCase()}/${d.title.replace(/\s/g, '-').replace(/[:?|,]/g, '').toLowerCase()}`;
             return html + `<div class='pub'>
                 <div class='pub-teaser'
-                    style='background-image:url(${path}/teaser.png);'>
+                    style='background-image:url(${getURL(d.teaser)});'>
                 </div>
                 <div class='pub-detail'>
                     <div class='pub-title'><strong>${d.title}</strong></div>
                     <div class='pub-authors'>${d.authors.replace('Nam Wook Kim', '<strong>Nam Wook Kim</strong>')}</div>
                     <div class='pub-venue'><em>${d.venue} ${d.venue_abbreviation?`(<strong>${d.venue_abbreviation}</strong>)`:''}, ${d.year}</em></div>
-                    <div class='pub-award'><strong>${d.award}</strong></div>
+                    <div class='pub-award'><strong>${d.award?d.award:""}</strong></div>
                     <div class='pub-materials'>
-                        ${renderPubMaterials(d, path)}
+                        ${renderPubMaterials(d)}
                     </div>
 
                 </div>
             </div>`
         }, '');
         let elem = document.createElement('div');
-        elem.innerHTML = `<h3 class='title'>${group.key}</h3>` + html;
+        elem.innerHTML = `<h3 class='title'>${group[0]}</h3>` + html;
         elem.classList.add('pub-group');
         container.appendChild(elem);
     });
 }
-function renderPubMaterials(d, path){
+function renderPubMaterials(d){
     // let path = `/files/publications/${group.key.toLowerCase()}/${d.title.replace(/\s/g, '-').replace(/:/g, '').toLowerCase()}`;
     let generate = (icon, link, label)=>`<div class='item'>
         <i class="${icon}"></i>
         <a href='${link}' target='_blank'>${label}</a>
     </div>`
-    let html = generate('far fa-file-alt', `${path}/paper.pdf`, 'PAPER');
-    if (d.website!=''){
+    let html = generate('far fa-file-alt', `${getURL(d.paper)}`, 'PAPER');
+    if (d.website){
         html+= generate('fas fa-globe', d.website, 'WEBSITE');
     }
-    if (d.supplement=='yes'){
-        html+= generate('far fa-file-alt', `${path}/supplement.pdf`, 'SUPPLEMENT');
-    } else if (d.supplement=='zip'){
-        html+= generate('far fa-file-alt', `${path}/supplement.zip`, 'SUPPLEMENT');
+    if (d.supplement){
+        html+= generate('far fa-file-alt', `${getURL(d.supplement)}`, 'SUPPLEMENT');
     }
-    if (d.slides=='yes'){
-        html+= generate('fas fa-chalkboard-teacher', `${path}/slides.pdf`, 'SLIDES');
-    }else if (d.slides.startsWith('http')){
-        html+= generate('far fa-file-alt', d.slides, 'SLIDES');
+    if (d.slides){
+        html+= generate('fas fa-chalkboard-teacher', `${getURL(d.slides)}`, 'SLIDES');
     }
-    if (d.data!=''){
-        html+= generate('fas fa-database', d.data, 'DATA');
+    if (d.data){
+        html+= generate('fas fa-database',`${getURL(d.data)}`,'DATA');
     }
 
-    if (d.code!=''){
-        html+= generate('fas fa-code', d.code, 'CODE');
+    if (d.code){
+        html+= generate('fas fa-code', `${getURL(d.code)}`, 'CODE');
     }
-    if (d.video!=''){
-        html+= generate('fas fa-video', d.video.startsWith('http')?d.video:`${path}/video.mp4`, 'VIDEO');
+    if (d.video){
+        html+= generate('fas fa-video', `${getURL(d.video)}`, 'VIDEO');
     }
-    if (d.software!=''){
-        html+= generate('fas fa-desktop', d.software, 'SOFTWARE');
+    if (d.software){
+        html+= generate('fas fa-desktop',`${getURL(d.software)}`, 'SOFTWARE');
     }
 
     return html;
@@ -313,7 +362,7 @@ function writeAddress(item){
     if (item.country=='USA'){
         return item.city + ', ' +  item.state;
     }
-    if (item.city!=''){
+    if (item.city){
         return item.city + ', ' + item.country
     }
     return item.country
@@ -370,9 +419,6 @@ let travelSearch = document.querySelector('.search input[name="travel"');
 travelSearch.addEventListener('input', function(event){
     if (this.value!=''){
         let filtered = allTravels.filter(d=>{
-            
-
-
             var tmp = document.createElement("div");
             tmp.innerHTML = md.render(d.headline);
             let start = formatDate(d.start)
@@ -389,9 +435,24 @@ travelSearch.addEventListener('input', function(event){
     }
 });
 
+let pubSearch = document.querySelector('.search input[name="publication"');
+
+pubSearch.addEventListener('input', function(event){
+
+    if (this.value!=''){
+        let filtered = allPubs.filter(d=>{
+            return d.title.toLowerCase().includes(this.value.toLowerCase());
+        })
+        renderPubs(filtered);
+    }else{
+        renderPubs(allPubs);
+    }
+});
+
+
 let profileImage = document.querySelector('.profile-image');
 
-let numImages = 11;
+let numImages = 13;
 let randIdx  = Math.floor(Math.random()*numImages)+1;
 profileImage.src = `/assets/images/profile/photo${randIdx}.png`;
 profileImage.addEventListener('mousemove', function(event){
