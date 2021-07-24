@@ -259,7 +259,10 @@ function renderPubMaterials(d){
         <i class="${icon}"></i>
         <a href='${link}' target='_blank'>${label}</a>
     </div>`
-    let html = generate('far fa-file-alt', `${getURL(d.paper)}`, 'PAPER');
+    let html = '';
+    if (d.paper){
+        generate('far fa-file-alt', `${getURL(d.paper)}`, 'PAPER');
+    }
     if (d.website){
         html+= generate('fas fa-globe', d.website, 'WEBSITE');
     }
