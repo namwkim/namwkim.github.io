@@ -261,7 +261,7 @@ function renderPubMaterials(d){
     </div>`
     let html = '';
     if (d.paper){
-        generate('far fa-file-alt', `${getURL(d.paper)}`, 'PAPER');
+        html+= generate('far fa-file-alt', `${getURL(d.paper)}`, 'PAPER');
     }
     if (d.website){
         html+= generate('fas fa-globe', d.website, 'WEBSITE');
