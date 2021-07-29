@@ -67,19 +67,19 @@ Promise.all([
 });
 
 function renderPeople(people){
-    people = people.filter(d=>d.position!=="Principle Investigator");
+    people = people.filter(d=>d["Position"]!=="Principle Investigator");
 
     console.log('render people', people);
 
 
     let container = document.querySelector('.people');
     container.innerHTML='';
-    people.filter(d=>d.status==="Present").forEach(item=>{
+    people.filter(d=>d["Status"]==="Present").forEach(item=>{
         let elem = document.createElement('div');
         elem.innerHTML=`
-        <a target="_blank"href="${item.website?item.website:item.linkedin}">
-            <img src="${!item.image?'assets/images/person.png':getURL(item.image)}"/>
-            <div class="person-detail" style="display:none">${item.name}<br>${item.position}</div>
+        <a target="_blank"href="${item["Website"]?item["Website"]:item["LinkedIn"]}">
+            <img src="${!item["Photo"]?'assets/images/person.png':getURL(item["Photo"])}"/>
+            <div class="person-detail" style="display:none">${item["Name"]}<br>${item["Position"]}</div>
         </a>
         `
         
@@ -91,12 +91,12 @@ function renderPeople(people){
 
     container = document.querySelector('.alumni');
     container.innerHTML='';
-    people.filter(d=>d.status==="Alumni").forEach(item=>{
+    people.filter(d=>d["Status"]==="Alumni").forEach(item=>{
         let elem = document.createElement('div');
         elem.innerHTML=`
-        <a target="_blank" href="${item.website?item.website:item.linkedin}">
-            <img src="${!item.image?'assets/images/person.png':getURL(item.image)}"/>
-            <div class="person-detail"  style="display:none">${item.name}<br>${item.position}</div>
+        <a target="_blank"href="${item["Website"]?item["Website"]:item["LinkedIn"]}">
+            <img src="${!item["Photo"]?'assets/images/person.png':getURL(item["Photo"])}"/>
+            <div class="person-detail" style="display:none">${item["Name"]}<br>${item["Position"]}</div>
         </a>
         `
         
