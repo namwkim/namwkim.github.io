@@ -76,9 +76,10 @@ function renderPeople(people){
     container.innerHTML='';
     people.filter(d=>d["Status"]==="Present").forEach(item=>{
         let elem = document.createElement('div');
+        console.log("item", item)
         elem.innerHTML=`
         <a target="_blank"href="${item["Website"]?item["Website"]:item["LinkedIn"]}">
-            <img src="${!item["Photo"]?'assets/images/person.png':getURL(item["Photo"])}"/>
+            <img src="${!item["Photo"]?'assets/images/person.png':getURL(item["Photo"])}" alt="${item["Name"]}, ${item["Position"]}"/>
             <div class="person-detail" style="display:none">${item["Name"]}<br>${item["Position"]}</div>
         </a>
         `
@@ -95,7 +96,7 @@ function renderPeople(people){
         let elem = document.createElement('div');
         elem.innerHTML=`
         <a target="_blank"href="${item["Website"]?item["Website"]:item["LinkedIn"]}">
-            <img src="${!item["Photo"]?'assets/images/person.png':getURL(item["Photo"])}"/>
+            <img src="${!item["Photo"]?'assets/images/person.png':getURL(item["Photo"])}" alt="${item["Name"]}, ${item["Position"]}"/>
             <div class="person-detail" style="display:none">${item["Name"]}<br>${item["Position"]}</div>
         </a>
         `
