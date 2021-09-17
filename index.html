@@ -170,24 +170,24 @@
           <input type="text" name='publication' placeholder="Search Publications...">
         </div>
         <div class="filter">
-          <div class="chip selected" data-cond="pub-all" role="button">All</div>
-          <div class="chip" data-cond="pub-featured" role="button">Featured</div>
-          <div class="chip" data-cond="pub-awards" role="button">Awards</div>
-          <div class="chip" data-cond="pub-first-author" role="button">First Author</div>
+          <div class="chip selected" data-cond="pub-all" role="button" aria-label="Filter Publications by All">All</div>
+          <div class="chip" data-cond="pub-featured" role="button" aria-label="Filter Publications by Featured">Featured</div>
+          <div class="chip" data-cond="pub-awards" role="button" aria-label="Filter Publications by Awards">Awards</div>
+          <div class="chip" data-cond="pub-first-author" role="button" aria-label="Filter Publications by First Author">First Author</div>
           <!-- <div class="chip" data-cond="pub-recent">Recent</div> -->
-          <div class="chip" data-cond="pub-thesis" role="button">Thesis</div>
-          <div class="chip" data-cond="pub-journal" role="button">Journal</div>
-          <div class="chip" data-cond="pub-conference" role="button">Conference</div>
+          <div class="chip" data-cond="pub-thesis" role="button" aria-label="Filter Publications by Thesis">Thesis</div>
+          <div class="chip" data-cond="pub-journal" role="button" aria-label="Filter Publications by Journal">Journal</div>
+          <div class="chip" data-cond="pub-conference" role="button" aria-label="Filter Publications by Conference">Conference</div>
           <div class="switch-container">
-            <label class="switch">
+            <label id="by-time-switch" class="switch" role="button" aria-label="Filter by Time" aria-pressed="true">
               <input id="by-time" class="checkbox" type="checkbox" checked name="byTime" />
               <span class="slider"></span>
             </label>
-            <span class="label">By Time</span>
+            <span class="label" aria-hidden="true">By Time</span>
 
           </div>
         </div>
-        <div class="pubs">
+        <div class="pubs" role="search-result" aria-label="Publication Search Result">
 
         </div>
       </section>

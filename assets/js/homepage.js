@@ -189,6 +189,7 @@ function renderPubs(pubs, cond){
         // .entries(filtered);
         filtered.sort((a,b)=>b[0]-a[0]);
         // console.log("ACC", filtered);
+        document.querySelector("#by-time-switch").setAttribute("aria-pressed", true);
 
     }else{
         // filtered = d3.nest()
@@ -218,6 +219,7 @@ function renderPubs(pubs, cond){
         //     }
         //     acc[d.year].values.push(d);
         // }, {}).map(group=>group.values);
+        document.querySelector("#by-time-switch").setAttribute("aria-pressed", false);
         
     }
     console.log("filtered publications", filtered);
