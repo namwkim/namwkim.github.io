@@ -27,7 +27,9 @@
 
   <title>Nam Wook Kim</title>
   <link rel="icon" href="/assets/images/favicon.ico" type="image/png" sizes="16x16 32x32">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+    integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="assets/css/homepage.css">
@@ -114,7 +116,14 @@
           <!-- and Ajou Universities as part of a dual-degree program. -->
         </p>
         <p>
-            I am hiring <a href="https://docs.google.com/document/d/1kJomOo-Dg-U3mxw3PRRqS3wtl4cEEVj-mgdhSdndKbw/edit?usp=sharing" target="_blank"><strong>postdoctoral fellows</strong></a> and <a href="https://docs.google.com/document/d/17vVKjHjPu4F7R9dDap9XFPq6KVx6QMKTXjMBeQDiplE/edit?usp=sharing" target="_blank"><strong>research associates</strong></a>. If you are interested in <a href="https://www.bc.edu/content/bc-web/offices/office-of-international-students-and-scholars/immigration/scholars.html" target="_blank">visiting scholars</a> or undergraduates at BC interested in research, please reach out to me at any time.
+          I am hiring <a
+            href="https://docs.google.com/document/d/1kJomOo-Dg-U3mxw3PRRqS3wtl4cEEVj-mgdhSdndKbw/edit?usp=sharing"
+            target="_blank"><strong>postdoctoral fellows</strong></a> and <a
+            href="https://docs.google.com/document/d/17vVKjHjPu4F7R9dDap9XFPq6KVx6QMKTXjMBeQDiplE/edit?usp=sharing"
+            target="_blank"><strong>research associates</strong></a>. If you are interested in <a
+            href="https://www.bc.edu/content/bc-web/offices/office-of-international-students-and-scholars/immigration/scholars.html"
+            target="_blank">visiting scholars</a> or undergraduates at BC interested in research, please reach out to me
+          at any time.
         </p>
         <p>
           <strong>Office hours</strong>: Please reserve a <a href="https://calendly.com/namwkim/office-hours"
@@ -150,7 +159,7 @@
           <input id="search-news" type="text" name='news' placeholder="Search News..." aria-label="search news">
         </div>
 
-        <div class="news">
+        <div class="news" role="list">
 
         </div>
 
@@ -170,13 +179,17 @@
         </div>
         <div class="filter">
           <div class="chip selected" data-cond="pub-all" role="button" aria-label="Filter Publications by All">All</div>
-          <div class="chip" data-cond="pub-featured" role="button" aria-label="Filter Publications by Featured">Featured</div>
+          <div class="chip" data-cond="pub-featured" role="button" aria-label="Filter Publications by Featured">Featured
+          </div>
           <div class="chip" data-cond="pub-awards" role="button" aria-label="Filter Publications by Awards">Awards</div>
-          <div class="chip" data-cond="pub-first-author" role="button" aria-label="Filter Publications by First Author">First Author</div>
+          <div class="chip" data-cond="pub-first-author" role="button" aria-label="Filter Publications by First Author">
+            First Author</div>
           <!-- <div class="chip" data-cond="pub-recent">Recent</div> -->
           <div class="chip" data-cond="pub-thesis" role="button" aria-label="Filter Publications by Thesis">Thesis</div>
-          <div class="chip" data-cond="pub-journal" role="button" aria-label="Filter Publications by Journal">Journal</div>
-          <div class="chip" data-cond="pub-conference" role="button" aria-label="Filter Publications by Conference">Conference</div>
+          <div class="chip" data-cond="pub-journal" role="button" aria-label="Filter Publications by Journal">Journal
+          </div>
+          <div class="chip" data-cond="pub-conference" role="button" aria-label="Filter Publications by Conference">
+            Conference</div>
           <div class="switch-container">
             <label id="by-time-switch" class="switch" role="button" aria-label="Filter by Time" aria-pressed="true">
               <input id="by-time" class="checkbox" type="checkbox" checked name="byTime" />
@@ -186,7 +199,7 @@
 
           </div>
         </div>
-        <div class="pubs" role="search-result" aria-label="Publication Search Result">
+        <div class="pubs" role="list" aria-label="Publication Search Result">
 
         </div>
       </section>
@@ -194,13 +207,13 @@
     <div class="column">
       <section>
         <h2 class="title">Advisees</h2>
-        <div class="people">
+        <div class="people" role="list">
 
         </div>
         <!-- <div><strong>Alumni</strong></div> -->
         <section>
           <h4>Alumni</h4>
-          <div class="alumni"></div>
+          <div class="alumni" role="list"></div>
         </section>
 
       </section>
@@ -210,13 +223,13 @@
           <!-- <label for="search-news" class="visuallyhidden">Search Travels</label> -->
           <input type="text" name='travel' placeholder="Search Travels..." aria-label="search travels">
         </div>
-        <div class="travels">
+        <div class="travels" role="list">
 
         </div>
       </section>
       <section>
         <h2 class="title">Teaching</h2>
-        <div class="courses">
+        <div class="courses" role="list">
 
         </div>
       </section>
@@ -229,16 +242,22 @@
           St. Mary's Hall S256<br> Chestnut Hill, MA 02467
         </div>
         <div class="profile-item">
-          <a href="https://twitter.com/namwkim85" target="_blank"><i class="fab fa-twitter"
-              aria-label="Twitter"></i></a>
+          <a href="https://twitter.com/namwkim85" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i>
+            <span class="visuallyhidden">Twitter</span>
+          </a>
           <span class="dv">|</span>
           <a href="https://www.instagram.com/namwkim/" target="_blank"><i class="fab fa-instagram-square"
-              aria-label="Instagram"></i></a>
+              aria-hidden="true"></i>
+            <span class="visuallyhidden">Instagram</span>
+          </a>
           <span class="dv">|</span>
           <a href="https://www.linkedin.com/in/namwkim" target="_blank"><i class="fab fa-linkedin"
-              aria-label="LinkedIn"></i></a>
+            aria-hidden="true"></i>
+            <span class="visuallyhidden">LinkedIn</span>
+          </a>
           <span class="dv">|</span>
-          <a href="https://github.com/namwkim" target="_blank"><i class="fab fa-github" aria-label="Github"></i></a>
+          <a href="https://github.com/namwkim" target="_blank"><i class="fab fa-github" aria-hidden="true"></i>
+            <span class="visuallyhidden">Github</span></a>
         </div>
         <br>
         <div class="google-maps-container centered" aria-label="Google Map showing Saint Mary's Hall">

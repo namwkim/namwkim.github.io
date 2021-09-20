@@ -76,6 +76,7 @@ function renderPeople(people){
     container.innerHTML='';
     people.filter(d=>d["Status"]==="Present").forEach(item=>{
         let elem = document.createElement('div');
+        elem.setAttribute('role', 'listitem');
         console.log("item", item)
         elem.innerHTML=`
         <a target="_blank"href="${item["Website"]?item["Website"]:item["LinkedIn"]}">
@@ -94,6 +95,7 @@ function renderPeople(people){
     container.innerHTML='';
     people.filter(d=>d["Status"]==="Alumni").forEach(item=>{
         let elem = document.createElement('div');
+        elem.setAttribute('role', 'listitem');
         elem.innerHTML=`
         <a target="_blank"href="${item["Website"]?item["Website"]:item["LinkedIn"]}">
             <img src="${!item["Photo"]?'assets/images/person.png':getURL(item["Photo"])}" alt="${item["Name"]}, ${item["Position"]}"/>
@@ -234,7 +236,7 @@ function renderPubs(pubs, cond){
 
             // let path = ;
             // let path = `assets/files/publications/${d.type.toLowerCase()}/${d.title.replace(/\s/g, '-').replace(/[:?|,]/g, '').toLowerCase()}`;
-            return html + `<div class='pub'>
+            return html + `<div class='pub' role="listitem">
                 <div class='pub-teaser'
                     style='background-image:url(${getURL(d.teaser)});'>
                 </div>
@@ -243,7 +245,7 @@ function renderPubs(pubs, cond){
                     <div class='pub-authors'>${d.authors.replace('Nam Wook Kim', '<strong>Nam Wook Kim</strong>')}</div>
                     <div class='pub-venue'><em>${d.venue} ${d.venue_abbreviation?`(<strong>${d.venue_abbreviation}</strong>)`:''}, ${d.year}</em></div>
                     <div class='pub-award'><strong>${d.award?d.award:""}</strong></div>
-                    <div class='pub-materials'>
+                    <div class='pub-materials' role="list" aria-label="Publication Materials">
                         ${renderPubMaterials(d)}
                     </div>
 
@@ -258,7 +260,7 @@ function renderPubs(pubs, cond){
 }
 function renderPubMaterials(d){
     // let path = `/files/publications/${group.key.toLowerCase()}/${d.title.replace(/\s/g, '-').replace(/:/g, '').toLowerCase()}`;
-    let generate = (icon, link, label)=>`<div class='item'>
+    let generate = (icon, link, label)=>`<div class='item' role="listitem">
         <i class="${icon}"></i>
         <a href='${link}' target='_blank'>${label}</a>
     </div>`
@@ -319,6 +321,7 @@ function renderNews(news){
     filtered.sort((a,b)=> parseTime(b.date) - parseTime(a.date));
     filtered.forEach(item=>{
         let elem = document.createElement('div');
+        elem.setAttribute('role', 'listitem')
         elem.innerHTML = `
                 ${md.render(item.headline)}
                  <span class='date'>${formatDate(item.date)}</span>
@@ -336,6 +339,7 @@ function renderTravels(travels){
     filtered.sort((a,b)=> parseTime(b.end) - parseTime(a.end));
     filtered.forEach(item=>{
         let elem = document.createElement('div');
+        elem.setAttribute('role', 'listitem')
         elem.innerHTML = `
                 ${md.render(item.headline)}
                  <span class='date'>${formatDate(item.start)}</span> ${item.start!=item.end?'~':''} 
@@ -354,6 +358,7 @@ function renderCourses(courses){
     filtered.sort((a,b)=> `${b.when}, ${b.year}` - `${a.when}, ${a.year}`);
     filtered.forEach(item=>{
         let elem = document.createElement('div');
+        elem.setAttribute('role', 'listitem')
         elem.innerHTML = `
                 ${md.render(item.name)}
                  <span class='date'>${item.when}, ${item.year}</span>
