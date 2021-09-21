@@ -253,7 +253,10 @@ function renderPubs(pubs, cond){
             </div>`
         }, '');
         let elem = document.createElement('div');
-        elem.innerHTML = `<h3 class='title'>${group[0]}</h3>` + html;
+        // elem.setAttribute('role', 'listitem')
+        elem.innerHTML = `<h3 class='title' aria-hidden="true">${group[0]}</h3>
+            <div role="list" aria-label="${group[0]} Publications">${html}
+            </div>`;
         elem.classList.add('pub-group');
         container.appendChild(elem);
     });
