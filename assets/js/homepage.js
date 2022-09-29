@@ -75,15 +75,17 @@ function renderPeople(people){
     let container = document.querySelector('.people');
     const positions = ["Postdoctoral Fellow", "Research Associate", "Undergraduate Assistant"];
     container.innerHTML='';
-    people.filter(d=>d["Status"]==="Present").sort((a,b)=>{
+    people.sort(d=>d["Status"]==="Present").sort((a,b)=>{
         if (positions.indexOf(a["Position"])>positions.indexOf(b["Position"])){
             return 1;
         }
-        if (positions.indexOf(a["Position"])>positions.indexOf(b["Position"])){
+        if (positions.indexOf(a["Position"])<positions.indexOf(b["Position"])){
             return -1
         }
         return 0;
-    }).forEach(item=>{
+    })
+        
+    people.forEach(item=>{
         let elem = document.createElement('div');
         elem.setAttribute('role', 'listitem');
         console.log("item", item)
