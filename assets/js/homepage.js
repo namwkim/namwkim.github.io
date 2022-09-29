@@ -76,10 +76,10 @@ function renderPeople(people){
     const positions = ["Postdoctoral Fellow", "Research Associate", "Undergraduate Assistant"];
     container.innerHTML='';
     people.filter(d=>d["Status"]==="Present").sort((a,b)=>{
-        if (positions.indexOf(a["Position"])>positions.indexOf(a["Position"])){
+        if (positions.indexOf(a["Position"])>positions.indexOf(b["Position"])){
             return 1;
         }
-        if (positions.indexOf(a["Position"])>positions.indexOf(a["Position"])){
+        if (positions.indexOf(a["Position"])>positions.indexOf(b["Position"])){
             return -1
         }
         return 0;
