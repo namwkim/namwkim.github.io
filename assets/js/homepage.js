@@ -67,7 +67,7 @@ Promise.all([
 });
 
 function renderPeople(people){
-    people = people.filter(d=>d["Position"]!=="Principle Investigator");
+    people = people.filter(d=>d["Position"]!=="Principal Investigator");
 
     console.log('render people', people);
 
