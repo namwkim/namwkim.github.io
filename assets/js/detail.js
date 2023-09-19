@@ -1,4 +1,4 @@
-import {formatDate, getURL, renderNews, renderTravels, renderCourses} from './index.js';
+import {formatDate, getURL, renderNews, renderTravels, renderCourses} from './common.js';
 
 document.addEventListener("DOMContentLoaded", async function () {
     // Your code here
