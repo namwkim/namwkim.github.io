@@ -30,31 +30,7 @@ section{
 .email{
     cursor: pointer;
 }
-.center{
-    text-align: center;
-}
-.hidden{
-    display:none;
-}
-.show{
-    display: block;
-    animation: slide-down .3s ease-out;
-}
-.item{
-    animation: slide-down .3s ease-out;
-}
-.item p{
-    margin:0;
-}
-.date, .location {
-    color:#757575;
-    font-size: 0.9rem;
-    
-}
-@keyframes slide-down {
-    0% { opacity: 0; -webkit-transform: translateY(-10%); }   
-    100% { opacity: 1; -webkit-transform: translateY(0); }
-}
+
 
 .profile-image{
     width:100%;
@@ -64,10 +40,10 @@ section{
     height:0; */
     /* padding-top:100%; */
     
-}
-.profile-item{
+  }
+  .profile-item{
     margin-top:10px;
-}
+  }
 
 .dv{
     color: #9E9E9E;
@@ -77,19 +53,7 @@ section{
     display: flex;
     flex-wrap: wrap;
 }
-.chip{
-    border-radius: 1rem;
-    background: #eeeeee;
-    
-    padding: .2rem 0.5rem;
-    margin: .2rem;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-.chip.selected{
-    background: #B3E5FC;
-    /* color:#fafafa; */
-}
+
 .pub{
     display: flex;
     width:100%;
@@ -194,40 +158,83 @@ section{
         padding-top: 100%; */
     }
 }
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+.see-all{
+    margin-top: 5px;
+    display: inline-block;
+}
+a.see-all{
+    border: none;
+    /* color: #000000; */
+    color:#726158;
+    /* padding-bottom: .25em; */
+    text-decoration: none;
+    cursor: pointer;
+    font-variant: small-caps;
+  }
+  
+a.see-all:hover{
+    /* background-position:0 calc(100% - 1.5px);
+    border-bottom:none;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%234FC3F7' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: auto 4px; */
+    background:none;
+    border: none;
+    /* border-bottom:solid 1px #726158; */
+    color:#8a100b;
+    transition: color .25s;
+    padding: 0;
+    /* padding-bottom: .25em; */
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
 .people{
     margin-bottom: 15px;
-}
-.people{
+  }
+  .people{
     display: grid;
     margin-top: 10px;
     grid-template-columns: repeat(6, 15%);
     /* flex-wrap: wrap; */
-}
-.alumni{
+  }
+  .alumni{
     display: grid;
     margin-top: 10px;
     grid-template-columns: repeat(9, 10%);
     /* flex-wrap: wrap; */
-}
-.people .item{
+  }
+  .people .item{
     margin-right: 10px;
     
-}
-.alumni .item{
+  }
+  .alumni .item{
     margin-right: 5px;
     
-}
-.alumni .item a, .people .item a{
+  }
+  .alumni .item a, .people .item a{
     border:none;
     text-decoration: none;
     cursor: pointer;
-}
-.alumni .item a:hover, .people .item a:hover{
+  }
+  .alumni .item a:hover, .people .item a:hover{
     border: none;
     background: none;
     padding: 0;
-}
-.people .item img{
+  }
+  .people .item img{
     position: relative;
     border-radius: 50%;
     width:48px;
@@ -235,8 +242,8 @@ section{
     object-fit: cover;
     border:2px solid white;
     transition: all .25s;
-}
-.alumni .item img{
+  }
+  .alumni .item img{
     position: relative;
     border-radius: 50%;
     width:30px;
@@ -244,12 +251,12 @@ section{
     object-fit: cover;
     border:2px solid white;
     transition: all .25s;
-}
-.alumni .item img:hover, .people .item img:hover{
-    border:2px solid #B3E5FC;
-}
-
-.person-detail{
+  }
+  .alumni .item img:hover, .people .item img:hover{
+    border:2px solid #dccaa0;
+  }
+  
+  .person-detail{
     position: absolute;
     background-color: white;
     min-width: 150px;
@@ -261,15 +268,4 @@ section{
     text-align: center;
     box-shadow:0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
     /* font-size: 12px; */
-}
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
   }

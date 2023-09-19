@@ -9,11 +9,11 @@ body{
 }
 
 ::selection{
-  background: #B3E5FC;
+  background: #dccaa0;
 }
 
 a {
-  border-bottom: 2px solid #4FC3F7; /*81D4FA*/
+  border-bottom: 2px solid #dda93e; /*81D4FA*/
   /* color: #000000; */
   color:#052d3f;
   /* padding-bottom: .25em; */
@@ -24,7 +24,7 @@ a {
 a:hover {
   background-position:0 calc(100% - 1.5px);
   border-bottom:none;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%234FC3F7' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23DDA93E' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-size: auto 4px;
   border-bottom: 0;
@@ -122,7 +122,7 @@ a:hover {
 }
 .title::after {
   content: '';
-  background-color: #FFE0B2;
+  background-color: #dccaa0;
   height: 30%;
   position: absolute;
   top: 65%;
@@ -137,11 +137,50 @@ a:hover {
 }
 
 .text-highlight{
-  background-color:#FFE0B2;
+  background-color:#dccaa0;
 }
 .emphasis{
   background: #03A9F4;
   border-radius: 5px;
   padding: 5px 10px;
   color:white;
+}
+.chip{
+  border-radius: 1rem;
+  background: #dccaa0;
+  
+  padding: .2rem 0.5rem;
+  margin: .2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.chip.selected{
+  background: #8a100b;
+  color:#dccaa0;
+}
+
+.center{
+  text-align: center;
+}
+.hidden{
+  display:none;
+}
+.show{
+  display: block;
+  animation: slide-down .3s ease-out;
+}
+.item{
+  animation: slide-down .3s ease-out;
+}
+.item p{
+  margin:0;
+}
+.date, .location {
+  color:#757575;
+  font-size: 0.9rem;
+  
+}
+@keyframes slide-down {
+  0% { opacity: 0; -webkit-transform: translateY(-10%); }   
+  100% { opacity: 1; -webkit-transform: translateY(0); }
 }

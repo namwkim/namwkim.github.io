@@ -1,0 +1,60 @@
+.back-button{
+    width: 100px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.container{
+    max-width: 1366px;
+    width: 100%;
+    padding: 20px;
+}
+
+.people, .alumni{
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+.people .item , .alumni .item {
+    flex: 1 0 calc(100%/12 - 1rem); /* Subtracting 1rem for margin */
+    margin: 0.5rem; /* Adjust as needed for space between columns */
+    
+
+}
+
+.people .item{
+    max-width: 150px;;
+}
+.alumni .item{
+    max-width: 150px;;
+}
+.people .item img{
+    position: relative;
+    border-radius: 50%;
+    width:128px;
+    height:128px;
+    object-fit: cover;
+    border:2px solid white;
+    transition: all .25s;
+  }
+  .alumni .item img{
+    position: relative;
+    border-radius: 50%;
+    width:64px;
+    height:64px;
+    object-fit: cover;
+    border:2px solid white;
+    transition: all .25s;
+  }
+  .alumni .item img:hover, .people .item img:hover{
+    border:2px solid #dccaa0;
+  }
+  .alumni .item a, .people .item a{
+    border:none;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .alumni .item a:hover, .people .item a:hover{
+    border: none;
+    background: none;
+    padding: 0;
+  }
