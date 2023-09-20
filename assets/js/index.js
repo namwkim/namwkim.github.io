@@ -370,11 +370,14 @@ function renderPeople(people, container, maxPeople = 20) {
             }<br>${item["Position"]}</div>
         </a>
         `;
-
+        setTimeout(function() {
+            
             container.appendChild(elem);
             elem.classList.add("item");
             elem.addEventListener("mouseenter", showPersonDetail);
             elem.addEventListener("mouseleave", hidePersonDetail);
+          }, 350);
+            
         });
 
     const alumni = document.createElement("section");

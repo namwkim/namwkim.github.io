@@ -110,7 +110,7 @@ export function renderPeople(people, container, maxPeople = 20) {
             container.appendChild(elem);
             elem.classList.add("item");
             console.log("delayed loading");
-          }, 200);
+          }, 350);
        
         });
 
