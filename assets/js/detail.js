@@ -109,6 +109,7 @@ export function renderPeople(people, container, maxPeople = 20) {
             // do something after 1000 milliseconds
             container.appendChild(elem);
             elem.classList.add("item");
+            console.log("delayed loading");
           }, 200);
        
         });
