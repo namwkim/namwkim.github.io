@@ -413,10 +413,13 @@ function renderPeople(people, container, maxPeople = 20) {
         </a>
         `;
 
+        setTimeout(function() {
+            
             container.appendChild(elem);
             elem.classList.add("item");
             elem.addEventListener("mouseenter", showPersonDetail);
             elem.addEventListener("mouseleave", hidePersonDetail);
+          }, 350);
         });
 }
 

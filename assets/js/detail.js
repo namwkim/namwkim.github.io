@@ -144,7 +144,11 @@ export function renderPeople(people, container, maxPeople = 20) {
             <div class="person-detail">${item["Name"]}<br>${item["Position"]}</div>
         `;
 
-            container.appendChild(elem);
-            elem.classList.add("item");
+            setTimeout(function() {
+                // do something after 1000 milliseconds
+                container.appendChild(elem);
+                elem.classList.add("item");
+                console.log("delayed loading");
+              }, 350);
         });
 }
