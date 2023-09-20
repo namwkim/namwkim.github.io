@@ -239,6 +239,8 @@ a.see-all:hover{
   border-radius: 50%;
   width:48px;
   height:48px;
+  max-width: 48px;
+  max-height: 48px;
   object-fit: cover;
   border:2px solid white;
   transition: all .25s;
@@ -247,7 +249,9 @@ a.see-all:hover{
   position: relative;
   border-radius: 50%;
   width:30px;
+  max-width: 30px;
   height:30px;
+  max-height: 30px;
   object-fit: cover;
   border:2px solid white;
   transition: all .25s;
