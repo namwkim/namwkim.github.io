@@ -1,4 +1,4 @@
-import {formatDate, getURL, renderNews, renderTravels, renderCourses} from './common.js';
+import { formatDate, getURL, renderNews, renderTravels, renderCourses } from './common.js';
 
 document.addEventListener("DOMContentLoaded", async function () {
     // Your code here
@@ -14,15 +14,15 @@ document.addEventListener("DOMContentLoaded", async function () {
             "https://docs.google.com/spreadsheets/d/e/2PACX-1vRiEYYD3rIzHcyFpugw6fF8EbO2EVjClWyoHf49rU7nJCVa-YjXJ6vJ4VMwgRIFyaVHSgfBswDhU5-B/pub?output=csv";
         const items = await loadCSV(url);
         renderNews(items, document.querySelector(".items"), Infinity);
-    }else if (params.page ==="travel"){
+    } else if (params.page === "travel") {
         const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSQ9qDvzFADgd4bP6GK6Ql3fHmpi9Ur4h2ulOi6C5PduoUg2r-5QRm5fxuM24asKxmRp1vzA8lPGdWE/pub?output=csv";
         const items = await loadCSV(url);
         renderTravels(items, document.querySelector(".items"), Infinity);
-    }else if (params.page ==="teaching"){
+    } else if (params.page === "teaching") {
         const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSbSAg-v5C7XlV5VZ0OB_3xwTuc0D9DmkkblCsVTlwlxAy3y7OcGmNkQl_nsweJTkwxTmiyABSoO6WR/pub?output=csv";
         const items = await loadCSV(url);
         renderCourses(items, document.querySelector(".items"), Infinity);
-    }else if (params.page ==="people"){
+    } else if (params.page === "people") {
         const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQVrB2GEn9fEm1aWMys8h4FE0KG_a65VeULWBsV_l1xMCfgsDOJNn66t-yAWyLGvR1cb2YATyF9i62-/pub?output=csv";
         const items = await loadCSV(url);
         renderPeople(items, document.querySelector(".items"), Infinity);
@@ -88,31 +88,31 @@ export function renderPeople(people, container, maxPeople = 20) {
         return 0;
     });
 
-    people
-        .filter((d) => d["Status"] === "Present")
-        .slice(0, maxPeople)
-        .forEach((item) => {
-            let elem = document.createElement("div");
-            elem.setAttribute("role", "listitem");
-            console.log("item", item);
-            elem.innerHTML = `
-            <a target="_blank"href="${item["Website"] ? item["Website"] : item["LinkedIn"]}">
-                <img class="person-photo" src="${
-                    !item["Photo"]
-                        ? "../assets/images/person.png"
-                        : getURL(item["Photo"])
-                }" alt="${item["Name"]}, ${item["Position"]}"/>
-            </a>
-            <div class="person-detail">${item["Name"]}<br>${item["Position"]}</div>
-        `;
-            setTimeout(function() {
-            // do something after 1000 milliseconds
-            container.appendChild(elem);
-            elem.classList.add("item");
-            console.log("delayed loading");
-          }, 350);
-       
-        });
+    // people
+    //     .filter((d) => d["Status"] === "Present")
+    //     .slice(0, maxPeople)
+    //     .forEach((item, i) => {
+    //         let elem = document.createElement("div");
+    //         elem.setAttribute("role", "listitem");
+    //         console.log("item", item);
+    //         elem.innerHTML = `
+    //         <a target="_blank"href="${item["Website"] ? item["Website"] : item["LinkedIn"]}">
+    //             <img class="person-photo" src="${!item["Photo"]
+    //                 ? "../assets/images/person.png"
+    //                 : getURL(item["Photo"])
+    //             }" alt="${item["Name"]}, ${item["Position"]}"/>
+    //         </a>
+    //         <div class="person-detail">${item["Name"]}<br>${item["Position"]}</div>
+    //     `;
+    //         setTimeout(function () {
+    //             // do something after 1000 milliseconds
+    //             container.appendChild(elem);
+    //             elem.classList.add("item");
+    //             console.log("delayed loading");
+
+    //         }, 100 * i);
+
+    //     });
 
     const alumni = document.createElement("section");
     alumni.innerHTML = `
@@ -122,33 +122,36 @@ export function renderPeople(people, container, maxPeople = 20) {
     container.parentNode.insertBefore(alumni, container.nextSibling);
     // container.parentNode.appendChild(alumni);
     container.classList.add("alumni");
-    
 
-    container = alumni.querySelector(".alumni");
-    container.innerHTML = "";
+
+    const alumniContainer = alumni.querySelector(".alumni");
+    alumniContainer.innerHTML = "";
     people
-        .filter((d) => d["Status"] === "Alumni")
+        .sort((d) => d["Status"] === "Alumni" ? 1 : -1)
         .slice(0, maxPeople)
-        .forEach((item) => {
+        .forEach((item, i) => {
             let elem = document.createElement("div");
             elem.setAttribute("role", "listitem");
             elem.innerHTML = `
             <a target="_blank"href="${item["Website"] ? item["Website"] : item["LinkedIn"]}">
-                <img src="${
-                    !item["Photo"]
-                        ? "../assets/images/person.png"
-                        : getURL(item["Photo"])
+                <img src="${!item["Photo"]
+                    ? "../assets/images/person.png"
+                    : getURL(item["Photo"])
                 }" alt="${item["Name"]}, ${item["Position"]}"/>
             </a>
 
             <div class="person-detail">${item["Name"]}<br>${item["Position"]}</div>
         `;
 
-            setTimeout(function() {
-                // do something after 1000 milliseconds
-                container.appendChild(elem);
+            setTimeout(function () {
+                console.log("delayed loading", i * 250);
+                if (item["Status"] === "Present") {
+                    container.appendChild(elem);
+                } else if (item["Status"] === "Alumni") {
+                    alumniContainer.appendChild(elem);
+                }
                 elem.classList.add("item");
                 console.log("delayed loading");
-              }, 350);
+            }, i*250);
         });
 }
