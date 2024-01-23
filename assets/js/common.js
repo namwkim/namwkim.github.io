@@ -21,6 +21,22 @@ export function formatDate(date) {
     }
 }
 
+export function getImgURL(path) {
+    if (path.startsWith("http") && path.includes("drive.google.com")) {
+        const url = new URL(path);
+        const urlParams = new URLSearchParams(url.search);
+        if (urlParams.get("id")) {
+            return `https://lh3.google.com/u/0/d/${urlParams.get(
+                "id"
+            )}`;
+        } else {
+            const id = path.split("/").slice(-2)[0]; // second from last
+            return `https://lh3.google.com/u/0/d/${id}`;
+        }
+    } else {
+        return path;
+    }
+}
 export function getURL(path) {
     if (path.startsWith("http") && path.includes("drive.google.com")) {
         const url = new URL(path);

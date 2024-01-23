@@ -9,7 +9,7 @@ let peopleContainer = document.querySelector('.people');
 let travelContainer = document.querySelector('.travels');
 let md = new Remarkable();
 
-import {formatDate, getURL, renderNews, renderTravels, renderCourses, writeAddress} from './common.js';
+import {formatDate, getURL, getImgURL, renderNews, renderTravels, renderCourses, writeAddress} from './common.js';
 
 Promise.all([
     'https://docs.google.com/spreadsheets/d/e/2PACX-1vRiEYYD3rIzHcyFpugw6fF8EbO2EVjClWyoHf49rU7nJCVa-YjXJ6vJ4VMwgRIFyaVHSgfBswDhU5-B/pub?output=csv',
@@ -149,7 +149,7 @@ function renderPubs(pubs, cond){
             // let path = `assets/files/publications/${d.type.toLowerCase()}/${d.title.replace(/\s/g, '-').replace(/[:?|,]/g, '').toLowerCase()}`;
             return html + `<div class='pub' role="listitem">
                 <div class='pub-teaser'
-                    style='background-image:url(${getURL(d.teaser)});'>
+                    style='background-image:url(${getImgURL(d.teaser)});'>
                 </div>
                 <div class='pub-detail'>
                     <div class='pub-title'><strong>${d.title}</strong></div>
@@ -363,7 +363,7 @@ function renderPeople(people, container, maxPeople = 20) {
             <img src="${
                 !item["Photo"]
                     ? "assets/images/person.png"
-                    : getURL(item["Photo"])
+                    : getImgURL(item["Photo"])
             }" alt="${item["Name"]}, ${item["Position"]}"/>
             <div class="person-detail" style="display:none">${
                 item["Name"]
@@ -402,7 +402,7 @@ function renderPeople(people, container, maxPeople = 20) {
             <img src="${
                 !item["Photo"]
                     ? "assets/images/person.png"
-                    : getURL(item["Photo"])
+                    : getImgURL(item["Photo"])
             }" alt="${item["Name"]}, ${item["Position"]}"/>
             <div class="person-detail" style="display:none">${
                 item["Name"]

@@ -1,4 +1,4 @@
-import {formatDate, getURL, renderNews, renderTravels, renderCourses} from './common.js';
+import {formatDate, getImgURL, renderNews, renderTravels, renderCourses} from './common.js';
 
 document.addEventListener("DOMContentLoaded", async function () {
     // Your code here
@@ -100,7 +100,7 @@ export function renderPeople(people, container, maxPeople = 20) {
                 <img class="person-photo" src="${
                     !item["Photo"]
                         ? "../assets/images/person.png"
-                        : getURL(item["Photo"])
+                        : getImgURL(item["Photo"])
                 }" alt="${item["Name"]}, ${item["Position"]}"/>
             </a>
             <div class="person-detail">${item["Name"]}<br>${item["Position"]}</div>
@@ -133,7 +133,7 @@ export function renderPeople(people, container, maxPeople = 20) {
                 <img src="${
                     !item["Photo"]
                         ? "../assets/images/person.png"
-                        : getURL(item["Photo"])
+                        : getImgURL(item["Photo"])
                 }" alt="${item["Name"]}, ${item["Position"]}"/>
             </a>
 
