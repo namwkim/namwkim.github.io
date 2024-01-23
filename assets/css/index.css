@@ -239,18 +239,36 @@ a.see-all:hover{
   border-radius: 50%;
   width:48px;
   height:48px;
+  max-width: 48px;
+  max-height: 48px;
   object-fit: cover;
   border:2px solid white;
   transition: all .25s;
+
+  display: inline-block;
+  font-family: Arial;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-wrap;
 }
 .alumni .item img{
   position: relative;
   border-radius: 50%;
   width:30px;
+  max-width: 30px;
   height:30px;
+  max-height: 30px;
   object-fit: cover;
   border:2px solid white;
   transition: all .25s;
+
+  display: inline-block;
+  font-family: Arial;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-wrap;
 }
 .alumni .item img:hover, .people .item img:hover{
   border:2px solid #dccaa0;

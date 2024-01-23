@@ -31,19 +31,38 @@
     position: relative;
     border-radius: 50%;
     width:128px;
+    max-width: 128px;
     height:128px;
+    max-height: 128px;
     object-fit: cover;
     border:2px solid white;
     transition: all .25s;
+
+
+    display: inline-block;
+    font-family: Arial;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
   }
   .alumni .item img{
     position: relative;
     border-radius: 50%;
     width:64px;
+    max-width: 64px;
     height:64px;
+    max-height: 64px;
     object-fit: cover;
     border:2px solid white;
     transition: all .25s;
+
+    display: inline-block;
+    font-family: Arial;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
   }
   .alumni .item img:hover, .people .item img:hover{
     border:2px solid #dccaa0;
